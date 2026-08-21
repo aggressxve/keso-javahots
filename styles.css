@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.heroUs{
+  display: flex;
+  margin: 5rem;
+
+}
+
+.textUs{
+  margin: 5rem;
+}
