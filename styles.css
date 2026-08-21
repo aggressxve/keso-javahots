@@ -1,7 +1,7 @@
 :root{
-  --color-1: #0d0d0d;
-  --text-color: #f0f0f0;
-  --text-muted: rgba(240,240,240,0.7);
+  --color-1: #DA799C;
+  --text-color: #6E3547;
+  --text-muted: rgba(247, 240, 244, 0.842);
   --accent-color: #f3aaef;
   --pill-radius: 999px;
 }
