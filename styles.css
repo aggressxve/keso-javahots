@@ -21,7 +21,7 @@ body{
   background: #eef0f3;
 }
 
-/* ---- NAVBAR (desktop = píldora flotante) ---- */
+/* nav bar laptop */
 nav{
   position: sticky;
   top: 16px;
@@ -40,7 +40,7 @@ nav{
   align-items: center;
 }
 
-/* ---- Logo (reemplaza la imagen en el <img src>) ---- */
+/* logo nav bar*/
 .logo{
   display: inline-flex;
   align-items: center;
@@ -58,7 +58,7 @@ nav{
   transform: rotate(-8deg) scale(1.1);
 }
 
-/* ---- Contenedor de links + acciones ---- */
+/* animaciones nav bar */
 .links-container{
   height: 100%;
   flex: 1;
@@ -72,7 +72,7 @@ nav a{
   color: var(--text-muted);
 }
 
-/* Grupo de secciones (Inicio, Catálogo...): ocupan TODO el espacio disponible, repartido igual */
+/* secciones espacio igual*/
 .nav-links{
   order: 1;
   flex: 1;
@@ -92,7 +92,7 @@ nav a{
   transform: scale(1.08);
 }
 
-/* Píldora de acciones (persona / contacto / carrito), pegada a la derecha */
+/* nav pildora*/
 .nav-actions{
   order: 2;
   margin-left: auto;
@@ -127,7 +127,6 @@ nav a{
   50% { color: var(--accent-color); }
 }
 
-/* Etiqueta ("Login" / "Contacto") que aparece abajo del ícono al hacer click/tap */
 .nav-actions a[data-label]::after{
   content: attr(data-label);
   position: absolute;
@@ -171,7 +170,7 @@ nav svg{
   display: none;
 }
 
-/* ---- Responsive: barra completa + sidebar deslizable ---- */
+/* responsive*/
 @media(max-width: 768px){
 
   nav{
@@ -182,7 +181,7 @@ nav svg{
     margin: 0;
     border-radius: 0;
     padding: 0 16px;
-    justify-content: space-between; /* logo a la izq, hamburguesa pegada a la der */
+    justify-content: space-between;
   }
 
   .logo{
@@ -208,7 +207,7 @@ nav svg{
     transition: 0.75s ease-out;
   }
 
-  /* Íconos primero (arriba), justo debajo del botón de cerrar */
+  /* Íconos primero */
   .nav-actions{
     order: 1;
     margin: 8px 20px 0;
