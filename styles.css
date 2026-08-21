@@ -1,0 +1,81 @@
+body {
+  padding: 40px 15px;
+}
+
+.cta-box {
+  background-color: #fdf1f6;
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Emoji de pastel que flota */
+.cta-icono {
+  font-size: 70px;
+  display: inline-block;
+  animation: flotar 3s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Etiqueta pequeña tipo "oferta" */
+.cta-badge {
+  background-color: #d9799c;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 18px;
+  animation: pulso 2s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.cta-box h2 {
+  font-weight: 800;
+  color: #6a2e42;
+  margin-bottom: 12px;
+}
+
+.cta-box p.desc {
+  color: #7a5866;
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+/* Botón principal */
+.btn-cta {
+  background-color: #d9799c;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-cta:hover {
+  background-color: #c2607f;
+  color: white;
+  transform: scale(1.06);
+}
+
+.cta-nota {
+  color: #9c8590;
+  font-size: 13px;
+  margin-top: 16px;
+}
