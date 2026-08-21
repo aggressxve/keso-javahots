@@ -1,62 +1,126 @@
-body{
-    background-color: gray;
+/* Definición de Paleta de Colores y Tipografías */
+:root {
+    --color-primario: #972a17;
+    --color-secundario: #fff3fe;
+    --color-acento: #7782e9;
+    --color-texto: #333333;
+    
+    --fuente-titulos: 'Domine', serif;
+    --fuente-texto: 'Outfit', sans-serif;
 }
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    color: var(--color-texto);
+}
+
+#margin-cards {
+    margin: 60px;
+}
+
+.equipo h2 {
+    text-align: center; 
+    padding-bottom: 20px;
+}
+
 .contenedor-cartas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    
+    gap: 20px; 
 }
+
 
 .carta {
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: white;
+    border: none;
+    border-radius: 25px; 
+    padding: 20px;
+    background-color: var(--color-secundario); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Tablets */
+
+.carta h3, 
+.carta .rol {
+    text-align: center;
+    margin: 0;
+}
+
+.carta .rol {
+    font-size: 0.99rem;
+    font-weight: 400;
+    color: var(--color-primario); 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.carta h3 {
+    margin-bottom: 15px;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row; 
+    justify-content: rightflex-end; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.enlaces-perfil {
+    display: flex;
+    gap: 15px;
+}
+
+.enlaces-perfil a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.enlaces-perfil a:hover {
+    color: var(--color-acento);
+}
+
+
 @media (max-width: 1000px) {
     .contenedor-cartas {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Celulares */
+
 @media (max-width: 600px) {
     .contenedor-cartas {
         grid-template-columns: 1fr;
     }
-}
-.carta img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    align-self: center;
-}
-#margin-cards{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    #margin-cards {
+        margin: 20px;
+    }
 }
 
-.perfil {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.carta:hover {
+    transform: translateY(-12px); 
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); 
 }
 
-.perfil img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+.carta:hover .perfil img {
+    transform: scale(1.05);
 }
-
-.perfil a {
-    color: #0a66c2;
-    text-decoration: none;
-    font-weight: bold;
-}
-
