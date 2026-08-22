@@ -1,1 +1,19 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
 
+.container-fluid{
+    background-color: #DA799C;
+    position: absolute;
+    bottom: 0;
+}
+
+#letra{
+    color: white;
+    font-family: Outfit;
+}
+
+#ig{
+    position: absolute;
+}
