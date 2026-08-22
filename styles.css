@@ -1,8 +1,8 @@
 :root{
   --color-1: #DA799C;
   --text-color: #6E3547;
-  --text-muted: rgba(247, 240, 244, 0.842);
-  --accent-color: #f3aaef;
+  --text-muted: rgba(247, 246, 247, 0.842);
+  --accent-color: #d9b4c2;
   --pill-radius: 999px;
 }
 
@@ -48,9 +48,16 @@ nav{
   transition: transform .35s ease;
 }
 
+/*fondo logo nav bar y logo nav bar*/
+
 .logo img{
-  height: 34px;
-  width: auto;
+  width: 56px;            
+  height: 56px;
+  padding: 1px;            
+  background-color: rgba(247, 246, 247, 0.842); 
+  border-radius: 50%;      
+  box-sizing: border-box; 
+  object-fit: contain;      
   display: block;
 }
 
@@ -207,23 +214,25 @@ nav svg{
     transition: 0.75s ease-out;
   }
 
-  /* Íconos primero */
+ 
   .nav-actions{
     order: 1;
-    margin: 8px 20px 0;
-    width: calc(100% - 40px);
-    background: transparent;
+    margin: 20px 20px 12px;
+    width: fit-content;
+    background: #ffffff;
     box-shadow: none;
-    padding: 0 0 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 8px 18px;
+    border-radius: var(--pill-radius);
     justify-content: flex-start;
   }
 
   .nav-actions a{
     color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Secciones después de los íconos */
   .nav-links{
     order: 2;
     flex-direction: column;
