@@ -163,12 +163,20 @@ nav svg{
   transition: transform .2s ease;
 }
 
+
 .open-sidebar-button:hover svg,
 .close-sidebar-button:hover svg{
   transform: scale(1.1);
 }
 
 #sidebar-active{
+  display: none;
+}
+
+/* Overlay oculto por defecto: si no, cuenta como item flex extra en nav
+   y descuadra el botón hamburguesa en mobile (aparece centrado en vez
+   de en la esquina) */
+#overlay{
   display: none;
 }
 
@@ -262,6 +270,7 @@ nav svg{
   }
 
   #sidebar-active:checked ~ #overlay{
+    display: block;
     height: 100%;
     width: 100%;
     position: fixed;
