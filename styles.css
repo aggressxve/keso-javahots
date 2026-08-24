@@ -1,3 +1,22 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+
+.container-fluid{
+  // Probado en el footer, hay que cuidar que no rompa nada
+    background-color: #DA799C;
+    position: absolute;
+    bottom: 0;
+}
+
+#letra{
+    color: white;
+    font-family: Outfit;
+}
+
+#ig{
+    position: absolute;
 body {
     padding: 40px 15px;
 }
