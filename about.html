@@ -1,13 +1,31 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es">
+=======
+<html lang="en">
+
+>>>>>>> origin/main
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Importación de Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Outfit:wght@300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <title>Keso</title>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 </head>
+
 <body>
+<<<<<<< HEAD
 
 <nav>
 
@@ -64,4 +82,326 @@
 
 <script src="./about.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyo4Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+=======
+  <div class="container my-4">
+    <h2 class="fw-bold mb-3">Sobre nosotros</h2>
+
+    <!-- PESTAÑAS -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="historia-tab" data-bs-toggle="tab" data-bs-target="#historia" type="button"
+          role="tab">Nuestra Historia</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team" type="button" role="tab">Team
+          JavaHots</button>
+      </li>
+    </ul>
+
+    <div class="tab-content bg-light border border-top-0 p-3 p-md-4">
+
+      <!-- PESTAÑA 1 -->
+      <div class="tab-pane fade show active" id="historia" role="tabpanel">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="border bg-white d-flex align-items-center justify-content-center" style="height: 300px;">
+              foto de la pastelería
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <h3 class="fw-bold">Nuestra Historia</h3>
+            <p class="fw-semibold mb-2">Desde 2020</p>
+            <p class="small">
+              Somos una pastelería familiar que nació del amor por la repostería y de la ilusión de compartir algo hecho
+              con nuestras propias manos. Para nosotros, cada pastel y cada postre representa dedicación, cariño y el
+              deseo de formar parte de momentos especiales.
+              Trabajamos con ingredientes de calidad y ponemos todo nuestro esfuerzo en cada preparación, cuidando tanto
+              el sabor como cada detalle. Queremos que nuestros productos no solo sean deliciosos, sino que también
+              transmitan ese toque casero y especial que caracteriza a nuestra familia.
+              Más que una pastelería, somos una familia que disfruta endulzar tus momentos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PESTAÑA 2 -->
+      <div class="tab-pane fade" id="team" role="tabpanel">
+        <div class="row g-4 align-items-center">
+          <!-- FOTO -->
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="border bg-white d-flex align-items-center justify-content-center text-center"
+              style="height: 300px;">
+              foto grupal xd<br>o CTA
+            </div>
+          </div>
+          <!-- TEXTO -->
+          <div class="col-12 col-md-7 col-lg-8">
+            <h3 class="fw-bold">Team Java</h3>
+            <p class="fw-semibold mb-2">Sobre nosotros</p>
+            <p class="small">
+              Somos una pastelería familiar que nació del amor por la repostería y de la ilusión de compartir algo hecho
+              con nuestras propias manos. Para nosotros, cada pastel y cada postre representa dedicación, cariño y el
+              deseo de formar parte de momentos especiales. Trabajamos con ingredientes de calidad y ponemos todo
+              nuestro esfuerzo en cada preparación, cuidando tanto el sabor como cada detalle. Queremos que nuestros
+              productos no solo sean deliciosos, sino que también transmitan ese toque casero y especial que caracteriza
+              a nuestra familia. Más que una pastelería, somos una familia que disfruta endulzar tus momentos.
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <!-- CINTA DE DATOS -->
+  <div id="cinta" class="bg-dark text-white py-4 " style="width: 100vw; margin-left: calc(50% - 50vw);">
+    <div class="row text-center g-3 mx-0">
+      <div class="col-12 col-md-4">
+        <h3 class="fw-bold mb-0">+5 años en el mercado</h3>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3 class="fw-bold mb-0">+30 sabores distintos</h3>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3 class="fw-bold mb-0">Para todo tipo de eventos</h3>
+      </div>
+    </div>
+  </div>
+
+  <section class="equipo" id="margin-cards">
+    <h2 style="text-align: center; padding-bottom: 50px;">Miembros del Equipo</h2>
+
+    <div class="contenedor-cartas">
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>MARCO ANTHOR</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+      </div>
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>MARTIN CRUZ</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>KEVIN NAVARRO</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>HOMAR CARMONA</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>OMAR PERIBAN</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>PAULA GARZA</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>AMY LOBO</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>LUIS ANGEL</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+      <div class="carta">
+        <!-- contenido de la carta -->
+        <h3>DIANA VERGARA</h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+      <div class="carta">
+        <!-- contenido de la carta -->
+
+        <h3>CARLOS ALFREDO </h3>
+        <p class="rol"> Desarrollador Full</p>
+        <div class="perfil">
+          <img src="images\FLego.png" alt="Marco" style="align-items: center;">
+          <a href="https://www.linkedin.com/" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            GitHub
+          </a>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at
+          St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for
+          Letraset's Body Type sheets.</p>
+
+      </div>
+
+    </div>
+
+
+
+
+  </section>
+
+  <!-- SECCIÓN CTA -->
+  <div class="cta-box">
+    <span class="cta-badge">🎉Oferta por tiempo limitado🎉</span>
+    <h2>Endulza tu próximo evento con nosotros</h2>
+    <p class="desc">Pasteles hechos a tu gusto, con ingredientes frescos y listos el mismo día.</p>
+
+    <!-- Mueve el icono de pastel aquí -->
+    <div>
+      <span class="cta-icono">🎂</span>
+    </div>
+
+    <button class="btn btn-cta" id="verCatalogo">Ver catálogo</button>
+
+    <p id="estadoCatalogo" class="mb-0"></p>
+    <p class="cta-nota">Sin pedido mínimo · Entrega a domicilio</p>
+  </div>
+</body>
+
+<script src="./about.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+>>>>>>> origin/main
 </html>
