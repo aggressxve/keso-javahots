@@ -1,7 +1,3 @@
-
-
-/* --------------------------- INICIO BARRA DE NAVEGACIÓN --------------------------------------------*/
-
 :root{
   --color-1: #DA799C;
   --text-color: #6E3547;
@@ -312,12 +308,10 @@ nav svg{
     z-index: 9;
     background: rgba(0,0,0,0.35);
   }
-/* --------------------------- TERMINA BARRA DE NAVEGACIÓN --------------------------------------------*/
-html {
-    height: 100%;
-    width: 100%;
-  }
 
+} /* cierre de @media(max-width: 768px) */
+
+/* Footer */
 .container-fluid{
   /* Probado en el footer, hay que cuidar que no rompa nada */
   background-color: #DA799C;
@@ -330,9 +324,8 @@ html {
   font-family: Outfit;
 }
 
-#ig {
+#ig{
   position: absolute;
-  }
 }
 
 /* CTA */
@@ -423,7 +416,34 @@ html {
   font-size: 13px;
   margin-top: 16px;
 }
+/* Definición de Paleta de Colores y Tipografías */
+:root {
+    --color-primario: #972a17;
+    --color-secundario: #fff3fe;
+    --color-acento: #7782e9;
+    --color-texto: #333333;
 
+    --fuente-titulos: 'Domine', serif;
+    --fuente-texto: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    color: var(--color-texto);
+}
 /* Equipo */
 #margin-cards {
   margin: 60px;
@@ -524,4 +544,45 @@ html {
   #margin-cards {
     margin: 20px;
   }
+}
+
+.carta:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carta:hover .perfil img {
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Index */
+.bannerPedido{
+  position: relative; 
+  border-radius: 2rem;
+  padding: 5rem;
+  background-color: #a5ace6;
+  overflow: hidden;
+}
+.bannerPedido::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/confetti\ blanco.svg');
+  background-repeat: repeat;
+  background-size: 500px;
+  opacity: .4;
+  mix-blend-mode: soft-light; 
+}
+
+.bannerPedido > * {
+  position: relative;
+  z-index: 1; /* asegura que tu texto y botón queden ARRIBA del confeti */
 }
