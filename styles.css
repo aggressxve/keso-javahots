@@ -330,7 +330,6 @@ nav svg{
 
 body {
   padding: 40px 15px;
-  position: absolute;
 }
 
 /* CTA */
@@ -550,11 +549,13 @@ ul.lista-vendidos li{
 div.pastel {
     position: relative;
     overflow: hidden;
+    border-radius: 16px;
     
 }
 div.pastel img{
     max-width: 100%;
     filter: grey;
+    border-radius: 12px;
     -webkit-filter: grayscale(1);
     -webkit-transition: all .5s ease-in-out;
     
