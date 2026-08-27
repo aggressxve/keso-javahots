@@ -218,16 +218,16 @@ nav svg{
 /* responsive*/
 @media(max-width: 768px){
 
-  nav{
-    position: sticky;
-    top: 0;
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    padding: 0 16px;
-    justify-content: space-between;
-  }
+nav{
+  position: sticky;
+  top: 12px;            
+  max-width: none;
+  width: calc(100% - 32px); 
+  margin: 0 auto;          
+  border-radius: var(--pill-radius); 
+  padding: 0 16px;
+  justify-content: space-between;
+}
 
   .logo{
     margin-right: 0;
@@ -551,97 +551,40 @@ h6 {
   }
 }
 
+.carta:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carta:hover .perfil img {
+    transform: scale(1.05);
+}
+
 a {
     text-decoration: none;
     font-weight: 700;
 }
 
-/**Los mas vendidos**/
-
-ul.lista-vendidos li{
-    padding: 30px;
-    padding-left: 20px;
-    float: left;
-    list-style: none;
-}
-@media only screen and (min-width: 480px){
-    ul.lista-vendidos li{
-    width: 50%;
-}
-}
-@media only screen and (min-width: 768px){
-    ul.lista-vendidos li{
-    width: 33.3%;
-}
-}
-div.pastel {
-    position: relative;
-    overflow: hidden;
-    
-}
-div.pastel img{
-    max-width: 100%;
-    filter: grey;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .5s ease-in-out;
-    
-}
-div.pastel:hover img {
-    -webkit-filter: grayscale(0);
-    -webkit-transform: scale(1.1);
-    
-}
-
-div.pastel p{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 15px 10px;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.55);
-    width: 100%;
-    text-align: left;
-    color: #972a17;
-    text-transform: uppercase;
-    -webkit-transition: all .5s ease-in-out;
-    font-size:1.5em;
-}
-
-
-.comprar-pastel{
-    align-content: center;
-    text-align: right;
-    
-}
-.text-center-titulo{
-    text-align: center;
-    font-size: 2.5em;
-    font-family: 'Domine', serif;
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
-
 /* Index */
 .bannerPedido{
-    position: relative; 
-    border-radius: 2rem;
-    padding: 5rem;
-    background-color: #a5ace6;
-    overflow: hidden;
+  position: relative; 
+  border-radius: 2rem;
+  padding: 5rem;
+  background-color: #a5ace6;
+  overflow: hidden;
 }
-
 .bannerPedido::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/confetti\ blanco.svg');
-    background-repeat: repeat;
-    background-size: 500px;
-    opacity: .4;
-    mix-blend-mode: soft-light; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/confetti\ blanco.svg');
+  background-repeat: repeat;
+  background-size: 500px;
+  opacity: .4;
+  mix-blend-mode: soft-light; 
 }
 
 .bannerPedido > * {
