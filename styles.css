@@ -19,6 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html{
@@ -328,11 +329,6 @@ nav svg{
     position: absolute;
 }
 
-body {
-  padding: 40px 15px;
-  position: absolute;
-}
-
 /* CTA */
 .cta-box {
   background-color: #fdf1f6;
@@ -434,7 +430,7 @@ body {
 
 .contenedor-cartas {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -620,4 +616,10 @@ div.pastel p{
 .bannerPedido > * {
   position: relative;
   z-index: 1; /* asegura que tu texto y botón queden ARRIBA del confeti */
+}
+
+/** About **/
+#cinta{
+  background-color:#4FC7E5;
+  color: white;
 }
