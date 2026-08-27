@@ -621,3 +621,7 @@ div.pastel p{
   position: relative;
   z-index: 1; /* asegura que tu texto y botón queden ARRIBA del confeti */
 }
+
+.color-letras-cinta{
+    color: white;
+}
