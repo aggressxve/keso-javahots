@@ -218,16 +218,16 @@ nav svg{
 /* responsive*/
 @media(max-width: 768px){
 
-  nav{
-    position: sticky;
-    top: 12px;
-    max-width: none;
-    width: calc(100% - 32px);
-    margin: 0 auto;
-    border-radius: var(--pill-radius);
-    padding: 0 16px;
-    justify-content: space-between;
-  }
+nav{
+  position: sticky;
+  top: 12px;            
+  max-width: none;
+  width: calc(100% - 32px); 
+  margin: 0 auto;          
+  border-radius: var(--pill-radius); 
+  padding: 0 16px;
+  justify-content: space-between;
+}
 
   .logo{
     margin-right: 0;
