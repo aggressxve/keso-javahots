@@ -220,11 +220,11 @@ nav svg{
 
   nav{
     position: sticky;
-    top: 0;
+    top: 12px;
     max-width: none;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    border-radius: var(--pill-radius);
     padding: 0 16px;
     justify-content: space-between;
   }
