@@ -330,7 +330,6 @@ nav svg{
 
 body {
   padding: 40px 15px;
-  position: absolute;
 }
 
 /* CTA */
@@ -550,19 +549,21 @@ ul.lista-vendidos li{
 div.pastel {
     position: relative;
     overflow: hidden;
+    border-radius: 16px;
     
 }
 div.pastel img{
     max-width: 100%;
     filter: grey;
+    border-radius: 12px;
     -webkit-filter: grayscale(1);
     -webkit-transition: all .5s ease-in-out;
     
 }
-div.pastel:hover img {
-    -webkit-filter: grayscale(0);
-    -webkit-transform: scale(1.1);
-    
+div.pastel:hover img{
+    filter: grayscale(0);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 div.pastel p{
@@ -586,13 +587,51 @@ div.pastel p{
     text-align: right;
     
 }
-.text-center-titulo{
-    text-align: center;
-    font-size: 2.5em;
+.text-left-titulo{
+    text-align: left;
+    font-size: 28.1637px;
     font-family: 'Domine', serif;
     padding-bottom: 50px;
     padding-top: 50px;
 }
+
+/* Espacio entre Los más vendidos y Personaliza tu pedido */
+.bannerPedido {
+    margin-top: 80px;
+}
+
+#carouselMasVendido {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+/* Flecha anterior */
+#carouselMasVendido .carousel-control-prev {
+    width: 50px;
+    left: -10px;
+    opacity: 1;
+}
+
+/* Flecha siguiente */
+#carouselMasVendido .carousel-control-next {
+    width: 50px;
+    right: -10px;
+    opacity: 1;
+}
+
+#carouselMasVendido .carousel-control-prev-icon,
+#carouselMasVendido .carousel-control-next-icon {
+    background-color: var(--color-acento);
+    border-radius: 20%;
+    width: 35px;
+    height: 35px;
+}
+
+#carouselMasVendido .carousel-indicators {
+    bottom: -50px;
+}
+
+
 
 /* Index */
 .bannerPedido{
@@ -622,6 +661,3 @@ div.pastel p{
   z-index: 1; /* asegura que tu texto y botón queden ARRIBA del confeti */
 }
 
-.color-letras-cinta{
-    color: white;
-}
