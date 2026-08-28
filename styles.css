@@ -1,5 +1,5 @@
-:root {
-  --color-1: #DA799C;
+:root{
+  --color-1: #f077a3;
   --text-color: #6E3547;
   --text-muted: rgba(247, 246, 247, 0.842);
   --accent-color: #d9b4c2;
@@ -225,16 +225,16 @@ nav svg {
 /* responsive*/
 @media(max-width: 768px) {
 
-  nav {
-    position: sticky;
-    top: 0;
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    padding: 0 16px;
-    justify-content: space-between;
-  }
+nav{
+  position: sticky;
+  top: 12px;            
+  max-width: none;
+  width: calc(100% - 32px); 
+  margin: 0 auto;          
+  border-radius: var(--pill-radius); 
+  padding: 0 16px;
+  justify-content: space-between;
+}
 
   .logo {
     margin-right: 0;
@@ -340,7 +340,88 @@ nav svg {
 
 body {
   padding: 40px 15px;
-  position: absolute;
+}
+
+/* Contact Form Styling */
+.contact-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-title {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.contact-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-image-container img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact-image-container img:hover {
+  transform: scale(1.05);
+}
+
+.contact-card label {
+  font-family: var(--fuente-texto);
+  font-weight: 400;
+  color: #6E3547;
+  margin-bottom: 8px;
+}
+
+.contact-card .form-control {
+  border: 1px solid #d9b4c2;
+  border-radius: 8px;
+  padding: 12px;
+  color: #333333;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card .form-control:focus {
+  border-color: var(--color-1);
+  box-shadow: 0 0 0 0.2rem rgba(218, 121, 156, 0.25);
+}
+
+.btn-submit {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
 }
 
 /* CTA */
@@ -435,7 +516,34 @@ body {
   font-size: 13px;
   margin-top: 16px;
 }
+/* Definición de Paleta de Colores y Tipografías */
+:root {
+    --color-primario: #972a17;
+    --color-secundario: #fff3fe;
+    --color-acento: #7782e9;
+    --color-texto: #333333;
 
+    --fuente-titulos: 'Domine', serif;
+    --fuente-texto: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    color: var(--color-texto);
+}
 /* Equipo */
 #margin-cards {
   margin: 60px;
@@ -616,8 +724,8 @@ div.pastel p {
 }
 
 /* Index */
-.bannerPedido {
-  position: relative;
+.bannerPedido{
+  position: relative; 
   border-radius: 2rem;
   padding: 5rem;
   background-color: #a5ace6;
@@ -635,7 +743,7 @@ div.pastel p {
   background-repeat: repeat;
   background-size: 500px;
   opacity: .4;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: soft-light; 
 }
 
 .bannerPedido>* {
