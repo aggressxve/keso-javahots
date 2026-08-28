@@ -1,5 +1,5 @@
 :root{
-  --color-1: #DA799C;
+  --color-1: #f077a3;
   --text-color: #6E3547;
   --text-muted: rgba(247, 246, 247, 0.842);
   --accent-color: #d9b4c2;
@@ -218,16 +218,16 @@ nav svg{
 /* responsive*/
 @media(max-width: 768px){
 
-  nav{
-    position: sticky;
-    top: 0;
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    padding: 0 16px;
-    justify-content: space-between;
-  }
+nav{
+  position: sticky;
+  top: 12px;            
+  max-width: none;
+  width: calc(100% - 32px); 
+  margin: 0 auto;          
+  border-radius: var(--pill-radius); 
+  padding: 0 16px;
+  justify-content: space-between;
+}
 
   .logo{
     margin-right: 0;
@@ -421,7 +421,34 @@ body {
   font-size: 13px;
   margin-top: 16px;
 }
+/* Definición de Paleta de Colores y Tipografías */
+:root {
+    --color-primario: #972a17;
+    --color-secundario: #fff3fe;
+    --color-acento: #7782e9;
+    --color-texto: #333333;
 
+    --fuente-titulos: 'Domine', serif;
+    --fuente-texto: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    color: var(--color-texto);
+}
 /* Equipo */
 #margin-cards {
   margin: 60px;
@@ -596,25 +623,24 @@ div.pastel p{
 
 /* Index */
 .bannerPedido{
-    position: relative; 
-    border-radius: 2rem;
-    padding: 5rem;
-    background-color: #a5ace6;
-    overflow: hidden;
+  position: relative; 
+  border-radius: 2rem;
+  padding: 5rem;
+  background-color: #a5ace6;
+  overflow: hidden;
 }
-
 .bannerPedido::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/confetti\ blanco.svg');
-    background-repeat: repeat;
-    background-size: 500px;
-    opacity: .4;
-    mix-blend-mode: soft-light; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/confetti\ blanco.svg');
+  background-repeat: repeat;
+  background-size: 500px;
+  opacity: .4;
+  mix-blend-mode: soft-light; 
 }
 
 .bannerPedido > * {
