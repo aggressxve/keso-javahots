@@ -779,6 +779,11 @@ div.pastel p {
   background-color: #FDF1F6;
 }
 
+#cinta{
+  background-color: #4FC7E5;
+}
+
+
 /* FIX LINEA BLANCA - TABS KESO */
 .nav-tabs {
   border-bottom: none !important;
