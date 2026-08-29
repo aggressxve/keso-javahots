@@ -1,4 +1,5 @@
-<nav>
+function llamarNavbar(){
+    document.body.insertAdjacentHTML('beforebegin', `<nav>
 
   <input type="checkbox" id="sidebar-active">
 
@@ -45,4 +46,4 @@
 
   <label for="sidebar-active" id="overlay"></label>
 
-</nav>
+</nav>`)}
