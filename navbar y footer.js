@@ -3,7 +3,7 @@ function llamarNavbar(){
 
   <input type="checkbox" id="sidebar-active">
 
-  <a href="/keso-javahots/Inicio.html" class="logo">
+  <a href="index.html" class="logo">
     <img src="/images/logo-removebg-preview.png" alt="Keso">
   </a>
 
