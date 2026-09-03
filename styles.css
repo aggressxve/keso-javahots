@@ -432,6 +432,7 @@ body {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -547,6 +548,7 @@ h6 {
 /* Equipo */
 #margin-cards {
   margin: 60px;
+  display: none;
 }
 
 .equipo h2 {
@@ -568,6 +570,7 @@ h6 {
   background-color: var(--color-secundario);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
 }
 
 .carta h3,
@@ -594,8 +597,9 @@ h6 {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .perfil img {
@@ -631,6 +635,11 @@ h6 {
   transform: scale(1.05);
 }
 
+#margin-cards.mostrar-equipo {
+  display: block;
+}
+
+
 @media (max-width: 1000px) {
   .contenedor-cartas {
     grid-template-columns: repeat(3, 1fr);
@@ -644,6 +653,7 @@ h6 {
 
   #margin-cards {
     margin: 20px;
+    display: none;
   }
 }
 
