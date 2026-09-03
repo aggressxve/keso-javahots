@@ -322,24 +322,121 @@ nav{
 /* cierre de @media(max-width: 768px) */
 
 /* Footer */
-.container-fluid {
-  /* Probado en el footer, hay que cuidar que no rompa nada */
-  background-color: #DA799C;
-  position: absolute;
-  bottom: 0;
+* {
+  box-sizing: border-box;
 }
 
-#letra {
-  color: white;
-  font-family: Outfit;
+a, p {
+  font-family: 'Outfit', sans-serif;
 }
 
-#ig {
-  position: absolute;
+a {
+  color: #f1f1f1;
+  text-decoration: none;
 }
 
-body {
-  padding: 40px 15px;
+.site-footer {
+  background-color: #F077A3;
+  color: #f1f1f1;
+  padding: 40px 20px 20px;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
+  z-index: 10;
+}
+
+#adornoFooter {
+  display: block;
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto 25px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  font-weight:bold;
+  margin-bottom: 15px;
+  color: #f1f1f1;
+  font-family: 'Outfit', sans-serif;
+}
+
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+#kesoLogo {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #f1f1f1;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #kesoLogo {
+    margin: 0 auto;
+    max-width: 130px;
+  }
+
+  .social-icon {
+    margin: 0 6px;
+  }
+
+  #adornoFooter {
+    width: 100%;
+  }
 }
 
 /* Contact Form Styling */
@@ -432,6 +529,7 @@ body {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -547,6 +645,7 @@ h6 {
 /* Equipo */
 #margin-cards {
   margin: 60px;
+  display: none;
 }
 
 .equipo h2 {
@@ -568,6 +667,7 @@ h6 {
   background-color: var(--color-secundario);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
 }
 
 .carta h3,
@@ -594,8 +694,9 @@ h6 {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .perfil img {
@@ -631,6 +732,11 @@ h6 {
   transform: scale(1.05);
 }
 
+#margin-cards.mostrar-equipo {
+  display: block;
+}
+
+
 @media (max-width: 1000px) {
   .contenedor-cartas {
     grid-template-columns: repeat(3, 1fr);
@@ -644,6 +750,7 @@ h6 {
 
   #margin-cards {
     margin: 20px;
+    display: none;
   }
 }
 
