@@ -1,5 +1,5 @@
-function cargarFooter(){
-    document.body.insertAdjacentHTML('beforeend', `
+function cargarFooter() {
+  document.body.insertAdjacentHTML('beforeend', `
          <footer class="site-footer">
             <img id="adornoFooter" src="images/imgFooter/adorno-footer.png">
             <div class="footer-container">
@@ -32,8 +32,8 @@ function cargarFooter(){
         </footer>
         `)
 }
-function llamarNavbar(){
-    document.body.insertAdjacentHTML('beforebegin', `<nav>
+function llamarNavbar() {
+  document.body.insertAdjacentHTML('beforebegin', `<nav>
 
   <input type="checkbox" id="sidebar-active">
 
@@ -80,4 +80,5 @@ function llamarNavbar(){
 
   <label for="sidebar-active" id="overlay"></label>
 
-</nav>`)}
+</nav>`)
+}
