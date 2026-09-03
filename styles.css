@@ -335,6 +335,8 @@ a {
   text-decoration: none;
 }
 
+body {
+  padding: 40px 15px;
 .site-footer {
   background-color: #F077A3;
   color: #f1f1f1;
@@ -781,6 +783,25 @@ ul.lista-vendidos li {
 }
 
 div.pastel {
+<<<<<<<<< Temporary merge branch 1
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    
+}
+div.pastel img{
+    max-width: 100%;
+    filter: grey;
+    border-radius: 12px;
+    -webkit-filter: grayscale(1);
+    -webkit-transition: all .5s ease-in-out;
+    
+}
+div.pastel:hover img{
+    filter: grayscale(0);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.05);
+=========
   position: relative;
   overflow: hidden;
 
@@ -896,6 +917,8 @@ div.pastel p {
   z-index: 1;
 }
 
+<<<<<<<<< Temporary merge branch 1
+=========
 #historia-tab {
   background-color: #F077A3;
   color: white;
@@ -949,7 +972,4 @@ div.pastel p {
   margin-top: -1px;
   /* pega el contenido al botón y oculta la línea */
 }
-
-.color-letras-cinta{
-    color: white;
-}
+>>>>>>>>> Temporary merge branch 2
