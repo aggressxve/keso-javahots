@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background-color: var(--color-fondo);
+  background-color: #FDF1F6;
   font-family: var(--fuente-texto);
   color: var(--color-texto);
   font-weight: 300;
@@ -1021,6 +1021,7 @@ div.pastel p {
 /* Transición */
 #carouselPasteles .carousel-item {
     transition: opacity 0.9s ease-in-out;
+}
 #historia-tab {
   background-color: #F077A3;
   color: white;
