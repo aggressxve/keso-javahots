@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background-color: var(--color-fondo);
+  background-color: #FDF1F6;
   font-family: var(--fuente-texto);
   color: var(--color-texto);
   font-weight: 300;
@@ -335,6 +335,9 @@ a {
   text-decoration: none;
 }
 
+body {
+  padding: 40px 15px;
+}
 .site-footer {
   background-color: #F077A3;
   color: #f1f1f1;
@@ -529,6 +532,7 @@ a {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -644,6 +648,7 @@ h6 {
 /* Equipo */
 #margin-cards {
   margin: 60px;
+  display: none;
 }
 
 .equipo h2 {
@@ -665,6 +670,7 @@ h6 {
   background-color: var(--color-secundario);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
 }
 
 .carta h3,
@@ -691,8 +697,9 @@ h6 {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .perfil img {
@@ -728,6 +735,11 @@ h6 {
   transform: scale(1.05);
 }
 
+#margin-cards.mostrar-equipo {
+  display: block;
+}
+
+
 @media (max-width: 1000px) {
   .contenedor-cartas {
     grid-template-columns: repeat(3, 1fr);
@@ -741,6 +753,7 @@ h6 {
 
   #margin-cards {
     margin: 20px;
+    display: none;
   }
 }
 
@@ -771,6 +784,23 @@ ul.lista-vendidos li {
 }
 
 div.pastel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    
+}
+div.pastel img{
+    max-width: 100%;
+    filter: grey;
+    border-radius: 12px;
+    -webkit-filter: grayscale(1);
+    -webkit-transition: all .5s ease-in-out;
+    
+}
+div.pastel:hover img{
+    filter: grayscale(0);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.05);
   position: relative;
   overflow: hidden;
 
@@ -820,6 +850,44 @@ div.pastel p {
   padding-top: 50px;
 }
 
+/* Espacio entre Los más vendidos y Personaliza tu pedido */
+.bannerPedido {
+    margin-top: 80px;
+}
+
+#carouselMasVendido {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+/* Flecha anterior */
+#carouselMasVendido .carousel-control-prev {
+    width: 50px;
+    left: -10px;
+    opacity: 1;
+}
+
+/* Flecha siguiente */
+#carouselMasVendido .carousel-control-next {
+    width: 50px;
+    right: -10px;
+    opacity: 1;
+}
+
+#carouselMasVendido .carousel-control-prev-icon,
+#carouselMasVendido .carousel-control-next-icon {
+    background-color: var(--color-acento);
+    border-radius: 20%;
+    width: 35px;
+    height: 35px;
+}
+
+#carouselMasVendido .carousel-indicators {
+    bottom: -50px;
+}
+
+
+
 /* Index */
 .bannerPedido{
   position: relative; 
@@ -848,6 +916,113 @@ div.pastel p {
   z-index: 1;
 }
 
+/* BANNER Los más vendidos */
+.hero-mas-vendidos {
+    background-color: #f6dce8;
+    border-radius: 2rem;
+    margin: 40px auto;
+    max-width: 1100px;
+    overflow: hidden;
+    padding: 35px 55px;
+}
+
+.hero-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-texto {
+    flex: 1;
+    max-width: 480px;
+}
+
+.hero-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #6E3547;
+}
+
+.hero-texto p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #6E3547;
+}
+
+.btn-hero-catalogo {
+    display: inline-block;
+    background-color: #DA799C;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform .2s ease;
+}
+
+.btn-hero-catalogo:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.hero-carrusel {
+    width: 45%;
+    max-width: 450px;
+}
+
+.hero-carrusel img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* BANNER EN CELULAR */
+
+@media (max-width: 768px) {
+
+    .hero-mas-vendidos {
+        margin: 25px 0;
+        padding: 30px 25px;
+        border-radius: 1.5rem;
+    }
+
+    .hero-contenido {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero-texto {
+        max-width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-texto p {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .hero-carrusel {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero-carrusel img {
+        height: 190px;
+    }
+}
+
+/* Transición */
+#carouselPasteles .carousel-item {
+    transition: opacity 0.9s ease-in-out;
+}
 #historia-tab {
   background-color: #F077A3;
   color: white;
@@ -872,9 +1047,14 @@ div.pastel p {
   background-color: #D0BAF4 !important;
 }
 
-.about-background {
+.all-pages-background {
   background-color: #FDF1F6;
 }
+
+#cinta{
+  background-color: #4FC7E5;
+}
+
 
 /* FIX LINEA BLANCA - TABS KESO */
 .nav-tabs {
@@ -896,3 +1076,5 @@ div.pastel p {
   margin-top: -1px;
   /* pega el contenido al botón y oculta la línea */
 }
+
+
