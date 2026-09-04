@@ -336,7 +336,8 @@ a {
 }
 
 body {
-  padding: 40px 15px;}
+  padding: 40px 15px;
+}
 .site-footer {
   background-color: #F077A3;
   color: #f1f1f1;
@@ -1046,7 +1047,7 @@ div.pastel p {
   background-color: #D0BAF4 !important;
 }
 
-.about-background {
+.all-pages-background {
   background-color: #FDF1F6;
 }
 
@@ -1075,3 +1076,5 @@ div.pastel p {
   margin-top: -1px;
   /* pega el contenido al botón y oculta la línea */
 }
+
+
