@@ -33,7 +33,7 @@ body {
   font-family: var(--fuente-texto);
   color: var(--color-texto);
   font-weight: 300;
-  padding: 40px 15px;
+  padding: 40px 15px 0px;
 }
 
 h1,
@@ -322,10 +322,6 @@ nav{
 /* cierre de @media(max-width: 768px) */
 
 /* Footer */
-* {
-  box-sizing: border-box;
-}
-
 a, p {
   font-family: 'Outfit', sans-serif;
 }
@@ -335,16 +331,13 @@ a {
   text-decoration: none;
 }
 
-body {
-  padding: 40px 15px;
-}
 .site-footer {
   background-color: #F077A3;
   color: #f1f1f1;
   padding: 40px 20px 20px;
-  width: 100%;
   position: relative;
-  margin-top: auto;
+  margin-top: 20px;
+  margin-inline: -15px;
   z-index: 10;
 }
 
@@ -618,23 +611,6 @@ body {
   margin-top: 16px;
 }
 /* Definición de Paleta de Colores y Tipografías */
-:root {
-    --color-primario: #972a17;
-    --color-secundario: #fff3fe;
-    --color-acento: #7782e9;
-    --color-texto: #333333;
-
-    --fuente-titulos: 'Domine', serif;
-    --fuente-texto: 'Outfit', sans-serif;
-}
-
-body {
-    background-color: var(--color-fondo);
-    font-family: var(--fuente-texto);
-    color: var(--color-texto);
-    font-weight: 300;
-}
-
 h1,
 h2,
 h3,
