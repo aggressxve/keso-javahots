@@ -28,6 +28,8 @@ class ItemGenerator {
 
     items;
     currentId;
+    isComplete = false;
+
 
     constructor(currentId = 0) {
         this.items = [];
@@ -52,19 +54,23 @@ class ItemGenerator {
     }
 
     addItem(product) {
-        let isComplete = this.hasRequiredProperties(product);
+        this.isComplete = this.hasRequiredProperties(product);
 
         if (isComplete) {
             product.id = this.currentId;
             this.items.push(product);
             this.currentId++;
         } else {
-            console.log(`The product ${product} has incomplete properties. Please check it.`);
+            alert(`The product ${product} has incomplete properties. Please check it.`);
         }
     }
 
     getItems() {
         return this.items;
+    }
+
+    isProductComplete() {
+        return this.isComplete;
     }
 
 }
