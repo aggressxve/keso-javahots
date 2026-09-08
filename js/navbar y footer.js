@@ -1,7 +1,7 @@
 function cargarFooter() {
   document.body.insertAdjacentHTML('beforeend', `
          <footer class="site-footer">
-            <img id="adornoFooter" src="images/imgFooter/adorno-footer.png">
+            <img id="adornoFooter" src="/images/imgFooter/adorno-footer.png">
             <div class="footer-container">
                 <div class="footer-col">
                     <img id="kesoLogo" src="/images/imgFooter/kesologo.png" href="index.html">
