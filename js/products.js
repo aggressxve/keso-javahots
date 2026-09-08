@@ -1,6 +1,5 @@
-let productos = [
+export const productos = [
     {
-        "id": 1,
         "name": "Tres leches de fresa",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de fresa con crema batida y cobertura de fresas con crema batida.",
         "numeroDePersonas": 15,
@@ -12,7 +11,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 2,
         "name": "Tres leches de durazno",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de durazno con crema batida y cobertura de duraznos con crema batida.",
         "numeroDePersonas": 15,
@@ -24,7 +22,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 3,
         "name": "Tres leches de frutos rojos",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de frutos rojos con crema batida y cobertura de mermelada de frutos rojos y crema batida.",
         "numeroDePersonas": 15,
@@ -36,7 +33,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 4,
         "name": "Tres leches de nuez",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de nuez con crema batida y cobertura de nuez con crema batida.",
         "numeroDePersonas": 15,
@@ -48,7 +44,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 5,
         "name": "Tres leches de oreo",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de oreo con crema batida de chocolate y cobertura de crema batida de chocolate y oreo.",
         "numeroDePersonas": 15,
@@ -60,7 +55,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 6,
         "name": "Tres leches de chocolate con oreo",
         "descripcion": "Pastel de 3 leches, bizcocho de chocolate, relleno de oreo con crema batida y cobertura de crema batida de chocolate y oreo.",
         "numeroDePersonas": 15,
@@ -72,7 +66,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 7,
         "name": "Tres leches de chocolate con fresa",
         "descripcion": "Pastel de 3 leches, bizcocho de chocolate, relleno de fresa con crema batida y cobertura de fresa y crema batida de chocolate.",
         "numeroDePersonas": 15,
@@ -84,7 +77,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 8,
         "name": "Tres leches de chocolate con frutos rojos",
         "descripcion": "Pastel de 3 leches, bizcocho de chocolate, relleno de frutos rojos con crema batida y cobertura de mermelada de frutos rojos y crema batida de chocolate.",
         "numeroDePersonas": 15,
@@ -96,7 +88,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 9,
         "name": "Tres leches con rompope",
         "descripcion": "Pastel de 3 leches, bizcocho de vainilla, relleno de rompope con nuez, crema batida y cobertura de crema batida con nuez.",
         "numeroDePersonas": 15,
@@ -108,7 +99,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 10,
         "name": "Tres leches y crema de coco",
         "descripcion": "Pastel de 3 leches y crema de coco, bizcocho de vainilla, relleno de coco, queso crema y cobertura de crema batida y coco rallado.",
         "numeroDePersonas": 15,
@@ -120,7 +110,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 11,
         "name": "Matilda",
         "descripcion": "Pastel Matilda, pan de chocolate tipo americano, relleno y decorado con ganache de chocolate Turin semiamargo.",
         "numeroDePersonas": 15,
@@ -132,7 +121,6 @@ let productos = [
         "createdAt": null
     },
     {
-        "id": 12,
         "name": "Flan",
         "descripcion": "Flan clásico",
         "numeroDePersonas": 12,
