@@ -71,7 +71,7 @@ function llamarNavbar() {
     <div class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="Catálogo.html">Catálogo</a>
-      <a href="Pedido personalizado.html">Personaliza</a>
+      <a href="pedido-personalizado.html">Personaliza</a>
       <a href="about.html">Nosotros</a>
       <a href="Contacto.html">Contacto</a>
     </div>
