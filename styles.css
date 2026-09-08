@@ -596,7 +596,7 @@ body {
 
 /* Botón principal */
 .btn-cta {
-  background-color: #d9799c;
+  background-color: #F077A3;
   color: white;
   padding: 14px 40px;
   border-radius: 50px;
@@ -629,7 +629,7 @@ body {
 }
 
 body {
-    background-color: var(--color-fondo);
+    background-color: #FDF1F6;
     font-family: var(--fuente-texto);
     color: var(--color-texto);
     font-weight: 300;
