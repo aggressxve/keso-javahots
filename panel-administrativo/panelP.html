@@ -15,46 +15,47 @@
     <title>Panel Administrativo Keso</title>
 </head>
 <body>
-    
+
     <div class="app-container">
         
-        <aside class="sidebar">
-            <img src="/images/logo.jpeg" width="30px">
-            <h2>Panel</h2>
-            <nav class="sidebar-nav">
-                <a href="#" class="active">Agregar Producto</a>
-                <a href="#">Pedidos</a>
-                <a href="#">Productos</a>
-                <a href="#">Clientes</a>
-                <a href="#">Nuevo Producto</a>
+        <button id="menu-toggle" class="menu-toggle">
+            <span>&#9776;</span>
+        </button>
+
+        <aside class="sidebar" id="sidebar">
+            <h2 id="PO" >Panel Opciones</h2>
+            <img src="/images/logo.jpeg">
+            <nav id="slideA" class="sidebar-nav">
+                <a href="pedidos.html">Pedidos</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="productos.html">Productos</a>
+                <a href="panelP.html">Nuevo Producto</a>
             </nav>
         </aside>
 
-        
         <main class="main-content">
             <div class="container">
                 <h1>Agregar nuevo Producto</h1>
-                
                 
                 <div class="form-section">
                     <div class="row">
                         <div class="col">
                             <label for="NombreProducto" class="form-label">Nombre del producto</label>
-                            <input type="text" class="form-control" id="NombreProducto" name="NombreProducto" placeholder=" ">
+                            <input type="text" class="form-controlP" id="NombreProducto" name="NombreProducto" placeholder=" ">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="Descripcion" class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Describe el producto">
+                            <textarea class="form-controlD" id="Descripcion" name="Descripcion" placeholder="Describe el producto" rows="3"></textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="Relleno" class="form-label">Relleno</label>
-                            <select name="Relleno" id="Relleno" class="form-select" required>
+                            <select name="Relleno" id="Relleno" class="form-selectP" required>
                                 <option value="Agregar relleno">Agregar nuevo relleno</option>
                                 <option value="Crema con oreo">Crema con oreo</option>
                                 <option value="Chocolate">Chocolate</option>
@@ -76,7 +77,7 @@
 
                         <div class="col">
                             <label for="Cobertura" class="form-label">Cobertura</label>
-                            <select name="Cobertura" id="Cobertura" class="form-select" required>
+                            <select name="Cobertura" id="Cobertura" class="form-selectP" required>
                                 <option value="Agregar cobertura">Agregar nueva cobertura</option>
                                 <option value="Chantilly">Chantilly</option>
                                 <option value="Crema batida">Crema batida</option>
@@ -88,7 +89,7 @@
 
                         <div class="col">
                             <label for="Pan" class="form-label">Pan</label>
-                            <select name="Pan" id="Pan" class="form-select" required>
+                            <select name="Pan" id="Pan" class="form-selectP" required>
                                 <option value="Agregar Pan">Agregar nuevo pan</option>
                                 <option value="3 leches">3 leches (vainilla, moka, chocolate, rompope, marmolado)</option>
                                 <option value="Limon">Limón</option>
@@ -109,11 +110,15 @@
                     <div class="row">
                         <div class="col">
                             <label for="Precio" class="form-label">Precio</label>
-                            <input type="text" class="form-control" id="Precio" name="Precio" placeholder="$">
+                            <div class="input-with-symbol">
+                                <span class="symbol">$</span>
+                                <input type="text" class="form-controlP" id="Precio" name="Precio" placeholder="0.00">
+                            </div>
+                            
                         </div>
                         <div class="col">
                             <label for="Numeropersonas" class="form-label">Numero de personas</label>
-                            <select name="Numeropersonas" id="Numeropersonas" class="form-select" required>
+                            <select name="Numeropersonas" id="Numeropersonas" class="form-selectP" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -134,20 +139,21 @@
                     </div>
                 </div>
 
-                
                 <div class="AgregarIMG">
                     <p>Imagen del Producto</p>
                     <input type="file" class="form-control">
                 </div>
 
+                <div class="btn-container">
+                    <button type="button" class="btn-save">Añadir Producto</button>
+                </div>
             </div>
         </main>
-
     </div>
+
+
+    <script src="/js/navbar y footer.js"></script>
+    <script>cargarFooter();</script>
+    <script>llamarNavbar()</script>
 </body>
 </html>
-
-<script src="/js/navbar y footer.js"></script>
-<script>cargarFooter();</script>
-<script>llamarNavbar()</script>
-</body>
