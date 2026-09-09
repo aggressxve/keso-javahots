@@ -110,7 +110,22 @@ formulario.addEventListener("submit", function(event) {
     // Alerta general de errores
     const alertCampos = document.getElementById("alertCampos");
 
-    if (hayErrores) {
+    const todosVacios =
+        nombre === "" &&
+        telefono === "" &&
+        email === "" &&
+        password === "" &&
+        confirmarPassword === "";
+
+    if (todosVacios) {
+        alertNombre.classList.add("d-none");
+        alertTelefono.classList.add("d-none");
+        alertEmail.classList.add("d-none");
+        alertPassword.classList.add("d-none");
+        alertCoincidencia.classList.add("d-none");
+
+        alertCampos.classList.remove("d-none");
+    } else if (hayErrores) {
         alertCampos.classList.remove("d-none");
     } else {
         alertCampos.classList.add("d-none");
