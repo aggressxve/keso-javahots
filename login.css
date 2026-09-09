@@ -97,3 +97,24 @@ body {
     width: 65px;
     transform: rotate(-15deg);
 }
+
+/*ojito*/
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .form-control {
+    padding-right: 40px;
+}
+
+.password-wrapper .toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+    user-select: none;
+}

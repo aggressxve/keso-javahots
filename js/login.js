@@ -140,3 +140,29 @@ formulario.addEventListener("submit", function(event) {
     }
 
 });
+
+
+//ojito para ver contraseña
+
+function habilitarToggle(inputId, iconoId) {
+    const input = document.getElementById(inputId);
+    const icono = document.getElementById(iconoId);
+
+    function toggle() {
+        const esPassword = input.type === 'password';
+        input.type = esPassword ? 'text' : 'password';
+        icono.textContent = esPassword ? 'visibility' : 'visibility_off';
+        icono.setAttribute('aria-label', esPassword ? 'Ocultar contraseña' : 'Mostrar contraseña');
+    }
+
+    icono.addEventListener('click', toggle);
+    icono.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+        }
+    });
+}
+
+habilitarToggle('password', 'iconPassword');
+habilitarToggle('confirmPassword', 'iconConfirmPassword');
