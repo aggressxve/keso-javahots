@@ -9,15 +9,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
-    <link href="/styles.css" rel="stylesheet" type="text/css"/>
-    <link href="styleP.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Outfit:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+    <link href="styleP.css" rel="stylesheet" type="text/css" />
     <title>Panel Administrativo Keso</title>
 </head>
+
 <body>
-    
+
     <div class="app-container">
-        
+        <div id="liveAlertPlaceholder"></div>
         <aside class="sidebar">
             <img src="/images/logo.jpeg" width="30px">
             <h2>Panel</h2>
@@ -30,24 +32,26 @@
             </nav>
         </aside>
 
-        
+
         <main class="main-content">
             <div class="container">
                 <h1>Agregar nuevo Producto</h1>
-                
-                
+
+
                 <div class="form-section">
                     <div class="row">
                         <div class="col">
                             <label for="NombreProducto" class="form-label">Nombre del producto</label>
-                            <input type="text" class="form-control" id="NombreProducto" name="NombreProducto" placeholder=" ">
+                            <input type="text" class="form-control" id="NombreProducto" name="NombreProducto"
+                                placeholder=" ">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="Descripcion" class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Describe el producto">
+                            <input type="text" class="form-control" id="Descripcion" name="Descripcion"
+                                placeholder="Describe el producto">
                         </div>
                     </div>
 
@@ -66,7 +70,8 @@
                                 <option value="Queso con mermelada">Queso con mermelada</option>
                                 <option value="Flan">Flan</option>
                                 <option value="Trufa">Trufa</option>
-                                <option value="Ganache de chocolate (blanco u oscuro)">Ganache de chocolate (blanco u oscuro)</option>
+                                <option value="Ganache de chocolate (blanco u oscuro)">Ganache de chocolate (blanco u
+                                    oscuro)</option>
                                 <option value="Cream pastelera">Cream pastelera</option>
                                 <option value="Crema con queso">Crema con queso</option>
                                 <option value="Crema de avellana">Crema de avellana</option>
@@ -90,7 +95,8 @@
                             <label for="Pan" class="form-label">Pan</label>
                             <select name="Pan" id="Pan" class="form-select" required>
                                 <option value="Agregar Pan">Agregar nuevo pan</option>
-                                <option value="3 leches">3 leches (vainilla, moka, chocolate, rompope, marmolado)</option>
+                                <option value="3 leches">3 leches (vainilla, moka, chocolate, rompope, marmolado)
+                                </option>
                                 <option value="Limon">Limón</option>
                                 <option value="Naranja">Naranja</option>
                                 <option value="Marmoleado">Marmoleado (naranja y chocolate)</option>
@@ -112,8 +118,8 @@
                             <input type="text" class="form-control" id="Precio" name="Precio" placeholder="$">
                         </div>
                         <div class="col">
-                            <label for="Numeropersonas" class="form-label">Numero de personas</label>
-                            <select name="Numeropersonas" id="Numeropersonas" class="form-select" required>
+                            <label for="NumeroPersonas" class="form-label">Numero de personas</label>
+                            <select name="NumeroPersonas" id="NumeroPersonas" class="form-select" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -134,10 +140,11 @@
                     </div>
                 </div>
 
-                
+
                 <div class="AgregarIMG">
                     <p>Imagen del Producto</p>
                     <input type="file" class="form-control">
+                    <button id="submitButton">submit</button>
                 </div>
 
             </div>
@@ -145,8 +152,9 @@
 
     </div>
 </body>
-</html>
 
+</html>
+<script type="module" src="productHandler.js"></script>
 <script src="/js/navbar y footer.js"></script>
 <script>cargarFooter();</script>
 <script>llamarNavbar()</script>

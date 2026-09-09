@@ -1,7 +1,4 @@
-import { productos } from "./products.js";
-// La lista de productos es importada desde products.js
-
-class ItemGenerator {
+export class ItemGenerator {
     /*
     La clase ItemGenerator es creada para el manejo de los productos por una sola entidad centralizada. 
     Tiene dos propiedades: items (un arreglo de objetos con los productos) y currentId (una variable para guardar el estado del contador)
@@ -37,32 +34,34 @@ class ItemGenerator {
     }
 
     hasRequiredProperties(product) {
-        const requiredProperties = ["name", "descripcion", "numeroDePersonas", "relleno", "cobertura", "pan", "img", "precio", "createdAt"];
-        let isComplete = true;
+        const requiredProperties = ["NombreProducto", "Descripcion", "Relleno", "Cobertura", "Pan", "Precio", "NumeroPersonas", "img", "createdAt"];
+        let isProductComplete = true;
 
         if (product.createdAt == null) {
             product.createdAt = new Date().toISOString().split("T")[0];
         }
 
         requiredProperties.forEach(property => {
-            if (Object.hasOwn(product, property) == false) {
-                isComplete = false;
+            // Revisa que las propiedades existan, y que no esten en blanco
+            if (Object.hasOwn(product, property) == false || product[property] == false) {
+                isProductComplete = false;
             }
         })
 
-        return isComplete;
+        return isProductComplete;
     }
 
     addItem(product) {
         this.isComplete = this.hasRequiredProperties(product);
 
-        if (isComplete) {
+        if (this.isComplete) {
             product.id = this.currentId;
             this.items.push(product);
             this.currentId++;
         } else {
-            alert(`The product ${product} has incomplete properties. Please check it.`);
+            console.log("Product not complete!");
         }
+        return this.isComplete;
     }
 
     getItems() {
