@@ -38,63 +38,67 @@
 
   <form id="registroForm">
 
+ 
   <div class="form-group">
     <label for="nombreCompleto">Nombre Completo</label>
-    <input type="text" class="form-control" id="nombreCompleto">
+    <input type="text" class="form-control" id="nombreCompleto" placeholder="Ej. Ana García López">
+  </div><br>
+<!--alerta nombre-->
+  <div id="alertNombre" class="alert alert-primary d-none" role="alert">
+    Por favor, ingresa tu nombre completo.
   </div>
 
   <div class="form-group">
     <label for="telefono">Número de teléfono</label>
-    <input type="tel" class="form-control" id="telefono">
+    <input type="tel" class="form-control" id="telefono" placeholder="Ej. 55 1234 5678">
+  </div><br>
+<!--alerta teléfono-->
+  <div id="alertTelefono" class="alert alert-secondary d-none" role="alert">
+  Por favor, ingresa un número de teléfono válido.
   </div>
 
   <div class="form-group">
     <label for="email">Correo electrónico</label>
-    <input type="email" class="form-control" id="email">
+    <input type="email" class="form-control" id="email" placeholder="Ej. ana.garcia@correo.com">
+  </div><br>
+  <!--alerta email-->
+  <div id="alertEmail" class="alert alert-info d-none" role="alert">
+  Por favor, ingresa un correo electrónico válido.
   </div>
+
 
   <div class="form-group">
     <label for="password">Contraseña</label>
-    <input type="password" class="form-control" id="password">
-
+    <input type="password" class="form-control" id="password" placeholder="Mín. 8 caracteres, letras y números">
     <small id="passwordHelpBlock" class="form-text text-muted">
       8-20 caracteres, con letras y números. Sin espacios ni caracteres especiales.
     </small>
+  </div><br>
+<!--alerta contraseña-->
+  <div id="alertPassword" class="alert alert-warning d-none" role="alert">
+  Por favor, ingresa una contraseña válida.
   </div>
 
   <div class="form-group">
     <label for="confirmPassword">Confirmar contraseña</label>
-    <input type="password" class="form-control" id="confirmPassword">
+    <input type="password" class="form-control" id="confirmPassword" placeholder="Repite tu contraseña">
+  </div><br>
+  <!--alerta confirmar contraseña-->
+  <div id="alertCoincidencia" class="alert alert-danger d-none" role="alert">
+    Las contraseñas no coinciden.
   </div>
 
   <div class="text-center mt-4">
   <button type="submit" class="btn btn-primary" style="background-color:#7782e9; color: white; border-color: #7782e9;">
   Registrarse
   </button>
-  </div>
+  </div><br>
 
 </form>
 
-<!-- Alerts -->
-<div id="alertNombre" class="alert alert-primary d-none" role="alert">
-  Por favor, ingresa tu nombre completo.
-</div>
+<!-- Alerta final -->
 
-<div id="alertTelefono" class="alert alert-secondary d-none" role="alert">
-  Por favor, ingresa un número de teléfono válido.
-</div>
 
-<div id="alertEmail" class="alert alert-info d-none" role="alert">
-  Por favor, ingresa un correo electrónico válido.
-</div>
-
-<div id="alertPassword" class="alert alert-warning d-none" role="alert">
-  Por favor, ingresa una contraseña válida.
-</div>
-
-<div id="alertCoincidencia" class="alert alert-danger d-none" role="alert">
-  Las contraseñas no coinciden.
-</div>
 
 <div id="alertCampos" class="alert alert-dark d-none" role="alert">
   Por favor, revisa los campos marcados.
