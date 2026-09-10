@@ -19,7 +19,6 @@
 <body>
 
     <div class="app-container">
-        
         <button id="menu-toggle" class="menu-toggle">
             <span>&#9776;</span>
         </button>
@@ -28,6 +27,7 @@
             <h2 id="PO" >Panel Opciones</h2>
             <img src="/images/logo.jpeg">
             <nav id="slideA" class="sidebar-nav">
+                <a href="">Inicio</a>
                 <a href="pedidos.html">Pedidos</a>
                 <a href="clientes.html">Clientes</a>
                 <a href="productos.html">Productos</a>
@@ -36,6 +36,7 @@
         </aside>
 
         <main class="main-content">
+            <h1>Panel Administrativo de Keso Pastelería</h1>
             <div class="container">
                 <h1>Agregar nuevo Producto</h1>
                 
@@ -69,8 +70,8 @@
                                 <option value="Queso con mermelada">Queso con mermelada</option>
                                 <option value="Flan">Flan</option>
                                 <option value="Trufa">Trufa</option>
-                                <option value="Ganache de chocolate (blanco u oscuro)">Ganache de chocolate (blanco u
-                                    oscuro)</option>
+                                <option value="Ganache de chocolate (blanco u oscuro)"
+                                >Ganache de chocolate (blanco u oscuro)</option>
                                 <option value="Cream pastelera">Cream pastelera</option>
                                 <option value="Crema con queso">Crema con queso</option>
                                 <option value="Crema de avellana">Crema de avellana</option>
@@ -121,8 +122,8 @@
                             
                         </div>
                         <div class="col">
-                            <label for="Numeropersonas" class="form-label">Numero de personas</label>
-                            <select name="Numeropersonas" id="Numeropersonas" class="form-selectP" required>
+                            <label for="NumeroPersonas" class="form-label">Numero de personas</label>
+                            <select name="NumeroPersonas" id="NumeroPersonas" class="form-selectP" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -146,19 +147,18 @@
                 <div class="AgregarIMG">
                     <p>Imagen del Producto</p>
                     <input type="file" class="form-control">
-                    <button id="submitButton">submit</button>
                 </div>
 
                 <div class="btn-container">
                     <button type="button" class="btn-save">Añadir Producto</button>
                 </div>
+
             </div>
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <script src="/js/navbar y footer.js"></script>
-    <script>cargarFooter();</script>
-    <script>llamarNavbar()</script>
 </body>
 </html>

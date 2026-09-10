@@ -1,7 +1,6 @@
 function llamarPanel() {
-    // Verifica si ya existe el botón o el sidebar para no duplicar
     if (document.getElementById('menu-toggle') || document.getElementById('sidebar')) {
-        return; // Si ya existe, no hace nada
+        return;
     }
 
     document.body.insertAdjacentHTML('afterbegin', `
@@ -21,15 +20,14 @@ function llamarPanel() {
         </aside>
     `);
 
-    // Script para el toggle del menú (se ejecuta solo si no existe ya)
+    
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.querySelector('.main-content');
     const appContainer = document.querySelector('.app-container');
 
     if (menuToggle && sidebar && mainContent && !window.panelInitialized) {
-        window.panelInitialized = true; // Evita que se ejecute dos veces
-
+        window.panelInitialized = true; 
         menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             if (mainContent) mainContent.classList.toggle('active');
@@ -46,5 +44,5 @@ function llamarPanel() {
     }
 }
 
-// Ejecutar al cargar
+
 llamarPanel();
