@@ -24,10 +24,10 @@
         </button>
 
         <aside class="sidebar" id="sidebar">
-            <h2 id="PO" >Panel Opciones</h2>
+            <h2 id="PO">Panel Opciones</h2>
             <img src="/images/logo.jpeg">
             <nav id="slideA" class="sidebar-nav">
-                <a href="">Inicio</a>
+                <a href="Inicio Admin.html">Inicio</a>
                 <a href="pedidos.html">Pedidos</a>
                 <a href="clientes.html">Clientes</a>
                 <a href="productos.html">Productos</a>
@@ -38,20 +38,23 @@
         <main class="main-content">
             <h1>Panel Administrativo de Keso Pastelería</h1>
             <div class="container">
+                <div id="liveAlertPlaceholder"></div>
                 <h1>Agregar nuevo Producto</h1>
-                
+
                 <div class="form-section">
                     <div class="row">
                         <div class="col">
                             <label for="NombreProducto" class="form-label">Nombre del producto</label>
-                            <input type="text" class="form-controlP" id="NombreProducto" name="NombreProducto" placeholder=" ">
+                            <input type="text" class="form-controlP" id="NombreProducto" name="NombreProducto"
+                                placeholder=" ">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="Descripcion" class="form-label">Descripción</label>
-                            <textarea class="form-controlD" id="Descripcion" name="Descripcion" placeholder="Describe el producto" rows="3"></textarea>
+                            <textarea class="form-controlD" id="Descripcion" name="Descripcion"
+                                placeholder="Describe el producto" rows="3"></textarea>
                         </div>
                     </div>
 
@@ -119,7 +122,7 @@
                                 <span class="symbol">$</span>
                                 <input type="text" class="form-controlP" id="Precio" name="Precio" placeholder="0.00">
                             </div>
-                            
+
                         </div>
                         <div class="col">
                             <label for="NumeroPersonas" class="form-label">Numero de personas</label>
@@ -150,7 +153,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <button type="button" class="btn-save">Añadir Producto</button>
+                    <button type="button" id="submitButton" class="btn-save">Añadir Producto</button>
                 </div>
 
             </div>
@@ -160,5 +163,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
+    <script type="module" src="productHandler.js"></script>
 </body>
+
 </html>
