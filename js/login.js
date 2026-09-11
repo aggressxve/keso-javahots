@@ -148,6 +148,7 @@ formulario.addEventListener("submit", function(event) {
 
         console.log(usuario);
         console.log(usuariosRegistrados);
+        formulario.reset();
 
     } else {
 

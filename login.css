@@ -105,12 +105,12 @@ body {
 }
 
 .password-wrapper .form-control {
-    padding-right: 40px;
+    padding-right: 70px;
 }
 
 .password-wrapper .toggle-icon {
     position: absolute;
-    right: 12px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
