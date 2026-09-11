@@ -1,6 +1,8 @@
 import { ItemGenerator } from './itemscontroller.js';
+import { AlertThrower } from './alertThrower.js';
 
 let itemGenerator = new ItemGenerator();
+
 let dataElements = {
     nombreProductoEl: document.getElementById("NombreProducto"),
     descripcionEl: document.getElementById("Descripcion"),
@@ -11,9 +13,11 @@ let dataElements = {
     numeroPersonasEl: document.getElementById("NumeroPersonas"),
     imgEl: document.querySelector('input[type="file"]'),
 }
+
 const submitButton = document.getElementById("submitButton");
 
 submitButton.addEventListener("click", () => {
+
     let data = {
         NombreProducto: dataElements.nombreProductoEl.value,
         Descripcion: dataElements.descripcionEl.value,
@@ -29,10 +33,11 @@ submitButton.addEventListener("click", () => {
     data.NumeroPersonas = parseInt(data.NumeroPersonas);
 
     let itemAdded = itemGenerator.addItem(data);
-    if (itemAdded) {
-        alert("Pastel añadido!");
-        console.log(itemGenerator.getItems());
-    } else {
-        alert("No se pudo agregar el pastel!")
-    }
+    let alertThrower = new AlertThrower(itemAdded);
+
+    alertThrower.throwAlert();
+
+    Object.values(dataElements).forEach(element => {
+        element.value = "";
+    });
 })

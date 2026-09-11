@@ -9,7 +9,7 @@ function cargarFooter() {
                 <div class="footer-col">
                     <h3><a href="index.html">Inicio</a></h3>
                 <ul>
-                    <li><a href="Catálogo.html">Catálogo</a></li>
+                    <li><a href="Catalogo.html">Catálogo</a></li>
                     <li><a href="Pedido personalizado.html">Pedido personalizado</a></li>
                 </ul>
                 </div>
@@ -70,7 +70,7 @@ function llamarNavbar() {
 
     <div class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="Catálogo.html">Catálogo</a>
+      <a href="Catalogo.html">Catálogo</a>
       <a href="pedido-personalizado.html">Personaliza</a>
       <a href="about.html">Nosotros</a>
       <a href="Contacto.html">Contacto</a>
