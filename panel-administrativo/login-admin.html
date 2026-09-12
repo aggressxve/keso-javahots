@@ -20,7 +20,38 @@
         /* ---- Navbar reducida (solo logo + nombre) ---- */
         body {
             padding-top: 16px;
+
         }
+
+        /*Confeti*/
+        .confetti-background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .confetti-dot {
+            position: absolute;
+            font-size: 14px;
+            color: var(--color-1);
+            opacity: 0.5;
+        }
+
+        .confetti-dot:nth-child(3n) {
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+
+        .confetti-dot:nth-child(5n) {
+            color: var(--color-acento);
+            font-size: 10px;
+            opacity: 0.7;
+        }
+
+        /*Fin del confeti*/
+
 
         .page-wrapper {
             min-height: 100vh;
@@ -188,6 +219,8 @@
 
         .footer-login-admin .footer-bottom {
             border-top: none;
+            position: relative;
+            z-index: 2;
         }   
 
         .footer-login-admin {
@@ -200,6 +233,7 @@
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none;
+            z-index: 1;
         }
 
         .footer-sticker-1 { left: 5%; }
@@ -238,6 +272,50 @@
 
 <div class="page-wrapper">
     <body>
+
+        <!--Confeti-->
+        <div class="confetti-background">
+            <span class="confetti-dot" style="top:8%; left:12%;">●</span>
+            <span class="confetti-dot" style="top:20%; left:80%;">●</span>
+            <span class="confetti-dot" style="top:35%; left:5%;">●</span>
+            <span class="confetti-dot" style="top:45%; left:60%;">●</span>
+            <span class="confetti-dot" style="top:60%; left:90%;">●</span>
+            <span class="confetti-dot" style="top:70%; left:25%;">●</span>
+            <span class="confetti-dot" style="top:85%; left:70%;">●</span>
+            <span class="confetti-dot" style="top:15%; left:45%;">●</span>
+            <span class="confetti-dot" style="top:55%; left:15%;">●</span>
+            <span class="confetti-dot" style="top:92%; left:40%;">●</span>
+            <span class="confetti-dot" style="top:5%; left:30%;">●</span>
+            <span class="confetti-dot" style="top:12%; left:65%;">●</span>
+            <span class="confetti-dot" style="top:18%; left:90%;">●</span>
+            <span class="confetti-dot" style="top:25%; left:20%;">●</span>
+            <span class="confetti-dot" style="top:30%; left:50%;">●</span>
+            <span class="confetti-dot" style="top:40%; left:35%;">●</span>
+            <span class="confetti-dot" style="top:48%; left:78%;">●</span>
+            <span class="confetti-dot" style="top:52%; left:8%;">●</span>
+            <span class="confetti-dot" style="top:62%; left:55%;">●</span>
+            <span class="confetti-dot" style="top:68%; left:95%;">●</span>
+            <span class="confetti-dot" style="top:75%; left:40%;">●</span>
+            <span class="confetti-dot" style="top:80%; left:12%;">●</span>
+            <span class="confetti-dot" style="top:88%; left:65%;">●</span>
+            <span class="confetti-dot" style="top:95%; left:22%;">●</span>
+            <span class="confetti-dot" style="top:3%; left:75%;">●</span>
+            <span class="confetti-dot" style="top:10%; left:55%;">●</span>
+            <span class="confetti-dot" style="top:22%; left:8%;">●</span>
+            <span class="confetti-dot" style="top:33%; left:72%;">●</span>
+            <span class="confetti-dot" style="top:38%; left:92%;">●</span>
+            <span class="confetti-dot" style="top:42%; left:18%;">●</span>
+            <span class="confetti-dot" style="top:50%; left:38%;">●</span>
+            <span class="confetti-dot" style="top:58%; left:82%;">●</span>
+            <span class="confetti-dot" style="top:63%; left:28%;">●</span>
+            <span class="confetti-dot" style="top:70%; left:5%;">●</span>
+            <span class="confetti-dot" style="top:73%; left:60%;">●</span>
+            <span class="confetti-dot" style="top:78%; left:88%;">●</span>
+            <span class="confetti-dot" style="top:84%; left:33%;">●</span>
+            <span class="confetti-dot" style="top:90%; left:75%;">●</span>
+            <span class="confetti-dot" style="top:96%; left:50%;">●</span>
+            <span class="confetti-dot" style="top:2%; left:20%;">●</span>
+        </div>
 
         <nav class="nav-admin-login">
             <a href="/index.html" class="logo">
