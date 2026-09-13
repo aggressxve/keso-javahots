@@ -1,58 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Outfit:wght@300;400&display=swap"
-        rel="stylesheet">
-    <link href="/styles.css" rel="stylesheet" type="text/css" />
-    <link href="styleP.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+    <link href="styleP.css" rel="stylesheet" type="text/css">
     <title>Panel Administrativo Keso</title>
 </head>
 <body>
     <div class="app-container">
-        <button id="menu-toggle" class="menu-toggle">
-            <span>&#9776;</span>
-        </button>
 
-        <aside class="sidebar" id="sidebar">
-            <h2 id="PO" >Panel Opciones</h2>
-            <img src="/images/logo.jpeg">
-            <nav id="slideA" class="sidebar-nav">
-                <a href="Inicio Admin.html">Inicio</a>
-                <a href="pedidos.html">Pedidos</a>
-                <a href="clientes.html">Clientes</a>
-                <a href="productos.html">Productos</a>
-                <a href="panelP.html">Nuevo Producto</a>
-            </nav>
-        </aside>
+        <main class="main-content">
+            <h1 id="textPanelAdmin">Panel Administrativo de Keso Pastelería</h1>
+            <div class="container Pedidos">
+                <div class="row sector">
+                    <div class="col sect pedidosH">Pedidos de hoy
+                    </div>
+                    <div class="col sect pedidosP">Pedidos pendientes
+                    </div>
+                    <div class="col sect pedidosE">Pedidos entregados
+                    </div>
+                </div>
 
-        <main class="main-pedidos">
-            <div class="container">
-                <h1> Panel Administrativo de Keso Pastelria</h1>
+                <div class="paneles-pedidos">
+                    <div class="container text-center tabla">
+                        <h2 id="pR">Pedidos recientes</h2>
+                        <div class="row justify-content-md-center header">
+                            <div class="col-auto sec">Pedidos</div>
+                            <div class="col-auto sec">Clientes</div>
+                            <div class="col-auto sec">Fecha</div>
+                            <div class="col-auto sec">Tiempo de Entrega</div>
+                            <div class="col-auto sec">Estado</div>
+                            <div class="col-auto sec">Acciones</div>
+                        </div>
+                    </div>
+
+                    <div class="container tiquet">
+                        <h2>Ticket</h2>
+                        <div class="ticket-contenido">
+                            <p>Selecciona un pedido para ver sus detalles.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </main>
     </div>
-    
 
-
-
-
-
-
-
-
-
-
-
+    <script src="/js/panel opciones.js"></script>
+    <script>llamarPanel()</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 </html>
