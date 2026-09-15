@@ -105,11 +105,12 @@
     border-radius: 8px;
 }
 
-h1 {
+#Gen{
     font-weight: bold;
     color: #5D3412;
     margin-top: 0;
     margin-bottom: 40px;
+    font-style: 'Domine', serif ;
 }
 
 @media (max-width: 768px) {

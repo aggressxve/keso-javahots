@@ -9,7 +9,7 @@ function llamarPanel() {
             <h2 id="PO">Panel Opciones</h2>
             <img src="/images/logo.jpeg">
             <nav id="slideA" class="sidebar-nav">
-                <a href="Inicio Admin.html">Inicio</a>
+                <a href="vistaGeneral.html">Inicio</a>
                 <a href="pedidos.html">Pedidos</a>
                 <a href="clientes.html">Clientes</a>
                 <a href="productos.html">Productos</a>
