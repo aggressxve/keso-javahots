@@ -423,7 +423,7 @@ h1 {
 
 #pR {
     text-align: start;
-    font-family: Golos Text, sans-serif;
+    font-family: Outfit, sans-serif;
     font-weight: bold;
     color: black !important;
 }
@@ -435,7 +435,7 @@ h1 {
 
 .pedido{
     color: #00000096;
-    font-family: Golos Text, sans-serif;
+    font-family: Outfit, sans-serif;
     font-weight: 600;
     padding: 10px;
     margin-bottom: 15px;
@@ -480,7 +480,7 @@ h1 {
     padding: 10px;
     color: #362C2C;
     font-weight: 800;
-    font-family: Golos Text, sans-serif;
+    font-family: Outfit, sans-serif;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     background-color: #FAD4E2;
