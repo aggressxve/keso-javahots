@@ -1,9 +1,25 @@
 const formulario = document.getElementById("registroForm");
 
+const btnLogin = document.getElementById("btnLogin");
+const btnRegistrarse = document.getElementById("btnRegistrarse");
+
+const camposRegistro = document.getElementById("camposRegistro");
+const campoConfirmarPassword = document.getElementById("campoConfirmarPassword");
+
+const tituloFormulario = document.getElementById("tituloFormulario");
+const subtituloFormulario = document.getElementById("subtituloFormulario");
+
+let modoLogin = false;
+
 // Espera el evento submit del formulario
 formulario.addEventListener("submit", function(event) {
 
     event.preventDefault();
+
+    if (modoLogin) {
+        iniciarSesion();
+        return;
+    }
 
     // Obtener los valores de los campos
     const nombre = document.getElementById("nombreCompleto").value.trim();
@@ -137,6 +153,7 @@ formulario.addEventListener("submit", function(event) {
 
     if (!hayErrores) {
         alertExito.classList.remove("d-none");
+
         const usuario = {
             nombre: nombre,
             telefono: telefono,
@@ -145,6 +162,8 @@ formulario.addEventListener("submit", function(event) {
         };
 
         const usuariosRegistrados = JSON.stringify(usuario);
+
+        localStorage.setItem("usuario", usuariosRegistrados);
 
         console.log(usuario);
         console.log(usuariosRegistrados);
@@ -182,3 +201,132 @@ function habilitarToggle(inputId, iconoId) {
 
 habilitarToggle('password', 'iconPassword');
 habilitarToggle('confirmPassword', 'iconConfirmPassword');
+
+// Botón Iniciar sesión
+const textoToggleAuth = document.getElementById("textoToggleAuth");
+
+btnLogin.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    modoLogin = !modoLogin;
+
+    // Limpiar todas las alertas
+    document.getElementById("alertExito").classList.add("d-none");
+    document.getElementById("alertCampos").classList.add("d-none");
+    document.getElementById("alertNombre").classList.add("d-none");
+    document.getElementById("alertTelefono").classList.add("d-none");
+    document.getElementById("alertEmail").classList.add("d-none");
+    document.getElementById("alertPassword").classList.add("d-none");
+    document.getElementById("alertCoincidencia").classList.add("d-none");
+    document.getElementById("alertLoginCampos").classList.add("d-none");
+    document.getElementById("alertLoginCredenciales").classList.add("d-none");
+    document.getElementById("alertLoginSinUsuario").classList.add("d-none");
+    document.getElementById("alertLoginExito").classList.add("d-none");
+
+    formulario.reset();
+
+    if (modoLogin) {
+        camposRegistro.classList.add("d-none");
+        campoConfirmarPassword.classList.add("d-none");
+        document.getElementById("passwordHelpBlock").classList.add("d-none");
+
+        tituloFormulario.textContent = "¡Bienvenido de nuevo!";
+        subtituloFormulario.textContent = "Inicia sesión para continuar.";
+
+        btnRegistrarse.textContent = "Iniciar sesión";
+
+        textoToggleAuth.textContent = "¿Aún no tienes una cuenta?";
+        btnLogin.textContent = "Créala aquí";
+
+    } else {
+        camposRegistro.classList.remove("d-none");
+        campoConfirmarPassword.classList.remove("d-none");
+        document.getElementById("passwordHelpBlock").classList.remove("d-none");
+
+        tituloFormulario.textContent = "¡Crea tu cuenta!";
+        subtituloFormulario.textContent = "Regístrate para diseñar un pastel único para cada ocasión.";
+
+        btnRegistrarse.textContent = "Registrarse";
+
+        textoToggleAuth.textContent = "¿Ya tienes una cuenta?";
+        btnLogin.textContent = "Inicia sesión aquí";
+    }
+});
+
+// Inicio de sesión
+function iniciarSesion() {
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    const alertLoginCampos =
+        document.getElementById("alertLoginCampos");
+
+    const alertLoginCredenciales =
+        document.getElementById("alertLoginCredenciales");
+
+    const alertLoginSinUsuario =
+        document.getElementById("alertLoginSinUsuario");
+
+    const alertLoginExito =
+        document.getElementById("alertLoginExito");
+
+    alertLoginCampos.classList.add("d-none");
+    alertLoginCredenciales.classList.add("d-none");
+    alertLoginSinUsuario.classList.add("d-none");
+    alertLoginExito.classList.add("d-none");
+
+
+    // Validar campos vacíos
+    if (email === "" || password === "") {
+        alertLoginCampos.classList.remove("d-none");
+        return;
+    }
+
+
+    // Obtener usuario de LocalStorage
+    const usuarioJSON = localStorage.getItem("usuario");
+
+    if (usuarioJSON === null) {
+        alertLoginSinUsuario.classList.remove("d-none");
+        return;
+    }
+
+
+    //JSON a objeto
+    const usuario = JSON.parse(usuarioJSON);
+
+
+// Validar credenciales
+        if (
+            email === usuario.email &&
+            password === usuario.password
+        ) {
+
+            alertLoginExito.classList.remove("d-none");
+
+            setTimeout(function() {
+                formulario.reset();
+                alertLoginExito.classList.add("d-none");
+                window.location.href = "index.html";
+            }, 1500);
+
+        } else {
+
+            alertLoginCredenciales.classList.remove("d-none");
+
+        }
+
+}
+
+// Limpiar formulario al regresar a la página
+window.addEventListener("pageshow", function() {
+
+    formulario.reset();
+
+    document.getElementById("alertLoginCampos").classList.add("d-none");
+    document.getElementById("alertLoginCredenciales").classList.add("d-none");
+    document.getElementById("alertLoginSinUsuario").classList.add("d-none");
+    document.getElementById("alertLoginExito").classList.add("d-none");
+
+});

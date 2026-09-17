@@ -1,0 +1,150 @@
+body {
+    background: #FDF1F6;
+    font-family: Domine, sans-serif;
+}
+
+/* Contenedor principal */
+.paneles-pedidos,
+.card-clientes {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Título */
+#pR, .title-clientes {
+    font-weight: 800;
+    font-size: 18pt;
+    margin-bottom: 20px;
+}
+
+/* Encabezado */
+.row.header {
+    background: #f8d7e5;  
+    color: #000;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0;
+    padding: 14px 12px;
+    margin-bottom: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Cada cliente (fila) */
+.cliente-row {
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;   /* línea suave como en la imagen */
+    padding: 14px 12px;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    align-items: center;
+}
+
+
+.cliente-row:last-child {
+    border-bottom: none;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Celdas */
+.cliente-row .col,
+.row.header .col {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botones */
+.btn-modificar,
+.btn-eliminar {
+    border: 0;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 11px;
+    line-height: 1.2;
+}
+
+.btn-modificar {
+    background: #B8E6B1;
+    color: #000;
+    margin-right: 6px;
+}
+
+.btn-eliminar {
+    background: #FFB0C1;
+    color: #000;
+}
+
+.btn-modificar:hover {
+    background: #a5d99e;
+}
+
+.btn-eliminar:hover {
+    background: #ff98b0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .cliente-row .col,
+    .row.header .col {
+        font-size: 12px;
+        padding: 0 4px;
+    }
+
+    .btn-modificar,
+    .btn-eliminar {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .paneles-pedidos,
+    .card-clientes {
+        padding: 12px;
+        margin-top: 20px;
+        border-radius: 16px;
+    }
+
+    #pR, .title-clientes {
+        font-size: 16pt;
+        text-align: center;
+    }
+
+    .tabla {
+        overflow-x: auto;
+    }
+
+    .row.header,
+    .cliente-row {
+        min-width: 900px;
+    }
+
+    .cliente-row .col,
+    .row.header .col {
+        font-size: 11px;
+    }
+
+    .btn-modificar,
+    .btn-eliminar {
+        font-size: 10px;
+        padding: 3px 7px;
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-modificar,
+    .btn-eliminar {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+}
