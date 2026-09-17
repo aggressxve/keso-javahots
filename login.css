@@ -122,7 +122,6 @@ body {
 /* Botones */
 
 #btnRegistrarse,
-#btnLogin,
 #btnVolverRegistro {
     min-width: 180px;
     border-radius: 12px;
@@ -137,16 +136,28 @@ body {
     color: #333333;
 }
 
-#btnLogin {
-    background-color: #ffedbe;
-    color: #333333;
-}
-
 #btnVolverRegistro {
     background-color: #c0b2fd;
     color: #333333;
 }
 
+.login-link-wrapper {
+    font-size: 0.95rem;
+    color: #6E3547;
+}
+
+.login-link {
+    color: #6E3547;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+    border-bottom: 2px solid #ffedbe;
+}
+
+.login-link:hover {
+    color: #4a2c3d;
+    border-bottom-color: #949DF1;
+}
 
 /* Alertas de login */
 
