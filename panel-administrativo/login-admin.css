@@ -1,4 +1,8 @@
  /* ---- Navbar reducida (solo logo + nombre) ---- */
+        body {
+            padding-top: 16px;
+
+        }
 
         /*Confeti*/
         .confetti-background {
@@ -199,6 +203,10 @@
             position: relative;
             z-index: 2;
         }   
+
+        .footer-login-admin {
+            position: relative;
+        }
 
         .footer-sticker {
             position: absolute;
