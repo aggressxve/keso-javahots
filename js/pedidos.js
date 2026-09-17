@@ -26,7 +26,66 @@ const pedidos = [
         fecha: "13 Oct 2026",
         entrega: "6:00 pm - 10:00 pm",
         estado: "En reparto"
+    },
+    {
+        id: "PED-003",
+        cliente: "Carlos Hernández",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 8:00 pm",
+        estado: "Entregado"
+    },
+    {
+        id: "PED-004",
+        cliente: "Brandon Garcia",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 10:00 pm",
+        estado: "En reparto"
+    },
+    {
+        id: "PED-003",
+        cliente: "Carlos Hernández",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 8:00 pm",
+        estado: "Entregado"
+    },
+    {
+        id: "PED-004",
+        cliente: "Brandon Garcia",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 10:00 pm",
+        estado: "En reparto"
+    },
+    {
+        id: "PED-003",
+        cliente: "Carlos Hernández",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 8:00 pm",
+        estado: "Entregado"
+    },
+    {
+        id: "PED-004",
+        cliente: "Brandon Garcia",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 10:00 pm",
+        estado: "En reparto"
+    },
+    {
+        id: "PED-003",
+        cliente: "Carlos Hernández",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 8:00 pm",
+        estado: "Entregado"
+    },
+    {
+        id: "PED-004",
+        cliente: "Brandon Garcia",
+        fecha: "13 Oct 2026",
+        entrega: "6:00 pm - 10:00 pm",
+        estado: "En reparto"
     }
+
+    
+    
 
 ]
 
@@ -36,13 +95,7 @@ if (!listaPedidos) {
   console.error("No se encontró el elemento con id 'lista-pedidos'")
 } else {
 
-  // Lee el atributo data-limite del HTML.
-  // Si existe (ej. data-limite="3"), corta el array con slice().
-  // Si no existe (undefined), usa el array completo de pedidos.
-  const limite = listaPedidos.dataset.limite
-  const pedidosAMostrar = limite ? pedidos.slice(0, parseInt(limite)) : pedidos
-
-  pedidosAMostrar.forEach((pedido, index) => {
+  pedidos.forEach((pedido, index) => {
     const fila = document.createElement("div")
     fila.classList.add("row", "pedido")
 
@@ -53,7 +106,7 @@ if (!listaPedidos) {
     }
 
     fila.innerHTML = `
-      <div class="col prim">${pedido.id}</div>
+      <div class="col sc">${pedido.id}</div>
       <div class="col sc">${pedido.cliente}</div>
       <div class="col sc">${pedido.fecha}</div>
       <div class="col sc">${pedido.entrega}</div>
@@ -82,6 +135,10 @@ if (!listaPedidos) {
   })
   
 }
+
+
+
+
 
 const listaCorta = document.getElementById("lista-corta")
 
