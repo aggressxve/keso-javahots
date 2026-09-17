@@ -159,6 +159,70 @@ h6 {
     color: var(--color-texto);
 }
 
+.perfil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.linkedin-git-link{
+  color : blue;
+  font-family: 'Outfit', sans-serif;
+}
+
+.enlaces-perfil {
+  display: flex;
+  gap: 15px;
+}
+
+.enlaces-perfil a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.enlaces-perfil a:hover {
+  color: var(--color-acento);
+}
+
+.carta:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carta:hover .perfil img {
+  transform: scale(1.05);
+}
+
+#margin-cards.mostrar-equipo {
+  display: block;
+}
+
+
+@media (max-width: 1000px) {
+  .contenedor-cartas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor-cartas {
+    grid-template-columns: 1fr;
+  }
+
+  #margin-cards {
+    margin: 20px;
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
 
 /**Los mas vendidos**/
 
@@ -192,7 +256,7 @@ div.pastel img{
     filter: grey;
     border-radius: 12px;
     -webkit-filter: grayscale(1);
-    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     
 }
 div.pastel:hover img{
@@ -208,13 +272,13 @@ div.pastel img {
   max-width: 100%;
   filter: grey;
   -webkit-filter: grayscale(1);
-  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 
 }
 
 div.pastel:hover img {
-  -webkit-filter: grayscale(0);
-  -webkit-transform: scale(1.1);
+  filter: grayscale(0);
+  transform: scale(1.1);
 
 }
 
@@ -229,7 +293,7 @@ div.pastel p {
   text-align: left;
   color: #972a17;
   text-transform: uppercase;
-  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   font-size: 1.5em;
 }
 
@@ -311,6 +375,18 @@ div.pastel p {
   overflow: hidden;
 }
 
+.btn-primary{
+  background-color:#F077A3;
+  border: none;
+}
+.btn-primary:hover{
+  background-color:#F077A3;
+  border: none;
+  transform: scale(1.05);
+  transition: transform .2s ease;
+}
+
+
 .bannerPedido::before {
   content: "";
   position: absolute;
@@ -370,7 +446,7 @@ div.pastel p {
     background-color: #DA799C;
     color: white;
     padding: 10px 25px;
-    border-radius: 999px;
+    border-radius: 10px;
     font-weight: 700;
     transition: transform .2s ease;
 }
@@ -459,10 +535,6 @@ div.pastel p {
 
 .teamHistory {
   background-color: #D0BAF4 !important;
-}
-
-.all-pages-background {
-  background-color: #FDF1F6;
 }
 
 #cinta{

@@ -1,7 +1,6 @@
 const formulario = document.getElementById("registroForm");
 
 const btnLogin = document.getElementById("btnLogin");
-const btnVolverRegistro = document.getElementById("btnVolverRegistro");
 const btnRegistrarse = document.getElementById("btnRegistrarse");
 
 const camposRegistro = document.getElementById("camposRegistro");
@@ -204,72 +203,55 @@ habilitarToggle('password', 'iconPassword');
 habilitarToggle('confirmPassword', 'iconConfirmPassword');
 
 // Botón Iniciar sesión
+const textoToggleAuth = document.getElementById("textoToggleAuth");
+
 btnLogin.addEventListener("click", function(event) {
+    event.preventDefault();
 
-    if (!modoLogin) {
+    modoLogin = !modoLogin;
 
-        modoLogin = true;
-
-            document.getElementById("alertExito").classList.add("d-none");
-            document.getElementById("alertCampos").classList.add("d-none");
-
-            document.getElementById("alertNombre").classList.add("d-none");
-            document.getElementById("alertTelefono").classList.add("d-none");
-            document.getElementById("alertEmail").classList.add("d-none");
-            document.getElementById("alertPassword").classList.add("d-none");
-            document.getElementById("alertCoincidencia").classList.add("d-none");
-
-            document.getElementById("alertLoginCampos").classList.add("d-none");
-            document.getElementById("alertLoginCredenciales").classList.add("d-none");
-            document.getElementById("alertLoginSinUsuario").classList.add("d-none");
-            document.getElementById("alertLoginExito").classList.add("d-none");
-                    camposRegistro.classList.add("d-none");
-                    campoConfirmarPassword.classList.add("d-none");
-            document.getElementById("passwordHelpBlock").classList.add("d-none");
-
-        tituloFormulario.textContent = "¡Bienvenido de nuevo!";
-        subtituloFormulario.textContent = "Inicia sesión para continuar.";
-
-        btnRegistrarse.classList.add("d-none");
-        btnLogin.classList.remove("d-none");
-
-        document.getElementById("volverRegistro").classList.remove("d-none");
-
-    } else {
-
-        iniciarSesion();
-    }
-});
-
-
-// Botón Crear una cuenta
-btnVolverRegistro.addEventListener("click", function() {
-
-    modoLogin = false;
-
-    camposRegistro.classList.remove("d-none");
-    campoConfirmarPassword.classList.remove("d-none");
-
+    // Limpiar todas las alertas
+    document.getElementById("alertExito").classList.add("d-none");
+    document.getElementById("alertCampos").classList.add("d-none");
+    document.getElementById("alertNombre").classList.add("d-none");
+    document.getElementById("alertTelefono").classList.add("d-none");
+    document.getElementById("alertEmail").classList.add("d-none");
+    document.getElementById("alertPassword").classList.add("d-none");
+    document.getElementById("alertCoincidencia").classList.add("d-none");
     document.getElementById("alertLoginCampos").classList.add("d-none");
     document.getElementById("alertLoginCredenciales").classList.add("d-none");
     document.getElementById("alertLoginSinUsuario").classList.add("d-none");
     document.getElementById("alertLoginExito").classList.add("d-none");
 
-    document.getElementById("alertCampos").classList.add("d-none");
-    document.getElementById("alertExito").classList.add("d-none");
-    document.getElementById("passwordHelpBlock").classList.remove("d-none");
-
-    tituloFormulario.textContent = "¡Crea tu cuenta!";
-    subtituloFormulario.textContent =
-        "Regístrate para diseñar un pastel único para cada ocasión.";
-
-    btnRegistrarse.classList.remove("d-none");
-    btnLogin.classList.remove("d-none");
-    document.getElementById("volverRegistro").classList.add("d-none");
-
     formulario.reset();
-});
 
+    if (modoLogin) {
+        camposRegistro.classList.add("d-none");
+        campoConfirmarPassword.classList.add("d-none");
+        document.getElementById("passwordHelpBlock").classList.add("d-none");
+
+        tituloFormulario.textContent = "¡Bienvenido de nuevo!";
+        subtituloFormulario.textContent = "Inicia sesión para continuar.";
+
+        btnRegistrarse.textContent = "Iniciar sesión";
+
+        textoToggleAuth.textContent = "¿Aún no tienes una cuenta?";
+        btnLogin.textContent = "Créala aquí";
+
+    } else {
+        camposRegistro.classList.remove("d-none");
+        campoConfirmarPassword.classList.remove("d-none");
+        document.getElementById("passwordHelpBlock").classList.remove("d-none");
+
+        tituloFormulario.textContent = "¡Crea tu cuenta!";
+        subtituloFormulario.textContent = "Regístrate para diseñar un pastel único para cada ocasión.";
+
+        btnRegistrarse.textContent = "Registrarse";
+
+        textoToggleAuth.textContent = "¿Ya tienes una cuenta?";
+        btnLogin.textContent = "Inicia sesión aquí";
+    }
+});
 
 // Inicio de sesión
 function iniciarSesion() {
