@@ -6,7 +6,7 @@ export const productos = [
         "relleno": "crema batida con fresas",
         "cobertura": "crema batida con fresas",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/3-leches-fresa.jpeg",
         "precio": 440,
         "createdAt": null
     },
@@ -17,7 +17,7 @@ export const productos = [
         "relleno": "crema batida con durazno",
         "cobertura": "crema batida con durazno",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/3-leches-durazno.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -28,7 +28,7 @@ export const productos = [
         "relleno": "crema batida con frutos rojos",
         "cobertura": "crema batida con mermelada de frutos rojos",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/3-leches-frutosRojos.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -39,7 +39,7 @@ export const productos = [
         "relleno": "crema batida con nuez",
         "cobertura": "crema batida con nuez",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/rompope-nuez.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -50,7 +50,7 @@ export const productos = [
         "relleno": "crema batida de chocolate y oreo",
         "cobertura": "crema batida de chocolate y oreo",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/3-leches-oreo.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -61,7 +61,7 @@ export const productos = [
         "relleno": "crema batida de chocolate y oreo",
         "cobertura": "crema batida de chocolate y oreo",
         "pan": "chocolate",
-        "img": null,
+        "img": "/images/3-leches-chocolate-oreo.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -72,7 +72,7 @@ export const productos = [
         "relleno": "crema batida con fresa",
         "cobertura": "crema batida de chocolate con fresa",
         "pan": "chocolate",
-        "img": null,
+        "img": "/images/3-leches-chocolate-fresa.jpeg",
         "precio": 440,
         "createdAt": null
     },
@@ -83,7 +83,7 @@ export const productos = [
         "relleno": "crema batida con frutos rojos",
         "cobertura": "crema batida de chocolate y mermelada de frutos rojos",
         "pan": "chocolate",
-        "img": null,
+        "img": "/images/3-leches-frutosRojos.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -94,7 +94,7 @@ export const productos = [
         "relleno": "crema batida con rompope y nuez",
         "cobertura": "crema batida con nuez",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/rompope-nuez.jpeg",
         "precio": 480,
         "createdAt": null
     },
@@ -105,7 +105,7 @@ export const productos = [
         "relleno": "coco y queso crema",
         "cobertura": "crema batida y coco rallado",
         "pan": "vainilla",
-        "img": null,
+        "img": "/images/coco-queso-crema.jpeg",
         "precio": 420,
         "createdAt": null
     },
@@ -116,7 +116,7 @@ export const productos = [
         "relleno": "ganache de chocolate Turin semiamargo",
         "cobertura": "ganache de chocolate Turin semiamargo",
         "pan": "chocolate tipo americano",
-        "img": null,
+        "img": "/images/matilda.jpeg",
         "precio": 520,
         "createdAt": null
     },
@@ -127,7 +127,7 @@ export const productos = [
         "relleno": null,
         "cobertura": null,
         "pan": null,
-        "img": null,
+        "img": "/images/flan.jpeg",
         "precio": 320,
         "createdAt": null
     }
