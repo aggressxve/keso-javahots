@@ -15,80 +15,13 @@
   --fuente-texto: 'Outfit', sans-serif;
 }
 
-
-
-
-
-
-
-.main-content {
-    margin-left: 18px;
-    width: calc(100% - 250px);
-    padding: 20px;
-    padding-top: 40px;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease, width 0.3s ease;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 8px;
-}
-
 #Gen{
     font-weight: bold;
-    color: #5D3412;
     margin-top: 0;
     margin-bottom: 40px;
-    font-family: 'Domine', serif;
+    font-family: 'Domine', serif ;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .sidebar {
-        position: fixed;
-        height: 100vh;
-        width: 250px;
-        transform: translateX(-100%);
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px 15px;
-        padding-top: 60px;
-    }
-
-    .main-content.active {
-        margin-left: 250px;
-        width: calc(100% - 250px);
-    }
-
-    .app-container::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 900;
-        display: none;
-    }
-
-    .app-container.active::after {
-        display: block;
-    }
-}
 
 /* stats */
 
