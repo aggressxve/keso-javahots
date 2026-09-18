@@ -21,7 +21,7 @@
 
 <body>
     <div class = "app-container">
-      <main class="main-content general-page">
+      <div class="main-content product-page">
         <div class="container">
                 <h2 id="Gen">Vista general</h2>
                 <div class="stats row g-3 mb-4">
@@ -58,7 +58,11 @@
                     </div>
                 </div>
 
-                <div class="text-center tablaGen">
+                 <!-- Pedidos recientes -->
+
+
+                <div class="tabla-scroll">
+                  <div class="text-center tablaGen">
                         <h2 id="pR">Pedidos recientes</h2>
                         <div class="row header">
                             <div class="col sec">Pedidos</div>
@@ -69,18 +73,57 @@
                             <div class="col sec">Acciones</div>
                         </div>
                         <div id="lista-corta" data-limite="3"></div>
-                    </div>
-                
+                </div>
+
+                </div>
                 
             </div>
-        </main>
-    </div>
-      </main>
+            </div>
+
+            <div class="dashboard-row">
+
+              <!-- Pastel de la semana -->
+              <div class="topPastel">
+                    <img id="pastel-semanal" src="" alt="">
+                    <div class="topdiv">
+                      <h3 id="top-pastel">Top pastel de la semana</h3>
+                      <h4 id="pastel">Pastel</h4>
+                      <button class="btn-cakes" id="pastel-ventas">5 pasteles</button>
+                    </div>
+              </div>
+
+              <!-- grafica de pasteles anuales -->
+
+              <div class="ventas-ano">
+                <h2 id="top-ventas">Ventas del año</h2>
+                <h5 id="avg">Promedio de</h5>
+                <h3 id="cant">50 pasteles</h3>
+
+                <div class="chart-container">
+                  <div class="chart-grid">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <div class="chart-bars" id="chart-bars"></div>
+                </div>
+                <div class="chart-labels" id="chart-labels"></div>
+
+              </div>
+
+            </div>
+
+
+            
+          </div>
+    
+  
 
     </div>
     
     <script src="/js/pedidos.js"></script>
     <script src = "/js/panel opciones.js"></script>
+    <script src="/js/ventasAno.js" defer></script>
+    <script src="/js/Toppastel.js"></script>
+    <script src="/js/confetti.js" defer></script>
     <script>llamarPanel()</script>
 </body>
 </html>
