@@ -506,6 +506,11 @@ h1 {
     font-weight: bold;
 }
 
+.vermas{
+  color: #f077a3;
+  text-decoration: underline;
+}
+
 @media (max-width: 992px) {
     .paneles-pedidos {
         flex-direction: column;

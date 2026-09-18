@@ -62,8 +62,8 @@ if (!listaPedidos) {
           <div class="col-auto estado">${pedido.estado}</div>
         </div>
       </div>
-      <div class="col boton">
-        <button>Ver mas</button>
+      <div class="col">
+        <a href="./" class="vermas">Ver más</a>
       </div>
     `
 
@@ -115,8 +115,8 @@ if (!listaCorta) {
           <div class="col-auto estado">${pedido.estado}</div>
         </div>
       </div>
-      <div class="col boton">
-        <button>Ver mas</button>
+      <div class="col">
+        <a href="./" class="vermas">Ver más</a>
       </div>
     `
 
