@@ -37,11 +37,23 @@
       <ul id="producto-specs" class="producto-specs"></ul>
     </div>
 
-      <div class="producto-compra">
-        <label for="producto-cantidad" class="producto-cantidad-label">Cantidad:</label>
-        <input type="number" id="producto-cantidad" min="1" value="1">
-        <button type="button" class="btn-agregar-carrito">Agregar al carrito</button>
+    <!--Cantidad original
+    <div class="producto-compra" style="background-color: yellowgreen;">
+      <label for="producto-cantidad" class="producto-cantidad-label">Cantidad:</label>
+      <input type="number" id="producto-cantidad" min="1" value="1">
+      <button type="button" class="btn-agregar-carrito">Agregar al carrito</button>
+    </div>
+    -->
+
+    <!--Nuevos botones de cantidad +, -   -->
+    <div class="producto-compra">
+      <label for="cantidad" class="producto-cantidad-label">Cantidad:</label>
+      <div class="contenedor-cantidad">
+        <button type="button" class="btn-cantidad" onclick="cambiarValor(-1)">-</button>
+        <input type="number" id="cantidad" value="1" min="0">
+        <button type="button" class="btn-cantidad" onclick="cambiarValor(1)">+</button>
       </div>
+      <button type="button" class="btn-agregar-carrito">Agregar al carrito</button>
     </div>
 
   </div>
@@ -54,17 +66,18 @@
   <!--CSS-->
   <style>
     .producto-detalle {
-      display: flex;
-      grid-template-columns: auto 1fr 1.2fr;
-      gap: 1.5rem;
-      padding: 2rem 1.5rem;
-      align-items: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr 250px;
+      gap: 1rem;
+      padding: 2rem;
+      align-items: flex-start;
     }
 
     .producto-galeria {
       display: flex;
+      justify-content: center;
       gap: 1rem;
-      grid-column: 1 / 3;
+      max-width: 100%;
     }
 
     .producto-miniaturas {
@@ -74,31 +87,36 @@
     }
 
     .producto-miniaturas .miniatura {
-      width: 120px;
-      height: 120px;
+      max-width: 100%;
+      max-height: 120px;
       object-fit: cover;
       border-radius: 8px;
       background-color: #fff;
     }
 
     .producto-imagen-principal-contenedor {
-      width: 100%;
-      max-width: 320px;
+      max-width: 100%;
+      max-height: 500px;
       aspect-ratio: 1 / 1;
-      background-color: #fff;
     }
 
     #producto-imagen-principal {
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
       border-radius: 8px;
     }
 
     .producto-info{
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      width: 40%
+      box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.04),
+      0 4px 8px rgba(0, 0, 0, 0.06),
+      0 12px 24px rgba(0, 0, 0, 0.08);
     }
 
     .producto-info h1 {
@@ -127,6 +145,7 @@
     }
 
     .producto-compra input {
+      text-align: center;
       width: 100%;
       max-width: 200px;
       padding: .4rem;
@@ -135,12 +154,18 @@
     }
 
     .btn-agregar-carrito {
-      background-color: var(--color-acento);
+      width: 100%;
+      max-width: 200px;
+      background-color: var(--color-1);
       color: #fff;
       border: none;
-      border-radius: 8px;
+      border-radius: 30px;
       padding: .6rem 1.2rem;
       font-weight: 600;
+    }
+    .btn-agregar-carrito:hover{
+      transform: scale(1.03);
+      transition: .3s ease-in-out;
     }
 
     .otros-pasteles-seccion {
@@ -168,6 +193,11 @@
       text-align: center;
     }
 
+    .otro-pastel:hover{
+      transform: scale(1.03);
+      transition: .3s ease-in-out;
+    }
+
     .otro-pastel img {
       width: 100%;
       height: 140px;
@@ -179,7 +209,64 @@
       font-weight: 600;
     }
 
-    @media (max-width: 768px) {
+    /*CSS de los botones de cantidad +, - */
+    /* Oculta las flechas nativas */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .producto-cantidad-label{
+      font-family: var(--fuente-texto);
+      font-weight: 600;
+    }
+
+    .contenedor-cantidad{
+      width: 100%;
+      max-width: 200px;
+      background-color:#eef0f3;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 25px;
+      padding: 4px 10px;
+    }
+    
+    .btn-cantidad{
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 50%;
+      background: var(--color-1);
+      color: white;
+      font-size: 1.1rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    button:hover{
+    background: var(--color-acento);
+    transform: scale(1.08);
+    }
+
+    #cantidad {
+      text-align: center;
+      font-weight: 600;
+      font-family: var(--fuente-texto);
+      width: 60px;
+      border-radius: 10px;
+      border: none;
+      background-color: #eef0f3;
+    }
+
+
+
+    @media (max-width: 1000px) {
       .producto-detalle {
         grid-template-columns: 1fr;
       }
@@ -190,9 +277,22 @@
 
       .producto-compra {
         align-items: stretch;
+        margin-top: auto;
       }
     }
   </style>
+
+
+<!--Script para los botones de cantidad +, - -->
+  <script>
+    function cambiarValor(monto) {
+    const input = document.getElementById('cantidad');
+    let actual = parseInt(input.value) || 0;
+    let nuevo = actual + monto;
+    if (nuevo < 0) nuevo = 0; 
+    input.value = nuevo;
+    }
+  </script>
 
   <!-- Llamar navbar y footer-->
   <script src="./js/navbar y footer.js"></script>
