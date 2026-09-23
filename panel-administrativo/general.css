@@ -22,7 +22,6 @@
     font-family: 'Domine', serif ;
 }
 
-
 /* stats */
 
 .stat-card {
@@ -139,12 +138,6 @@
 .sec{
   white-space: nowrap;
   padding: 10px 8px;
-}
-
-.vermas{
-  color: #f077a3;
-  text-decoration: underline;
-  
 }
 
 .topPastel{

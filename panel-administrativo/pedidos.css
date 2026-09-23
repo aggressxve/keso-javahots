@@ -1,0 +1,388 @@
+/*=========================
+      Pagina Pedidos
+==========================*/
+
+.Pedidos {
+    margin: 0%;
+    padding: 0;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.sector {
+    border-radius: 30px;
+    margin: 83px 79px 99px;
+    gap: 70px;
+}
+
+.sect {
+    font-family: Golos Text, sans-serif;
+    font-size: 28px;
+    border-radius: 30px;
+    padding: 45px 33px;
+}
+
+.pedidosH {
+    background-color: #c1e9fc;
+    color: #297BD3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cantidad-pedidosH{
+    font-size: 39px;
+    font-family: Outfit, sans-serif;
+    font-weight: 700;
+}
+
+.pedidosH:hover{
+    background-color: #408cdd;
+    color: #c1e9fc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.pedidosH:active{
+    transform: scale(0.98);
+}
+
+.pedidosP {
+    background-color: #fac9c9;
+    color: #DF3636;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cantidad-pedidosP{
+    font-size: 39px;
+    font-family: Outfit, sans-serif;
+    font-weight: 700;
+}
+
+.pedidosP:hover{
+    background-color: #ee6868;
+    color: #fac9c9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.pedidosP:active{
+    transform: scale(0.98);
+}
+
+.pedidosE {
+    background-color: #b6f0b3;
+    color: #488A4D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cantidad-pedidosE{
+    font-size: 39px;
+    font-family: Outfit, sans-serif;
+    font-weight: 700;
+}
+
+.pedidosE:hover{
+    background-color: #74b97a;
+    color: #b6f0b3;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.pedidosE:active{
+    transform: scale(0.98);
+}
+
+.paneles-pedidos {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.tabla {
+    flex: 1;
+    min-width: 0;
+    border-radius: 25px;
+    text-align: center;
+    background-color: white;
+    margin: 0;
+    max-width: none;
+}
+
+#pR {
+    text-align: start;
+    font-family: Outfit, sans-serif;
+    font-weight: bold;
+    color: black !important;
+    margin: -12px 0 10px;
+}
+
+.sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 19px 0;
+    font-size: 23px;
+}
+
+.pedido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00000096;
+    font-family: Outfit, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    border: solid #FAD4E2 2px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.sc{
+padding: 0px 13px;
+}
+
+.pedido-first{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.pedido-rest{
+    border-radius: 10px;
+}
+
+.pedido:hover{
+    background-color: #fdf6f9;
+    border: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.pedido:active{
+    transform: scale(0.98);
+}
+
+.estado{
+    border-radius: 10px;
+    padding: 10px 0px;
+    width: 18vh;
+}
+
+.estado-pendiente{
+    background-color: #f7a9ac;
+    color: #d14141;
+}
+
+.estado-en-preparacion{
+    background-color: #efdaae;
+    color: #837d5f;
+}
+
+.estado-en-reparto{
+    background-color: #c1e9fc;
+    color: #297BD3;
+}
+
+.estado-entregado{
+    background-color: #b6f0b3;
+    color: #488A4D;
+}
+
+.header {
+    color: #362C2C;
+    font-weight: 800;
+    font-family: Outfit, sans-serif;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #FAD4E2;
+}
+
+.tiquet {
+    position: sticky;
+    top: 19%;
+    flex: 0 0 320px;
+    width: 320px;
+    min-height: 500px;
+    margin: 0;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: white;
+    color: #362C2C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tiquet h2 {
+    color: #ce658b;
+    font-family: Outfit, sans-serif;
+    font-weight: bold;
+}
+
+.vermas{
+  color: #f077a3;
+  text-decoration: underline;
+}
+
+@media (max-width: 1280px){
+    .sector{
+        margin: 0px 47px;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .paneles-pedidos {
+        flex-direction: column;
+    }
+
+    .tabla,
+    .tiquet {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .tiquet {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 1366px){
+    .sect{
+        font-size: 24px;
+        padding: 28px 21px;
+    }
+
+    .header{
+        padding: 0;
+    }
+
+    .sec{
+        margin: 3px 0;
+        font-size: 15px;
+    }
+
+    .paneles-pedidos{
+        gap: 12px;
+    }
+
+    .pedido {
+        margin-bottom: 6px;
+        padding: 3px;
+        font-size: 12px;
+    }
+    .estado{
+        width: 15vh;
+    }
+
+    #pR{
+        font-size: 27px;
+    }
+}
+
+@media(max-width: 1032px){
+    .sector{
+        margin: 0px 16px;
+        gap: 6px;
+    }
+
+    .pedido{
+        padding: 1px;
+        font-size: 13px;
+    }
+
+    .estado{
+        width: 10vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .estado{
+        width: 13vh;
+    }
+}
+
+@media (max-width: 860px){
+    .sector{
+        margin: 0px 76px;
+        gap: 10px;
+    }
+
+    .pedido{
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .estado{
+        width: 12vh;
+    }
+}
+
+@media (max-width: 600px){
+    .sector{
+        margin: 0px 7px;
+    }
+}
+
+@media (max-width: 500px){
+    .sector{
+        display: block;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .pedido-first{
+        border-radius: 10px;
+    }
+
+    #pR{
+        margin: -5px 0 17px;
+    }
+}
+
+@media (max-width: 459px) {
+    .sc{
+        padding: 0px 12px;
+    }
+
+    .estado{
+        width: 11vh;
+    }
+}
+
+@media (max-width: 448px){
+    .pedido{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 440px){
+
+    .sector {
+        display: block;
+    }
+    .sector{
+        margin: 0px 7px;
+    }
+
+    .pedido{
+        padding: 0;
+        font-size: 16px;
+    }
+}
+
+
+
+
