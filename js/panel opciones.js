@@ -14,7 +14,7 @@ function llamarPanel() {
                 <a href="clientes.html">Clientes</a>
                 <a href="productos.html">Productos</a>
                 <a href="panelP.html">Nuevo Producto</a>
-                <a href="/index.html">Salir</a>
+                <a id="salir" href="/index.html">⮐ Salir</a>
             </nav>
         </aside>
     `);

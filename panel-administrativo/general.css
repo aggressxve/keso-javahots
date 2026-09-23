@@ -22,7 +22,6 @@
     font-family: 'Domine', serif ;
 }
 
-
 /* stats */
 
 .stat-card {
@@ -112,4 +111,263 @@
     padding-top: 2rem;
     margin: 0;
     max-width: none;
+}
+
+  .tabla-scroll::-webkit-scrollbar{
+    height: 6px;
+  }
+
+  .tabla-scroll::-webkit-scrollbar-thumb{
+    background-color: #d9b4c2;
+    border-radius: 10px;
+  }
+
+.header{
+  display: flex; /* establish flex container */
+  justify-content: center; /* center flex items horizontally, in this case */
+  align-items: center;
+}
+
+.row{
+  display: flex; /* establish flex container */
+  justify-content: center; /* center flex items horizontally, in this case */
+  align-items: center;
+}
+
+
+.sec{
+  white-space: nowrap;
+  padding: 10px 8px;
+}
+
+.topPastel{
+    width: 100%;
+    max-width: 420px; 
+    margin: 20px auto;
+    padding: 35px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(93, 52, 18, 0.08);
+    font-family: "Outfit", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.topdiv{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#top{
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+}
+#pastel{
+  font-family: "Outfit", sans-serif;
+  color: #f077a3;
+  margin: 0;
+  font-weight: bold;
+}
+
+#avg{
+font-family: "Outfit", sans-serif;
+font-size: 10px;
+}
+#cant{
+font-family: "Outfit", sans-serif;
+font-weight: bold;
+color: #f077a3;
+}
+
+.btn-cakes{
+  background-color: #6BD3EF;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s, background-color 0.2s;
+  margin: 5px;
+
+}
+
+.btn-cakes:hover{
+  background-color: #4FC3E0;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#pastel-semanal{
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  height: auto;         
+  object-fit: cover;
+}
+
+.ventas-ano{
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(93, 52, 18, 0.08);
+  font-family: "Outfit", sans-serif;
+  flex: 1;
+}
+
+.dashboard-row{
+  display: flex;
+  gap: 20px;
+  align-items: stretch;   
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.topPastel,
+.ventas-ano{
+  flex: 1 1 0;      
+  width: auto;      
+  max-width: none;  
+  margin: 0 ;       
+}
+
+
+#avg{
+  font-weight: 400;
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+#cant{
+  color: #f077a3;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 5px 0 25px 0;
+}
+
+.chart-container{
+  position: relative;
+  height: 220px;
+}
+
+.chart-grid{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.chart-grid span{
+  display: block;
+  height: 1px;
+  background-color: #f7d6e0;
+}
+
+.chart-bars{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 100%;
+}
+
+.bar{
+  flex: 1;
+  background-color: #B9E4F5;
+  border-radius: 8px 8px 0 0;
+  min-height: 4px;
+  transition: height 0.5s ease;
+}
+
+.bar.activo{
+  background-color: #6BD3EF;
+}
+
+.chart-labels{
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.chart-labels span{
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+#top-pastel,
+#top-ventas{
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+}
+
+.confetti-emoji{
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  animation: confetti-fly ease-out forwards;
+  user-select: none;
+}
+
+@keyframes confetti-fly{
+  0%{
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100%{
+    transform: translate(var(--dx), var(--dy)) scale(0.6);
+    opacity: 0;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 576px){
+  .ventas-ano{
+    padding: 22px;
+  }
+  .chart-container{
+    height: 160px;
+  }
+  .chart-labels span{
+    font-size: 0.7rem;
+  }
+}
+
+
+
+/* Scroll horizontal SOLO en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tabla-scroll{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .tabla-scroll .row{
+    min-width: 700px;
+    flex-wrap: nowrap;
+  }
+
+  .sec{
+    white-space: nowrap;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px){
+  .dashboard-row{
+    flex-direction: column;
+  }
 }

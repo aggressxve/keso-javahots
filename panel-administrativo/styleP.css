@@ -30,7 +30,7 @@ font-family: Domine, sans-serif;
 }
 
 .sidebar {
-    width: 339px;
+    width: 279px;
     background-color: #f077a3;
     color: white;
     border-radius: 0px;
@@ -64,10 +64,11 @@ font-family: Domine, sans-serif;
 }
 
 .sidebar-nav {
+    font-family: Outfit, sans-serif;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: none;
+    margin-top: 50px;
     align-items: start;
 }
 
@@ -79,12 +80,17 @@ font-family: Domine, sans-serif;
     border-radius: 5px;
     transition: background 0.3s;
     display: block;
+    text-align: start;
+}
+
+#salir{
+    position: relative;
+    top: 18vh;
 }
 
 .main-content {
-    width: calc(100% - 250px);
-    padding: 20px;
-    padding-top: 40px;
+    width:100%;
+    padding: 40px 10px 20px;
     min-height: 100vh;
     transition: margin-left 0.3s ease, width 0.3s ease;
 }
@@ -365,222 +371,35 @@ h1 {
     }
 }
 
-/*=========================
-      Pagina Pedidos
-==========================*/
-
-.Pedidos {
-    margin: 0%;
-    padding: 0;
-    width: 100% !important;
-    max-width: none !important;
-}
-
-.sector {
-    margin: 0%;
-    gap: 70px;
-}
-
-.sect {
-    font-family: Golos Text, sans-serif;
-    font-size: 28px;
-    border-radius: 30px;
-    padding: 45px 33px;
-}
-
-.pedidosH {
-    background-color: #c1e9fc;
-    color: #297BD3;
-}
-
-.pedidosP {
-    background-color: #fac9c9;
-    color: #DF3636;
-}
-
-.pedidosE {
-    background-color: #b6f0b3;
-    color: #488A4D;
-}
-
-.paneles-pedidos {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    width: 100%;
-    margin-top: 25px;
-}
-
-.tabla {
-    flex: 1;
-    min-width: 0;
-    border-radius: 25px;
-    text-align: center;
-    background-color: white;
-    margin: 0;
-    max-width: none;
-}
-
-#pR {
-    text-align: start;
-    font-family: Outfit, sans-serif;
-    font-weight: bold;
-    color: black !important;
-}
-
-.sec {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    font-size: 20px;
-}
-
-.pedido{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #00000096;
-    font-family: Outfit, sans-serif;
-    font-weight: 600;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: solid #FAD4E2 2px;
-}
-
-.sc{
-padding: 0px 11px;
-}
-
-.pedido-first{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.pedido-rest{
-    border-radius: 10px;
-}
-
-.estado{
-    border-radius: 10px;
-    padding: 10px 0px;
-    width: 11dvh;
-}
-
-.estado-pendiente{
-    background-color: #f7a9ac;
-    color: #d14141;
-}
-
-.estado-en-preparacion{
-    background-color: #efdaae;
-    color: #837d5f;
-}
-
-.estado-en-reparto{
-    background-color: #c1e9fc;
-    color: #297BD3;
-}
-
-.estado-entregado{
-    background-color: #b6f0b3;
-    color: #488A4D;
-}
-
-.header {
-    padding: 10px;
-    color: #362C2C;
-    font-weight: 800;
-    font-family: Outfit, sans-serif;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background-color: #FAD4E2;
-}
-
-.tiquet {
-    position: sticky;
-    top: 19%;
-    flex: 0 0 320px;
-    width: 320px;
-    min-height: 500px;
-    margin: 0;
-    padding: 30px;
-    border-radius: 30px;
-    background-color: white;
-    color: #362C2C;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.tiquet h2 {
-    color: #ce658b;
-    font-family: Outfit, sans-serif;
-    font-weight: bold;
-}
-
-@media (max-width: 992px) {
-    .paneles-pedidos {
-        flex-direction: column;
-    }
-
-    .tabla,
-    .tiquet {
-        width: 100%;
-        max-width: 100%;
-        flex: none;
-    }
-
-    .tiquet {
-        min-height: 300px;
-    }
-}
-
 /*==================================
         RESPONSIVE GENERAL
 ==================================*/
-@media (max-width: 450px) {
-    #textPanelAdmin{
-        font-size:379%;
-    }
-}
-
-@media (max-width: 440px) {
-    #textPanelAdmin{
-        font-size:371%;
-    }
-}
-
-@media (max-width: 430px) {
-    #textPanelAdmin{
-        font-size:359%;
-    }
-}
-
-@media (max-width: 425px) {
-    #textPanelAdmin{
-        font-size:321%;
-    }
-}
-
-@media (max-width: 376px) {
-    #textPanelAdmin{
-        font-size:307%;
-    }
-}
-
-@media (max-width: 360px) {
-    #textPanelAdmin{
-        font-size:294%;
-    }
-}
-
-@media (max-width: 355px) {
-    #textPanelAdmin{
-        font-size:286%;
-    }
-}
-
 .menu-checkbox {
     display: none;
+}
+
+@media (max-width: 1370px) {
+    .sidebar{
+        width: 206px;
+    }
+
+    .sidebar img{
+        width: 107px;
+    }
+
+    .sidebar-nav a {
+        font-size: 21px;
+        padding: 5px;
+    }
+
+    .sidebar h2{
+        font-size: 1.4rem;
+    }
+
+    #salir {
+        position: relative;
+        top: 8vh;
+    }
 }
 
 @media (max-width: 768px) {
@@ -644,13 +463,9 @@ padding: 0px 11px;
         width: 100% !important;
     }
 
-    .sector {
-        display: block;
-    }
-
     .sector .col {
         width: 100%;
-        min-width: 100%;
+        min-width: 33%;
         margin-bottom: 20px;
     }
 
@@ -675,3 +490,54 @@ padding: 0px 11px;
         min-height: 300px;
     }
 }
+
+@media (max-width: 450px) {
+    #textPanelAdmin{
+        font-size:379%;
+    }
+}
+
+@media (max-width: 440px) {
+    #textPanelAdmin{
+        font-size:371%;
+    }
+}
+
+@media (max-width: 430px) {
+    #textPanelAdmin{
+        font-size:359%;
+    }
+}
+
+@media (max-width: 425px) {
+    #textPanelAdmin{
+        font-size:321%;
+    }
+}
+
+@media (max-width: 376px) {
+    #textPanelAdmin{
+        font-size:307%;
+    }    
+}
+
+@media (max-width: 360px) {
+    #textPanelAdmin{
+        font-size:294%;
+    }
+}
+
+@media (max-width: 355px) {
+    #textPanelAdmin{
+        font-size:286%;
+    }
+}
+
+@media (max-width: 320px) {
+    #textPanelAdmin{
+        font-size:189%;
+    }
+}
+
+
+
