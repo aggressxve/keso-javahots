@@ -406,6 +406,11 @@ div.pastel p {
   z-index: 1;
 }
 
+.bannerPedido>* {
+  position: relative;
+  z-index: 1;
+}
+
 /* BANNER Los más vendidos */
 .hero {
   position: relative;
@@ -466,7 +471,7 @@ div.pastel p {
   position: absolute;
   right: 0;
   bottom: 0;
-  height: 115%; /* que se salga un poco por arriba, como en el boceto */
+  height: 90%; 
   display: flex;
   align-items: flex-end;
   z-index: 1;
@@ -479,7 +484,28 @@ div.pastel p {
   object-position: bottom right;
 }
 
+.hero__image picture {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.hero__image picture img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
 /* Responsive */
+@media (max-width:1032px){
+  .hero__text{
+    width: 25rem;
+  }
+  .hero__image{
+    height: 80%;
+  }
+}
 @media (max-width: 992px) {
   .hero {
     padding: 120px 30px 40px;
@@ -492,13 +518,28 @@ div.pastel p {
     opacity: 0.9;
   }
 }
-
+@media (max-width:960px){
+  .hero__text{
+    width: 24rem;
+  }
+  .hero__image{
+    height: 90%;
+  }
+}
+@media (max-width:768px){
+  .hero__text{
+    width: 17rem;
+  }
+  .hero__image{
+    height: 65%;
+  }
+}
 @media (max-width: 700px) {
   .hero {
     flex-direction: column;
     text-align: center;
     min-height: auto;
-    padding: 130px 20px 260px; /* deja espacio abajo para la imagen */
+    padding: 130px 20px 260px;
   }
   .hero__content {
     max-width: 100%;
@@ -507,6 +548,20 @@ div.pastel p {
     height: 220px;
     right: 50%;
     transform: translateX(50%);
+  } 
+  .hero__text{
+    width: 18rem;
+    margin: 0 auto 32px;  
+  }
+  .hero__image{
+    height: 45%;
+  }
+
+  .hero__image picture {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
   }
 }
 
