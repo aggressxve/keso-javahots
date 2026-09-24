@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="./images/Keso-favicon.png">
+    <link rel="icon" type="image/x-icon" href="./images/imgFooter/kesologo.png">
 
     <!-- Importación de Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,60 +25,26 @@
 
 <body>
     
+<!-- banner los mas vendido -->
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">Los más venidos</h1>
+        <p class="hero__text">
+            Lorem ipsum dolor sit amet consectetur adipiscing, elit
+            natoque lobortis fusce libero dictumst sodales, gravida
+            montes risus molestie odio.
+        </p>
+        <a href="#" class="hero__btn">Ver catálogo</a>
+    </div>
 
-    <!-- banner los mas vendido -->
-    <section class="hero-mas-vendidos">
-
-        <div class="hero-contenido">
-
-            <div class="hero-texto">
-                <h1>Los más vendidos</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing, elit
-                    natoque lobortis fusce libero dictumst sodales, gravida
-                    montes risus molestie odio.
-                </p>
-
-                <a href="Catalogo.html" class="btn-hero-catalogo btn-primary">
-                    Ver catálogo
-                </a>
-
-            </div>
-
-            <!-- Carrusel -->
-            <div class="hero-carrusel">
-
-                <div id="carouselPasteles"
-                    class="carousel slide carousel-fade"
-                    data-bs-ride="carousel"
-                    data-bs-interval="3000">
-
-                    <div class="carousel-inner">
-
-                        <!-- Pastel 1 -->
-                        <div class="carousel-item active">
-                            <img src="images/pastel-referencia.png"
-                                alt="Pastel">
-                        </div>
-
-                        <!-- Pastel 2 -->
-                        <div class="carousel-item">
-                            <img src="images/pastel-de-coco.jpg"
-                                alt="Pastel ">
-                        </div>
-
-                        <!-- Pastel 3 -->
-                        <div class="carousel-item">
-                            <img src="images/pastel-referencia.png"
-                                alt="Pastel">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FBanner los mas vendidos -->
+    <div class="hero__image">
+        <picture>
+            <source media="(max-width: 700px)" srcset="./images/pastel_hero_1.png">
+            <img src="./images/pastel_hero_2.png" alt="Pastel de chocolate con fresas">
+        </picture>
+    </div>
+</section>
+<!-- FBanner los mas vendidos -->
 
 
     <!--Los mas vendidos-->
