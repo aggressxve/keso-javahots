@@ -315,7 +315,15 @@
       }
 
       .producto-galeria {
-        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .producto-miniaturas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        overflow: auto;
       }
 
       .producto-compra {
