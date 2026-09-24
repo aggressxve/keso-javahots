@@ -14,6 +14,28 @@ CREATE TABLE IF NOT EXISTS Clientes (
 
 
 -- =========================================
+-- TABLA: Credenciales
+-- (separada de Clientes por seguridad: aquí vive
+-- todo lo relacionado al login/autenticación)
+-- =========================================
+
+CREATE TABLE IF NOT EXISTS Credenciales (
+    credencial_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    cliente_id BIGINT NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    ultimo_login DATETIME,
+    intentos_fallidos INT NOT NULL DEFAULT 0,
+    bloqueado BOOLEAN NOT NULL DEFAULT FALSE,
+    creado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_credenciales_cliente
+        FOREIGN KEY (cliente_id)
+        REFERENCES Clientes(cliente_id)
+        ON DELETE CASCADE
+);
+
+
+-- =========================================
 -- TABLA: Roles
 -- =========================================
 
@@ -105,6 +127,7 @@ CREATE TABLE IF NOT EXISTS Pasteles (
     relleno_id BIGINT NOT NULL,
     cubierta_id BIGINT NOT NULL,
     topping_id BIGINT NOT NULL,
+    precio DECIMAL(10,2) NOT NULL DEFAULT 0.00,
 
     CONSTRAINT fk_pasteles_pan
         FOREIGN KEY (pan_id)
@@ -121,6 +144,47 @@ CREATE TABLE IF NOT EXISTS Pasteles (
     CONSTRAINT fk_pasteles_topping
         FOREIGN KEY (topping_id)
         REFERENCES Toppings(topping_id)
+);
+
+
+-- =========================================
+-- TABLA: Carrito
+-- (cabecera del carrito activo de cada cliente)
+-- =========================================
+
+CREATE TABLE IF NOT EXISTS Carrito (
+    carrito_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    cliente_id BIGINT NOT NULL,
+    estado ENUM('activo','abandonado','convertido') NOT NULL DEFAULT 'activo',
+    creado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    actualizado_en DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_carrito_cliente
+        FOREIGN KEY (cliente_id)
+        REFERENCES Clientes(cliente_id)
+);
+
+
+-- =========================================
+-- TABLA: Carrito_Detalle
+-- (los pasteles que el cliente agrega al carrito)
+-- =========================================
+
+CREATE TABLE IF NOT EXISTS Carrito_Detalle (
+    detalle_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    carrito_id BIGINT NOT NULL,
+    pastel_id BIGINT NOT NULL,
+    cantidad INT NOT NULL DEFAULT 1,
+    precio_unitario DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT fk_carritodetalle_carrito
+        FOREIGN KEY (carrito_id)
+        REFERENCES Carrito(carrito_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_carritodetalle_pastel
+        FOREIGN KEY (pastel_id)
+        REFERENCES Pasteles(pastel_id)
 );
 
 
