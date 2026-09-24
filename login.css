@@ -105,16 +105,92 @@ body {
 }
 
 .password-wrapper .form-control {
-    padding-right: 40px;
+    padding-right: 70px;
 }
 
 .password-wrapper .toggle-icon {
     position: absolute;
-    right: 12px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 20px;
     color: #888;
     user-select: none;
+}
+
+/* Botones */
+
+#btnRegistrarse,
+#btnVolverRegistro {
+    min-width: 180px;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    border: none;
+}
+
+#btnRegistrarse {
+    background-color: #949DF1;
+    color: #333333;
+}
+
+#btnVolverRegistro {
+    background-color: #c0b2fd;
+    color: #333333;
+}
+
+.login-link-wrapper {
+    font-size: 0.95rem;
+    color: #6E3547;
+}
+
+.login-link {
+    color: #6E3547;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+    border-bottom: 2px solid #ffedbe;
+}
+
+.login-link:hover {
+    color: #4a2c3d;
+    border-bottom-color: #949DF1;
+}
+
+/* Alertas de login */
+
+#alertLoginCampos,
+#alertLoginCredenciales,
+#alertLoginSinUsuario,
+#alertLoginExito {
+    margin-top: 15px;
+    border-radius: 12px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 576px) {
+
+    .login-wrapper {
+        padding: 25px 15px;
+    }
+
+    .login-card {
+        padding: 35px 25px;
+        border-radius: 20px;
+    }
+
+    .sticker {
+        width: 45px;
+    }
+
+    .sticker-1,
+    .sticker-2,
+    .sticker-7,
+    .sticker-8 {
+        display: none;
+    }
 }
