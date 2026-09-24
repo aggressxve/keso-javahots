@@ -133,7 +133,7 @@
     }
 
     .producto-info{
-      max-height: 500px;
+      max-height: fit-content;
       background-color: #fff;
       border-radius: 8px;
       padding: 2rem;
@@ -168,6 +168,10 @@
       flex-direction: column;
       align-items: end;
       gap: .5rem;
+    }
+
+    .producto-cantidad-label{
+      margin-right: 120px;
     }
 
     .botones{
@@ -315,8 +319,15 @@
       }
 
       .producto-compra {
-        align-items: stretch;
-        margin-top: auto;
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: .5rem;
+      } 
+
+      .producto-info{
+        max-height: fit-content;
       }
     }
   </style>
