@@ -519,6 +519,9 @@ div.pastel p {
   }
 }
 @media (max-width:960px){
+  .hero__content{
+    max-width: none;
+  }
   .hero__text{
     width: 24rem;
   }
@@ -526,6 +529,8 @@ div.pastel p {
     height: 90%;
   }
 }
+
+
 @media (max-width:768px){
   .hero__text{
     width: 17rem;
