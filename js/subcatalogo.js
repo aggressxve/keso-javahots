@@ -40,9 +40,11 @@ if (!producto) {
     .slice(0, 3);
 
   document.getElementById("otros-pasteles").innerHTML = otros.map(p => `
-    <a href="producto.html?id=${p.index}" class="otro-pastel">
+    <a href="subcatalogo.html?id=${p.index}" class="otro-pastel">
       <img src="${p.img || IMAGEN_RESPALDO}" alt="${p.name}">
       <p>${p.name}</p>
     </a>
   `).join("");
 }
+
+    
