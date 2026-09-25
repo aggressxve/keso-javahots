@@ -10,28 +10,35 @@
   border: 1px solid #eef0f3;
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
 .contact-title {
-  font-family: var(--fuente-titulos);
+  font-size: 45px;
   font-weight: 700;
   color: #5D3412;
-  margin-bottom: 20px;
+  margin-bottom: 5rem;
+
 }
 
 
 .contact-image-container {
+  max-width: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: justify;
 }
 
 .contact-image-container img {
   max-width: 280px;
-  width: 100%;
   height: auto;
   margin-top: 20px;
   transition: transform 0.3s ease;
