@@ -558,13 +558,25 @@ div.pastel p {
   }
 
   .hero__image picture {
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
 }
-
+@media (max-width: 932px) and (min-width: 769px) {
+  .hero__text {
+    width: 18rem;
+  }
+  .hero__image picture {
+    height: 80%;
+  }
+}
+@media (max-width: 1088px) and (min-width: 1033px) {
+  .hero__image picture {
+    height: 95%;
+  }
+}
 /* Transición */
 #carouselPasteles .carousel-item {
     transition: opacity 0.9s ease-in-out;
