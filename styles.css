@@ -451,7 +451,8 @@ div.pastel p {
 
 .hero__btn {
   font-family: var(--fuente-texto);
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 16px;
   display: inline-block;
   background-color: #e85f97;
   color: #fff;
@@ -631,3 +632,16 @@ div.pastel p {
   /* pega el contenido al botón y oculta la línea */
 }
 
+
+/*color botones inicio cambio color cuando los presionan CHECAR SI CAMBIO EL NAVBAR*/
+.btn-primary {
+  --bs-btn-bg: #F077A3;
+  --bs-btn-border-color: #F077A3;
+  --bs-btn-hover-bg: #c2607f;
+  --bs-btn-hover-border-color: #c2607f;
+  --bs-btn-active-bg: #c2607f;
+  --bs-btn-active-border-color: #c2607f;
+  --bs-btn-focus-shadow-rgb: #c2607f;
+  --bs-btn-disabled-bg: #F077A3;
+  --bs-btn-disabled-border-color: #F077A3;
+}

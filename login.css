@@ -44,9 +44,9 @@ body {
 
 .sticker-1 {
     top: 10%;
-    left: 6%;
+    left: 8%;
     width: 65px;
-    transform: rotate(-12deg);
+    transform: rotate(-10deg);
 }
 
 .sticker-2 { 
@@ -65,7 +65,7 @@ body {
 
 .sticker-8 {
     top: 32%;
-    right: 4%;
+    right: 3%;
     width: 65px;
     transform: rotate(-20deg);
 }
@@ -74,26 +74,26 @@ body {
     top: 55%;
     left: 4%;
     width: 65px;
-    transform: rotate(-8deg);
+    transform: rotate(-12deg);
 }
 
 .sticker-4 { 
     top: 55%;
-    right: 5%;
+    right: 4%;
     width: 65px;
     transform: rotate(12deg);
 }
 
 .sticker-5 { 
     top: 82%;
-    left: 9%;
+    left: 8%;
     width: 65px;
     transform: rotate(-15deg);
 }
 
 .sticker-6 { 
     top: 82%;
-    right: 10%;
+    right: 9%;
     width: 65px;
     transform: rotate(-15deg);
 }
@@ -127,18 +127,26 @@ body {
     border-radius: 12px;
     padding: 10px 20px;
     font-family: 'Outfit', sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     border: none;
 }
 
 #btnRegistrarse {
-    background-color: #949DF1;
-    color: #333333;
+    background-color: #D0BAF4;
+    color: #4a2c3d;
 }
 
+    #btnRegistrarse {
+        border-radius: 50px;
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 20px;
+        font-size: 1.05rem;
+    }
+
 #btnVolverRegistro {
-    background-color: #c0b2fd;
-    color: #333333;
+    background-color: #D0BAF4;
+    color: #4a2c3d;
 }
 
 .login-link-wrapper {
@@ -151,12 +159,12 @@ body {
     font-weight: 700;
     text-decoration: none;
     margin-left: 4px;
-    border-bottom: 2px solid #ffedbe;
+    border-bottom: 2px solid #F077A3;
 }
 
 .login-link:hover {
-    color: #4a2c3d;
-    border-bottom-color: #949DF1;
+    color: #6E3547;
+    border-bottom-color: #F077A3;
 }
 
 /* Alertas de login */
@@ -172,25 +180,44 @@ body {
 
 /* Responsive */
 
-@media (max-width: 576px) {
-
-    .login-wrapper {
-        padding: 25px 15px;
-    }
-
-    .login-card {
-        padding: 35px 25px;
-        border-radius: 20px;
-    }
-
+@media (max-width: 767px) {
     .sticker {
-        width: 45px;
-    }
-
-    .sticker-1,
-    .sticker-2,
-    .sticker-7,
-    .sticker-8 {
         display: none;
     }
 }
+
+@media (max-width: 576px) {
+
+    .login-wrapper {
+        min-height: auto;
+        align-items: flex-start;
+        padding: 20px 15px;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+    }
+
+    .login-card br {
+        display: block;
+        content: "";
+        margin-top: 6px;
+    }
+
+    .login-card .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media (max-width: 419px) {
+
+    .login-link-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        font-size: 0.85rem;
+    }
+}
+
+
