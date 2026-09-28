@@ -245,41 +245,27 @@ ul.lista-vendidos li {
   }
 }
 
-div.pastel {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    
-}
-div.pastel img{
-    max-width: 100%;
-    filter: grey;
-    border-radius: 12px;
-    -webkit-filter: grayscale(1);
-    transition: all .5s ease-in-out;
-    
-}
-div.pastel:hover img{
-    filter: grayscale(0);
-    -webkit-transform: scale(1.08);
-    transform: scale(1.05);
-  position: relative;
-  overflow: hidden;
+/* ===== Cards de Los más vendidos ===== */
 
+div.pastel {
+  position: relative;
+  border-radius: 16px;
+  /* Quitamos overflow: hidden de aquí: era lo que recortaba el botón.
+     El recorte del zoom ahora lo hace .img-wrap */
 }
 
 div.pastel img {
   max-width: 100%;
-  filter: grey;
+  border-radius: 12px;
+  filter: grayscale(1);
   -webkit-filter: grayscale(1);
-  transition: all .5s ease-in-out;
-
+  transition: transform .5s ease-in-out, filter .5s ease-in-out;
 }
 
 div.pastel:hover img {
   filter: grayscale(0);
+  -webkit-filter: grayscale(0);
   transform: scale(1.1);
-
 }
 
 div.pastel p {
@@ -297,11 +283,36 @@ div.pastel p {
   font-size: 1.5em;
 }
 
-
+/* Card: altura pareja y botón siempre abajo */
 .comprar-pastel {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: right;
+}
 
+/* Marco de la imagen: aquí se recorta el zoom */
+.comprar-pastel .img-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.comprar-pastel .img-wrap img {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* todas las fotos del mismo tamaño */
+  object-fit: cover;
+}
+
+/* Botón pegado al fondo, a la derecha como lo tenías */
+.comprar-pastel .btn {
+  margin-top: auto;
+  align-self: flex-end;
+  margin-bottom: 10px;   /* espacio para que el scale(1.05) no se corte */
+}
+
+/* Bootstrap recorta el carrusel con overflow: hidden; este padding da holgura */
+#carouselMasVendido .carousel-inner {
+  padding: 20px 0;
 }
 
 .text-center-titulo {
