@@ -114,3 +114,35 @@ a {
   text-decoration: none;
   font-weight: 700;
 }
+
+/*-- Efcto hover en las tarjetas de team java hots--*/
+/*
+.perfil {
+  position: relative;
+}*/
+
+.avatar-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.perfil .img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.perfil .img-default {
+  transition: transform 0.3s ease, opacity .3s ease;
+}
+
+.carta:hover .img-default {
+  opacity: 0;
+}
+
+.carta:hover .img-hover {
+  opacity: 1;
+}
