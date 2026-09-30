@@ -126,14 +126,17 @@ a {
 
 /* Botón principal */
 .btn-cta {
-  background-color: #F077A3;
-  color: white;
-  padding: 14px 40px;
-  border-radius: 50px;
-  border: none;
+  font-family: var(--fuente-texto);
   font-weight: bold;
   font-size: 16px;
-  transition: transform 0.2s, background-color 0.2s;
+  display: inline-block;
+  background-color: #F077A3;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 14px 32px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(232, 95, 151, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-cta:hover {
@@ -389,6 +392,8 @@ div.pastel p {
 .btn-primary{
   background-color:#F077A3;
   border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
 }
 .btn-primary:hover{
   background-color:#F077A3;
@@ -465,7 +470,7 @@ div.pastel p {
   font-weight: bold;
   font-size: 16px;
   display: inline-block;
-  background-color: #e85f97;
+  background-color: #F077A3;
   color: #fff;
   font-size: 0.9rem;
   padding: 14px 32px;
