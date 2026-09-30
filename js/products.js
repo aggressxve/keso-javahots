@@ -77,13 +77,13 @@ export const productos = [
         "createdAt": null
     },
     {
-        "name": "Tres leches de chocolate con frutos rojos",
-        "descripcion": "Pastel de 3 leches, bizcocho de chocolate, relleno de frutos rojos con crema batida y cobertura de mermelada de frutos rojos y crema batida de chocolate.",
+        "name": "Zanahoria con nuez",
+        "descripcion": "Pastel de zanahoria con nuez y crema de mantequilla y queso crema.",
         "numeroDePersonas": 15,
-        "relleno": "crema batida con frutos rojos",
-        "cobertura": "crema batida de chocolate y mermelada de frutos rojos",
+        "relleno": "crema de mantequilla y queso crema",
+        "cobertura": "crema de mantequilla con nuez",
         "pan": "chocolate",
-        "img": "/images/3-leches-frutosRojos.jpeg",
+        "img": "/images/zanahoria-queso-crema.jpeg",
         "precio": 420,
         "createdAt": null
     },
