@@ -15,10 +15,10 @@ if (!producto) {
 
   document.getElementById("producto-specs").innerHTML = `
     <li>Número de personas: ${producto.numeroDePersonas}</li>
-    <li>Relleno: ${producto.relleno}</li>
-    <li>Cobertura: ${producto.cobertura}</li>
-    <li>Pan: ${producto.pan}</li>
-    <li>Precio: $${producto.precio}</li>
+    <li>Relleno: ${producto.relleno || "no aplica"}</li>
+    <li>Cobertura: ${producto.cobertura || "no aplica"}</li>
+    <li>Pan: ${producto.pan || "no aplica"}</li>
+    <h4 style="font-weight: bold; margin-top: 2rem;">Precio: $${producto.precio}</h4>
   `;
 
   const imagenPrincipal = document.getElementById("producto-imagen-principal");
@@ -40,9 +40,11 @@ if (!producto) {
     .slice(0, 3);
 
   document.getElementById("otros-pasteles").innerHTML = otros.map(p => `
-    <a href="producto.html?id=${p.index}" class="otro-pastel">
+    <a href="subcatalogo.html?id=${p.index}" class="otro-pastel">
       <img src="${p.img || IMAGEN_RESPALDO}" alt="${p.name}">
       <p>${p.name}</p>
     </a>
   `).join("");
 }
+
+    
