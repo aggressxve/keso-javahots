@@ -15,10 +15,10 @@ if (!producto) {
 
   document.getElementById("producto-specs").innerHTML = `
     <li>Número de personas: ${producto.numeroDePersonas}</li>
-    <li>Relleno: ${producto.relleno}</li>
-    <li>Cobertura: ${producto.cobertura}</li>
-    <li>Pan: ${producto.pan}</li>
-    <li>Precio: $${producto.precio}</li>
+    <li>Relleno: ${producto.relleno || "no aplica"}</li>
+    <li>Cobertura: ${producto.cobertura || "no aplica"}</li>
+    <li>Pan: ${producto.pan || "no aplica"}</li>
+    <h4 style="font-weight: bold; margin-top: 2rem;">Precio: $${producto.precio}</h4>
   `;
 
   const imagenPrincipal = document.getElementById("producto-imagen-principal");
