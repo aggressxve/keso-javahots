@@ -87,3 +87,16 @@
 .btn-submit:active {
   transform: translateY(0);
 }
+
+.mb-4{
+  text-align: left;
+}
+
+@media (max-width: 768px){
+  .align-items-center{
+    justify-content: center;
+  }
+  .contact-image-container img{
+    display: none;
+  }
+}
