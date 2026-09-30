@@ -63,6 +63,10 @@
   transition: transform 0.3s ease;
 }
 
+#CA{
+  object-position: 10% 10%;
+}
+
 .enlaces-perfil {
   display: flex;
   gap: 15px;
