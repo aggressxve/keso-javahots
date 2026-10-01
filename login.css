@@ -177,6 +177,59 @@ body {
     border-radius: 12px;
 }
 
+[hidden] {
+    display: none !important;
+}
+
+.perfil-sesion h2 {
+    color: #6E3547;
+}
+
+.perfil-datos {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(240, 119, 163, 0.25);
+    border-radius: 18px;
+    background: #FDF1F6;
+    color: #6E3547;
+}
+
+.perfil-datos p {
+    margin: 0.45rem 0;
+    overflow-wrap: anywhere;
+}
+
+.perfil-acciones {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.perfil-acciones .btn {
+    min-height: 46px;
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.perfil-acciones .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(110, 53, 71, 0.15);
+}
+
+.perfil-acciones #btn-ir-carrito {
+    border: 0;
+    background: #F077A3;
+    color: #fff;
+}
+
+.perfil-acciones #btn-cerrar-sesion {
+    border: 1px solid #e6cbd5;
+    background: #fff;
+    color: #6E3547;
+}
+
 
 /* Responsive */
 
