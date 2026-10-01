@@ -1,27 +1,4 @@
-
-let carrito = [
-  {
-    id: 1,
-    nombre: "Pastel de chocolate",
-    precio: 350,
-    cantidad: 1,
-    imagen: "images/pastel-chocolate.png"
-  },
-  {
-    id: 2,
-    nombre: "Cheesecake de fresa",
-    precio: 280,
-    cantidad: 2,
-    imagen: "images/cheesecake-fresa.png"
-  },
-  {
-    id: 3,
-    nombre: "Cupcakes (caja de 6)",
-    precio: 180,
-    cantidad: 1,
-    imagen: "images/cupcakes.png"
-  }
-];
+let carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
 
 const listaCarrito = document.getElementById("lista-carrito");
 const carritoVacio = document.getElementById("carrito-vacio");
@@ -97,17 +74,20 @@ function cambiarCantidad(id, accion) {
     }
   }
 
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
   renderCarrito();
 }
 
 function eliminarProducto(id) {
   carrito = carrito.filter((p) => p.id !== id);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
   renderCarrito();
 }
 
 // Delegación de eventos: un solo listener para todos los botones,
 // aunque el contenido se regenere dinámicamente
-listaCarrito.addEventListener("click", (e) => {
+listaCarrito.addEventListener("click", (e) => {   
   const botonCantidad = e.target.closest(".btn-cantidad");
   const botonEliminar = e.target.closest(".btn-eliminar");
 
