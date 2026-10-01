@@ -130,6 +130,29 @@
   border-color: #dc3545;
 }
 
+/* ----- Mensaje de éxito / error ----- */
+.pedido-mensaje {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+}
+
+.pedido-mensaje--ok {
+  display: block;
+  background: #e8f7ee;
+  color: #1f6b3a;
+  border: 1px solid #b7e4c7;
+}
+
+.pedido-mensaje--error {
+  display: block;
+  background: #fdecee;
+  color: #a1283a;
+  border: 1px solid #f5c2c9;
+}
+
 /* ----- Botón y nota ----- */
 .pedido-form .btn-submit {
   background-color: #F077A3;
@@ -162,5 +185,43 @@
   .pedido-seccion {
     padding: 18px;
     border-radius: 18px;
+  }
+}
+
+
+/* Select personalizable (Chrome/Edge modernos). En otros navegadores se ignora. */
+@supports (appearance: base-select) {
+  .pedido-form select,
+  .pedido-form select::picker(select) {
+    appearance: base-select;
+  }
+
+  /* El menú desplegable */
+  .pedido-form select::picker(select) {
+    background: #ffffff;
+    border: 1px solid #d9b4c2;
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Cada opción */
+  .pedido-form select option {
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #333333;
+  }
+
+  /* Al pasar el mouse o navegar con teclado */
+  .pedido-form select option:hover,
+  .pedido-form select option:focus {
+    background: #F077A3;
+    color: #ffffff;
+  }
+
+  /* Opción ya elegida */
+  .pedido-form select option:checked {
+    background: #fbd3e1;
+    color: #5D3412;
   }
 }
