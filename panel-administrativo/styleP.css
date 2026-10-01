@@ -414,6 +414,35 @@ h1 {
     display: none;
 }
 
+@media (max-width: 1880px){
+    .sidebar{
+        width: 206px;
+    }
+
+    .sidebar img{
+        width: 107px;
+    }
+
+    .sidebar-nav a {
+        font-size: 27px;
+        padding: 5px;
+    }
+
+    .sidebar-nav{
+        margin-top: 37px;
+    }
+
+    .sidebar h2{
+        font-size: 1.9rem;
+    }
+
+    #salir {
+        position: relative;
+        top: 7vh;
+    }
+    
+}
+
 @media (max-width: 1370px) {
     .sidebar{
         width: 206px;
