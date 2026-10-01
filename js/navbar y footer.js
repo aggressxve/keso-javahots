@@ -10,7 +10,7 @@ function cargarFooter() {
                     <h3><a href="index.html">Inicio</a></h3>
                 <ul>
                     <li><a href="Catalogo.html">Catálogo</a></li>
-                    <li><a href="Pedido personalizado.html">Pedido personalizado</a></li>
+                    <li><a href="Pedido-personalizado.html">Pedido personalizado</a></li>
                 </ul>
                 </div>
                 <div class="footer-col">
