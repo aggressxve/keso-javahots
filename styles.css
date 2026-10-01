@@ -687,17 +687,6 @@ div.pastel p {
     opacity: 0.9;
   }
 }
-@media (max-width:960px){
-  .hero__content{
-    max-width: none;
-  }
-  .hero__text{
-    width: 24rem;
-  }
-  .hero__image{
-    height: 90%;
-  }
-}
 
 
 @media (max-width:768px){
