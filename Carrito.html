@@ -61,15 +61,88 @@
           <button class="btn btn-cta w-100" id="btn-pagar">Pasar a pagar</button>
         </div>
       </div>
-
     </div>
   </div>
 
+  <div id="checkout-modal" class="checkout-modal" hidden>
+    <section class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div id="checkout-review">
+        <div class="checkout-header">
+          <div>
+            <p class="checkout-eyebrow">Un último paso</p>
+            <h2 id="checkout-title">Revisa tu compra</h2>
+          </div>
+          <button type="button" id="checkout-close" class="checkout-close" aria-label="Cerrar">×</button>
+        </div>
 
+        <div id="checkout-items" class="checkout-items"></div>
+        <div class="checkout-total">
+          <span>Total</span>
+          <strong id="checkout-total">$0.00</strong>
+        </div>
 
+        <div class="checkout-profile">
+          <h3>Tus datos</h3>
+          <p><strong>Nombre:</strong> <span id="checkout-nombre"></span></p>
+          <p><strong>Correo:</strong> <span id="checkout-email"></span></p>
+          <p><strong>Teléfono:</strong> <span id="checkout-telefono"></span></p>
+        </div>
+
+        <form id="checkout-form">
+          <fieldset class="checkout-fulfillment">
+            <legend>¿Cómo quieres recibir tu pedido?</legend>
+            <label class="checkout-option">
+              <input type="radio" name="checkout-entrega" value="domicilio" checked>
+              <span>Entrega a domicilio</span>
+            </label>
+            <label class="checkout-option">
+              <input type="radio" name="checkout-entrega" value="tienda">
+              <span>Recoger en tienda</span>
+            </label>
+          </fieldset>
+
+          <div id="checkout-domicilio">
+            <label for="checkout-direccion">Dirección de entrega</label>
+            <textarea id="checkout-direccion" rows="3" required
+              placeholder="Calle, número, colonia y referencias"></textarea>
+          </div>
+
+          <div class="checkout-schedule">
+            <div>
+              <label for="checkout-fecha">Fecha <span id="checkout-fecha-contexto">de entrega</span></label>
+              <input type="date" id="checkout-fecha" required>
+            </div>
+            <div>
+              <label for="checkout-hora">Hora <span id="checkout-hora-contexto">de entrega</span></label>
+              <input type="time" id="checkout-hora" required>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="button" id="checkout-cancel" class="checkout-button checkout-button-secondary">
+              Cancelar
+            </button>
+            <button type="submit" class="checkout-button checkout-button-primary">
+              Finalizar compra
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="checkout-confirmation" class="checkout-confirmation" hidden>
+        <div class="checkout-confirmation-icon" aria-hidden="true">✓</div>
+        <p class="checkout-eyebrow">Gracias por elegir Keso</p>
+        <h2>Tu solicitud está preparada</h2>
+        <p id="checkout-confirmation-message"></p>
+        <button type="button" id="checkout-finish" class="checkout-button checkout-button-primary">
+          Volver al carrito
+        </button>
+      </div>
+    </section>
+  </div>
 
     <!-- Llamar navbar y footer-->
-     <script src="./js/carrito.js"></script>
+    <script src="./js/carrito.js"></script>
     <script src="./js/navbar y footer.js"></script>
     <script>cargarFooter();</script>
     <script>llamarNavbar()</script>
