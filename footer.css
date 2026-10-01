@@ -111,3 +111,7 @@ a {
     width: 100%;
   }
 }
+
+body {
+  user-select: none;
+}

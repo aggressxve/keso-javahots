@@ -160,3 +160,7 @@
 .carta:hover .img-hover {
   opacity: 1;
 }
+
+body {
+  user-select: none;
+}
