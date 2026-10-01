@@ -229,6 +229,10 @@ a {
 
 /**Los mas vendidos**/
 
+.texto-cafe{
+  color: #5D3412;
+}
+
 ul.lista-vendidos li {
   padding: 30px;
   padding-left: 20px;
@@ -292,6 +296,22 @@ div.pastel p {
   flex-direction: column;
   height: 100%;
   text-align: right;
+  background-color: white;
+  padding: 20px;
+  color: #5D3412;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 12px 24px rgba(0, 0, 0, 0.08);  
+}
+
+.comprar-pastel:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 20px 32px rgba(0, 0, 0, 0.12);
 }
 
 /* Marco de la imagen: aquí se recorta el zoom */
@@ -304,6 +324,7 @@ div.pastel p {
   width: 100%;
   aspect-ratio: 4 / 3;   /* todas las fotos del mismo tamaño */
   object-fit: cover;
+  padding-bottom: 10px;
 }
 
 /* Botón pegado al fondo, a la derecha como lo tenías */
@@ -324,6 +345,7 @@ div.pastel p {
   font-family: 'Domine', serif;
   padding-bottom: 50px;
   padding-top: 50px;
+  color: white;
 }
 
 /* Espacio entre Los más vendidos y Personaliza tu pedido */
@@ -352,10 +374,10 @@ div.pastel p {
 
 #carouselMasVendido .carousel-control-prev-icon,
 #carouselMasVendido .carousel-control-next-icon {
-    background-color: var(--color-acento);
+    background-color: #7770E3;
     border-radius: 20%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
 }
 
 #carouselMasVendido .carousel-indicators {
@@ -384,11 +406,30 @@ div.pastel p {
 .bannerPedido{
   position: relative; 
   border-radius: 2rem;
-  padding: 5rem;
+  padding: 2rem 3rem; 
   background-color: #a5ace6;
   overflow: hidden;
+  justify-content: space-between;
+  gap: 40px;
+  margin-right: 60px;
+  margin-left: 60px;
+  margin-bottom: 100px;
+  color: #5D3412;
 }
 
+#boton-morado{
+  background-color: #7770E3;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  transition: transform .2s ease;
+  color: white;
+}
+
+#boton-morado:hover{
+  background-color: #5f58c4;
+  transform: scale(1.05);
+}
 .btn-primary{
   background-color:#F077A3;
   border: none;
@@ -396,12 +437,107 @@ div.pastel p {
   padding: 10px 20px;
 }
 .btn-primary:hover{
-  background-color:#F077A3;
+  background-color:#c2607f;
   border: none;
   transform: scale(1.05);
   transition: transform .2s ease;
 }
 
+.titulo-banner{
+  color: #5D3412;
+  font-size: 3rem;
+  white-space: nowrap;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+
+}
+
+.bannerPedido p{
+  max-width: 450px;
+}
+
+.bannerPedido__texto{
+  max-width: 640px;
+  z-index: 1;
+}
+
+.bannerPedido__imagen{
+  flex-shrink: 0;
+  max-width: 600px;
+  max-height: 300px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;    /* centra la imagen dentro de su propia caja */
+}
+
+.bannerPedido__imagen img{
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform-origin: center;
+ 
+}
+
+.comprar-pastel h6{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 150px;  /* reserva el espacio de las 3 líneas aunque el texto sea corto */
+}
+
+/* Responsive: en celular vuelve a apilarse */
+@media (max-width: 768px){
+  .bannerPedido{
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .bannerPedido__texto{
+    max-width: 100%;
+    align-items: center !important;   /* le gana a align-items-start de Bootstrap */
+  }
+
+  .bannerPedido__imagen{
+     max-height: 260px; 
+  }
+
+  .titulo-banner{
+    white-space: normal;
+    font-size: 2rem;
+    align-items: center;
+  }
+
+  #boton-morado{
+    align-self: center;   /* centra el botón específicamente, por si acaso */
+  }
+
+
+}
+
+@media (max-width: 576px){
+  .comprar-pastel{
+    text-align: center;
+    align-items: center;
+  }
+
+  .comprar-pastel h6,
+  .comprar-pastel h3{
+    text-align: center !important;
+  }
+
+  .comprar-pastel .btn{
+    align-self: center;
+  }
+
+ .hero_banner{
+  font-size: .8rem;
+ }
+
+}
 
 .bannerPedido::before {
   content: "";
@@ -513,6 +649,22 @@ div.pastel p {
   object-fit: contain;
   object-position: bottom right;
 }
+
+.hero_banner{
+  background-color: #4FC7E5;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 50px;     
+  margin-bottom: 100px;
+}
+
+
+
+
 
 /* Responsive */
 @media (max-width:1032px){
