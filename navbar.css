@@ -17,6 +17,16 @@ nav {
   align-items: center;
 }
 
+nav * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 /* logo nav bar*/
 .logo {
   display: inline-flex;
@@ -168,6 +178,9 @@ nav svg {
   display: none;
 }
 
+
+
+
 /* responsive*/
 @media(max-width: 768px) {
 
@@ -266,3 +279,5 @@ nav{
 }
 
 /* cierre de @media(max-width: 768px) */
+
+

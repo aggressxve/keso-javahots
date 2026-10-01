@@ -76,3 +76,8 @@
 .btn-pagar{
   background-color: #f077a3;
 }
+
+
+body {
+  user-select: none;
+}
