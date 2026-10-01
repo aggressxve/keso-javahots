@@ -45,6 +45,32 @@ if (!producto) {
       <p>${p.name}</p>
     </a>
   `).join("");
+
+  document.querySelector(".btn-agregar-carrito").addEventListener("click", () => {
+  const cantidad = Math.max(
+    1,
+    parseInt(document.getElementById("cantidad").value, 10) || 1
+  );
+
+  const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+  const existente = carrito.find((item) => item.id === id);
+
+  if (existente) {
+    existente.cantidad += cantidad;
+  } else {
+    carrito.push({
+      id,
+      nombre: producto.name,
+      precio: producto.precio,
+      cantidad,
+      imagen: producto.img || IMAGEN_RESPALDO
+    });
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  window.location.href = "Carrito.html";
+});
+
 }
 
     
