@@ -5,9 +5,20 @@ const carritoVacio = document.getElementById("carrito-vacio");
 const resumenSubtotal = document.getElementById("resumen-subtotal");
 const resumenTotal = document.getElementById("resumen-total");
 const btnPagar = document.getElementById("btn-pagar");
+const checkoutModal = document.getElementById("checkout-modal");
+const checkoutForm = document.getElementById("checkout-form");
 
 function formatearPrecio(numero) {
   return "$" + numero.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+}
+
+function obtenerUsuarioSesion() {
+  const usuarioJSON = localStorage.getItem("usuarioSesion");
+  if (!usuarioJSON) return null;
+
+  const usuario = JSON.parse(usuarioJSON);
+  if (!usuario || typeof usuario !== "object" || !usuario.email) return null;
+  return usuario;
 }
 
 function renderCarrito() {
@@ -85,6 +96,58 @@ function eliminarProducto(id) {
   renderCarrito();
 }
 
+function renderResumenCheckout() {
+  const lista = document.getElementById("checkout-items");
+  lista.replaceChildren();
+
+  carrito.forEach((producto) => {
+    const fila = document.createElement("div");
+    fila.className = "checkout-item";
+
+    const detalle = document.createElement("div");
+    const nombre = document.createElement("strong");
+    nombre.textContent = producto.nombre;
+    const cantidad = document.createElement("span");
+    cantidad.textContent = `${producto.cantidad} × ${formatearPrecio(producto.precio)}`;
+    detalle.append(nombre, cantidad);
+
+    const subtotal = document.createElement("strong");
+    subtotal.textContent = formatearPrecio(producto.precio * producto.cantidad);
+    fila.append(detalle, subtotal);
+    lista.appendChild(fila);
+  });
+
+  const total = carrito.reduce((suma, producto) => suma + producto.precio * producto.cantidad, 0);
+  document.getElementById("checkout-total").textContent = formatearPrecio(total);
+}
+
+function abrirCheckout() {
+  if (carrito.length === 0) return;
+
+  const usuario = obtenerUsuarioSesion();
+  if (!usuario) {
+    sessionStorage.setItem("checkoutPendiente", "true");
+    window.location.href = "Login.html";
+    return;
+  }
+
+  document.getElementById("checkout-nombre").textContent = usuario.nombre || "";
+  document.getElementById("checkout-email").textContent = usuario.email || "";
+  document.getElementById("checkout-telefono").textContent = usuario.telefono || "No registrado";
+  renderResumenCheckout();
+  document.getElementById("checkout-review").hidden = false;
+  document.getElementById("checkout-confirmation").hidden = true;
+  checkoutModal.hidden = false;
+  document.body.classList.add("checkout-open");
+  document.getElementById("checkout-close").focus();
+}
+
+function cerrarCheckout() {
+  checkoutModal.hidden = true;
+  document.body.classList.remove("checkout-open");
+  btnPagar.focus();
+}
+
 // Delegación de eventos: un solo listener para todos los botones,
 // aunque el contenido se regenere dinámicamente
 listaCarrito.addEventListener("click", (e) => {   
@@ -103,9 +166,90 @@ listaCarrito.addEventListener("click", (e) => {
   }
 });
 
-btnPagar.addEventListener("click", () => {
-  // Aquí conectarías con tu flujo de pago real
-  alert("Redirigiendo a pago...");
+btnPagar.addEventListener("click", abrirCheckout);
+
+document.getElementById("checkout-close").addEventListener("click", cerrarCheckout);
+document.getElementById("checkout-cancel").addEventListener("click", cerrarCheckout);
+document.getElementById("checkout-finish").addEventListener("click", cerrarCheckout);
+
+const fechaCheckout = document.getElementById("checkout-fecha");
+const direccionCheckout = document.getElementById("checkout-direccion");
+const domicilioCheckout = document.getElementById("checkout-domicilio");
+
+function actualizarTipoEntrega() {
+  const tipoEntrega = checkoutForm.elements.namedItem("checkout-entrega").value;
+  const esDomicilio = tipoEntrega === "domicilio";
+  domicilioCheckout.hidden = !esDomicilio;
+  direccionCheckout.required = esDomicilio;
+  document.getElementById("checkout-fecha-contexto").textContent =
+    esDomicilio ? "de entrega" : "para recoger";
+  document.getElementById("checkout-hora-contexto").textContent =
+    esDomicilio ? "de entrega" : "para recoger";
+}
+
+const hoy = new Date();
+const fechaLocal = new Date(hoy.getTime() - hoy.getTimezoneOffset() * 60000)
+  .toISOString()
+  .slice(0, 10);
+fechaCheckout.min = fechaLocal;
+
+checkoutForm.querySelectorAll('input[name="checkout-entrega"]').forEach((opcion) => {
+  opcion.addEventListener("change", actualizarTipoEntrega);
+});
+actualizarTipoEntrega();
+
+checkoutModal.addEventListener("click", (event) => {
+  if (event.target === checkoutModal) cerrarCheckout();
 });
 
-document.addEventListener("DOMContentLoaded", renderCarrito);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !checkoutModal.hidden) cerrarCheckout();
+});
+
+direccionCheckout.addEventListener("input", (event) => {
+  event.target.setCustomValidity("");
+});
+
+checkoutForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const tipoEntrega = checkoutForm.elements.namedItem("checkout-entrega").value;
+  const direccion = direccionCheckout.value.trim();
+  if (tipoEntrega === "domicilio" && !direccion) {
+    direccionCheckout.setCustomValidity("Ingresa una dirección de entrega.");
+    direccionCheckout.reportValidity();
+    return;
+  }
+
+  const usuario = obtenerUsuarioSesion();
+  const fecha = new Date(`${fechaCheckout.value}T00:00:00`).toLocaleDateString("es-MX", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+  const hora = document.getElementById("checkout-hora").value;
+  const entrega = tipoEntrega === "domicilio"
+    ? `Entrega a domicilio en ${direccion}, el ${fecha} a las ${hora}.`
+    : `Recoger en tienda el ${fecha} a las ${hora}.`;
+
+  document.getElementById("checkout-confirmation-message").textContent =
+    `Gracias, ${usuario.nombre || "cliente"}. ${entrega} Pronto te informaremos sobre los siguientes pasos de tu compra en ${usuario.email}.`;
+  document.getElementById("checkout-review").hidden = true;
+  document.getElementById("checkout-confirmation").hidden = false;
+  document.getElementById("checkout-finish").focus();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderCarrito();
+
+  const parametros = new URLSearchParams(window.location.search);
+  if (parametros.get("checkout") === "1") {
+    sessionStorage.removeItem("checkoutPendiente");
+    if (obtenerUsuarioSesion()) {
+      abrirCheckout();
+    } else {
+      sessionStorage.setItem("checkoutPendiente", "true");
+      window.location.href = "Login.html";
+    }
+    window.history.replaceState({}, "", window.location.pathname);
+  }
+});

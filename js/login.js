@@ -8,8 +8,20 @@ const campoConfirmarPassword = document.getElementById("campoConfirmarPassword")
 
 const tituloFormulario = document.getElementById("tituloFormulario");
 const subtituloFormulario = document.getElementById("subtituloFormulario");
+const vistaFormulario = document.getElementById("login-form-view");
+const vistaPerfil = document.getElementById("perfil-sesion");
+const checkoutPendiente = () => sessionStorage.getItem("checkoutPendiente") === "true";
 
 let modoLogin = false;
+
+function mostrarPerfil(usuario) {
+    document.getElementById("perfil-nombre").textContent = usuario.nombre || "cliente";
+    document.getElementById("perfil-nombre-completo").textContent = usuario.nombre || "";
+    document.getElementById("perfil-email").textContent = usuario.email || "";
+    document.getElementById("perfil-telefono").textContent = usuario.telefono || "No registrado";
+    vistaFormulario.hidden = true;
+    vistaPerfil.hidden = false;
+}
 
 // Espera el evento submit del formulario
 formulario.addEventListener("submit", function(event) {
@@ -165,8 +177,6 @@ formulario.addEventListener("submit", function(event) {
 
         localStorage.setItem("usuario", usuariosRegistrados);
 
-        console.log(usuario);
-        console.log(usuariosRegistrados);
         formulario.reset();
 
     } else {
@@ -231,7 +241,9 @@ btnLogin.addEventListener("click", function(event) {
         document.getElementById("passwordHelpBlock").classList.add("d-none");
 
         tituloFormulario.textContent = "¡Bienvenido de nuevo!";
-        subtituloFormulario.textContent = "Inicia sesión para continuar.";
+        subtituloFormulario.textContent = checkoutPendiente()
+            ? "Inicia sesión para regresar al carrito y continuar tu compra."
+            : "Inicia sesión para continuar.";
 
         btnRegistrarse.textContent = "Iniciar sesión";
 
@@ -244,7 +256,9 @@ btnLogin.addEventListener("click", function(event) {
         document.getElementById("passwordHelpBlock").classList.remove("d-none");
 
         tituloFormulario.textContent = "¡Crea tu cuenta!";
-        subtituloFormulario.textContent = "Regístrate para diseñar un pastel único para cada ocasión.";
+        subtituloFormulario.textContent = checkoutPendiente()
+            ? "Crea tu cuenta o inicia sesión; volverás al carrito para continuar tu compra."
+            : "Regístrate para diseñar un pastel único para cada ocasión.";
 
         btnRegistrarse.textContent = "Registrarse";
 
@@ -304,11 +318,22 @@ function iniciarSesion() {
         ) {
 
             alertLoginExito.classList.remove("d-none");
+            const usuarioSesion = {
+                nombre: usuario.nombre,
+                telefono: usuario.telefono,
+                email: usuario.email
+            };
+            localStorage.setItem("usuarioSesion", JSON.stringify(usuarioSesion));
 
             setTimeout(function() {
                 formulario.reset();
                 alertLoginExito.classList.add("d-none");
-                window.location.href = "index.html";
+                if (checkoutPendiente()) {
+                    sessionStorage.removeItem("checkoutPendiente");
+                    window.location.href = "Carrito.html?checkout=1";
+                } else {
+                    window.location.href = "index.html";
+                }
             }, 1500);
 
         } else {
@@ -317,6 +342,25 @@ function iniciarSesion() {
 
         }
 
+}
+
+document.getElementById("btn-ir-carrito").addEventListener("click", () => {
+    const destino = checkoutPendiente() ? "Carrito.html?checkout=1" : "Carrito.html";
+    sessionStorage.removeItem("checkoutPendiente");
+    window.location.href = destino;
+});
+
+document.getElementById("btn-cerrar-sesion").addEventListener("click", () => {
+    localStorage.removeItem("usuarioSesion");
+    sessionStorage.removeItem("checkoutPendiente");
+    window.location.reload();
+});
+
+const sesionJSON = localStorage.getItem("usuarioSesion");
+if (sesionJSON) {
+    mostrarPerfil(JSON.parse(sesionJSON));
+} else if (checkoutPendiente()) {
+    subtituloFormulario.textContent = "Inicia sesión o crea tu cuenta; regresarás al carrito para continuar tu compra.";
 }
 
 // Limpiar formulario al regresar a la página
