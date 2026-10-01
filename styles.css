@@ -8,7 +8,7 @@
   --color-primario: #972a17;
   --color-secundario: #fff3fe;
   --color-acento: #7782e9;
-  --color-texto: #333333;
+  --color-texto: #5D3412;
   --color-fondo: #eef0f3;
 
   --fuente-titulos: 'Domine', serif;
@@ -803,3 +803,8 @@ div.pastel p {
   --bs-btn-disabled-bg: #F077A3;
   --bs-btn-disabled-border-color: #F077A3;
 }
+
+body {
+  user-select: none;
+}
+
