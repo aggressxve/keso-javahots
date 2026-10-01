@@ -651,6 +651,7 @@ div.pastel p {
 }
 
 .hero_banner{
+  background-image: url('./svg/background.png');
   background-color: #4FC7E5;
   width: 100vw;
   position: relative;
