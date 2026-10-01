@@ -83,20 +83,9 @@ font-family: Domine, sans-serif;
     text-align: start;
 }
 
-.sidebar-nav a {
-  
-  cursor: pointer;
-}
 
-.sidebar-nav a::before,
-.sidebar-nav a::after
- {
-    content: '';
-    position: absolute;
-    width: inherit;
-    border-left: inherit;
-    z-index: -1;
-}
+
+
 
 .sidebar-nav a::before {
     height: 80%;
@@ -120,7 +109,6 @@ font-family: Domine, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif;
     text-transform: capitalize;
     transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
     transition: 0.3s;
@@ -128,7 +116,7 @@ font-family: Domine, sans-serif;
 
 .sidebar-nav a:hover {
     transform: translateX(0.15em);
-    border-left: 0.08em solid;
+    border-left: 1.5em solid;
 }
 
 #salir{
@@ -160,7 +148,7 @@ h1 {
 
 #textPanelAdmin {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     color: #ce658b;
     font-family: Outfit, sans-serif;
     font-size: 350%;
@@ -426,6 +414,35 @@ h1 {
     display: none;
 }
 
+@media (max-width: 1880px){
+    .sidebar{
+        width: 206px;
+    }
+
+    .sidebar img{
+        width: 107px;
+    }
+
+    .sidebar-nav a {
+        font-size: 27px;
+        padding: 5px;
+    }
+
+    .sidebar-nav{
+        margin-top: 37px;
+    }
+
+    .sidebar h2{
+        font-size: 1.9rem;
+    }
+
+    #salir {
+        position: relative;
+        top: 7vh;
+    }
+    
+}
+
 @media (max-width: 1370px) {
     .sidebar{
         width: 206px;
@@ -446,7 +463,7 @@ h1 {
 
     #salir {
         position: relative;
-        top: 8vh;
+        top: 3vh;
     }
 }
 
