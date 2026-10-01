@@ -653,12 +653,7 @@ div.pastel p {
 .hero_banner{
   background-image: url('./svg/background.png');
   background-color: #4FC7E5;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-inline: -15px;
   margin-top: 50px;     
   margin-bottom: 100px;
 }
