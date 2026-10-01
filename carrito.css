@@ -407,3 +407,7 @@ body.checkout-open {
     width: 100%;
   }
 }
+
+body {
+  user-select: none;
+}
