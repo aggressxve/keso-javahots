@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="about.css">
-    <!-- contactanos.css ya no se usa aquí; ahora usamos pedido.css -->
-    <link rel="stylesheet" href="pedido.css">
+    <link rel="stylesheet" href="pedido-personalizado.css">
     <title>Keso - Pedido Personalizado</title>
 </head>
 
@@ -46,6 +45,7 @@
             <!-- COLUMNA DERECHA: formulario por secciones -->
             <div class="col-12 col-lg-7">
                 <form class="pedido-form" id="form-pedido" novalidate>
+
                     <!-- SECCIÓN 1 -->
                     <fieldset class="pedido-seccion">
                         <legend class="pedido-legend">
@@ -76,6 +76,7 @@
                             </div>
                         </div>
                     </fieldset>
+
                     <!-- SECCIÓN 2 -->
                     <fieldset class="pedido-seccion">
                         <legend class="pedido-legend">
@@ -183,6 +184,7 @@
                             required></textarea>
                     </fieldset>
 
+                    <div id="pedido-mensaje" class="pedido-mensaje" role="status"></div>
                     <button type="submit" class="btn btn-submit">Enviar pedido</button>
                     <p class="pedido-nota">Revisaremos tu solicitud y te confirmaremos precio y disponibilidad.</p>
                 </form>
@@ -196,30 +198,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="./js/navbar y footer.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            llamarNavbar();
-            cargarFooter();
-
-            // Bloquear fechas pasadas en el selector de fecha
-            const inputFecha = document.getElementById("fecha");
-            if (inputFecha) {
-                const hoy = new Date().toISOString().split("T")[0];
-                inputFecha.min = hoy;
-            }
-
-            // Mostrar errores de validación al intentar enviar
-            const form = document.getElementById("form-pedido");
-            form.addEventListener("submit", (e) => {
-                if (!form.checkValidity()) {
-                    e.preventDefault();
-                    // Lleva al usuario al primer campo con error
-                    form.querySelector(":invalid").focus();
-                }
-                form.classList.add("was-validated");
-            });
-        });
-    </script>
+    <script src="./js/pedido-personalizado.js"></script>
 </body>
 
 </html>

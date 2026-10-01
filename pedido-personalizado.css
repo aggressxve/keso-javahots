@@ -130,6 +130,29 @@
   border-color: #dc3545;
 }
 
+/* ----- Mensaje de éxito / error ----- */
+.pedido-mensaje {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+}
+
+.pedido-mensaje--ok {
+  display: block;
+  background: #e8f7ee;
+  color: #1f6b3a;
+  border: 1px solid #b7e4c7;
+}
+
+.pedido-mensaje--error {
+  display: block;
+  background: #fdecee;
+  color: #a1283a;
+  border: 1px solid #f5c2c9;
+}
+
 /* ----- Botón y nota ----- */
 .pedido-form .btn-submit {
   background-color: #F077A3;
