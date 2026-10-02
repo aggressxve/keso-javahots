@@ -2,128 +2,121 @@
       Pagina Pedidos
 ==========================*/
 
+:root {
+    --texto-cafe: #5D3412;
+    --gutter: clamp(20px, 5vw, 72px);   /* margen lateral de la página */
+
+    /* Paleta de estados (pasteles que combinan con el rosa) */
+    --azul-bg: #C1E9FC;     --azul-txt: #2B6A94;     --azul-hover: #4BA3D6;
+    --rosa-bg: #FDE1EC;     --rosa-txt: #B0345F;     --rosa-hover: #F077A3;
+    --verde-bg: #D6F0E3;    --verde-txt: #2F7A5A;    --verde-hover: #5BB28D;
+    --durazno-bg: #FFE8D1;  --durazno-txt: #A8601F;  --durazno-hover: #E8A15F;
+}
+
 .Pedidos {
-    margin: 0%;
-    padding: 0;
+    margin: 0;
+    padding: 0 0 48px;
     width: 100% !important;
     max-width: none !important;
 }
 
+/* ---------- Tarjetas resumen ---------- */
 .sector {
-    border-radius: 30px;
-    margin: 83px 79px 99px;
-    gap: 70px;
+    border-radius: 24px;
+    margin: 32px var(--gutter) 40px;
+    gap: 24px;
 }
 
 .sect {
-    font-family: Golos Text, sans-serif;
-    font-size: 28px;
-    border-radius: 30px;
-    padding: 45px 33px;
-}
-
-.pedidosH {
-    background-color: #c1e9fc;
-    color: #297BD3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.cantidad-pedidosH{
-    font-size: 39px;
     font-family: Outfit, sans-serif;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 22px;
+    padding: 24px 28px;
 }
 
-.pedidosH:hover{
-    background-color: #408cdd;
-    color: #c1e9fc;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px);
-}
-
-.pedidosH:active{
-    transform: scale(0.98);
-}
-
-.pedidosP {
-    background-color: #fac9c9;
-    color: #DF3636;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.cantidad-pedidosP{
-    font-size: 39px;
-    font-family: Outfit, sans-serif;
-    font-weight: 700;
-}
-
-.pedidosP:hover{
-    background-color: #ee6868;
-    color: #fac9c9;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px);
-}
-
-.pedidosP:active{
-    transform: scale(0.98);
-}
-
+.pedidosH,
+.pedidosP,
 .pedidosE {
-    background-color: #b6f0b3;
-    color: #488A4D;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    transition: background-color .25s ease, transform .25s ease;
 }
 
-.cantidad-pedidosE{
-    font-size: 39px;
+.cantidad-pedidosH,
+.cantidad-pedidosP,
+.cantidad-pedidosE {
+    font-size: 30px;
     font-family: Outfit, sans-serif;
     font-weight: 700;
 }
 
-.pedidosE:hover{
-    background-color: #74b97a;
-    color: #b6f0b3;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px);
+/* Pedidos de hoy → azul */
+.pedidosH { background-color: var(--azul-bg); color: var(--azul-txt); }
+.pedidosH:hover { background-color: var(--azul-hover); color: #fff; }
+
+/* Pedidos pendientes → rosa */
+.pedidosP { background-color: var(--rosa-bg); color: var(--rosa-txt); }
+.pedidosP:hover { background-color: var(--rosa-hover); color: #fff; }
+
+/* Pedidos entregados → verde menta */
+.pedidosE { background-color: var(--verde-bg); color: var(--verde-txt); }
+.pedidosE:hover { background-color: var(--verde-hover); color: #fff; }
+
+.pedidosH:hover,
+.pedidosP:hover,
+.pedidosE:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    transform: translateY(-2px);
 }
 
-.pedidosE:active{
-    transform: scale(0.98);
+.pedidosH:active,
+.pedidosP:active,
+.pedidosE:active {
+    transform: scale(.98);
 }
 
+/* ---------- Tabla + ticket ---------- */
 .paneles-pedidos {
     display: flex;
     align-items: flex-start;
-    gap: 25px;
+    gap: 24px;
+    width: calc(100% - 2 * var(--gutter));
+    margin: 28px var(--gutter) 0;
+}
+
+/* Si el panel está dentro de .sector, no duplica el margen lateral */
+.sector .paneles-pedidos {
     width: 100%;
-    margin-top: 25px;
+    margin: 28px 0 0;
 }
 
 .tabla {
     flex: 1;
     min-width: 0;
-    border-radius: 25px;
+    border-radius: 22px;
     text-align: center;
     background-color: white;
     margin: 0;
     max-width: none;
+    padding: 24px 24px 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
 }
 
+/* #pR y .sec se comparten con la página de productos */
 #pR {
     text-align: start;
     font-family: Outfit, sans-serif;
     font-weight: bold;
-    color: black !important;
+    color: var(--texto-cafe) !important;
     margin: -12px 0 10px;
+}
+
+.tabla #pR {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin: 0 0 18px;
 }
 
 .sec {
@@ -135,115 +128,136 @@
     font-size: 23px;
 }
 
-.pedido{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #00000096;
-    font-family: Outfit, sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    padding: 10px 0px;
-    margin-bottom: 15px;
-    border: solid #FAD4E2 2px;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.sc{
-padding: 0px 13px;
-}
-
-.pedido-first{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.pedido-rest{
-    border-radius: 10px;
-}
-
-.pedido:hover{
-    background-color: #fdf6f9;
-    border: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transform: translateY(-3px);
-}
-
-.pedido:active{
-    transform: scale(0.98);
-}
-
-.estado{
-    border-radius: 10px;
-    padding: 10px 0px;
-    width: 18vh;
-}
-
-.estado-pendiente{
-    background-color: #f7a9ac;
-    color: #d14141;
-}
-
-.estado-en-preparacion{
-    background-color: #efdaae;
-    color: #837d5f;
-}
-
-.estado-en-reparto{
-    background-color: #c1e9fc;
-    color: #297BD3;
-}
-
-.estado-entregado{
-    background-color: #b6f0b3;
-    color: #488A4D;
+/* Dentro de la tabla de pedidos las celdas heredan el tamaño de la fila */
+.tabla .sec {
+    margin: 0;
+    font-size: inherit;
 }
 
 .header {
-    color: #362C2C;
-    font-weight: 800;
+    color: var(--texto-cafe);
+    font-weight: 700;
+    font-size: .9rem;
     font-family: Outfit, sans-serif;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     background-color: #FAD4E2;
+    border: 2px solid #FAD4E2;
+    padding: 12px 0;
+    margin-bottom: 10px;
 }
 
+.pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--texto-cafe);
+    font-family: Outfit, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 8px;
+    margin-bottom: 10px;
+    border: solid #FAD4E2 2px;
+    transition: background-color .25s ease, transform .25s ease;
+}
+
+.sc {
+    padding: 0 12px;
+}
+
+.pedido-first {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.pedido-rest {
+    border-radius: 10px;
+}
+
+.pedido:hover {
+    background-color: #fdf6f9;
+    border-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    transform: translateY(-2px);
+}
+
+.pedido:active {
+    transform: scale(.98);
+}
+
+/* ---------- Estados (píldoras) ---------- */
+.estado {
+    border-radius: 999px;
+    padding: 6px 0;
+    width: 120px;
+    max-width: 100%;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.estado-pendiente      { background-color: var(--rosa-bg);    color: var(--rosa-txt); }
+.estado-en-preparacion { background-color: var(--durazno-bg); color: var(--durazno-txt); }
+.estado-en-reparto     { background-color: var(--azul-bg);    color: var(--azul-txt); }
+.estado-entregado      { background-color: var(--verde-bg);   color: var(--verde-txt); }
+
+/* ---------- Ticket ---------- */
 .tiquet {
     position: sticky;
     top: 19%;
-    flex: 0 0 320px;
-    width: 320px;
-    min-height: 500px;
+    flex: 0 0 280px;
+    width: 280px;
+    min-height: 380px;
     margin: 0;
-    padding: 30px;
-    border-radius: 30px;
+    padding: 24px;
+    border-radius: 22px;
     background-color: white;
-    color: #362C2C;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: var(--texto-cafe);
+    font-size: .95rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
 .tiquet h2 {
     color: #ce658b;
     font-family: Outfit, sans-serif;
     font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
 }
 
-.vermas{
-  color: #f077a3;
-  text-decoration: underline;
+.vermas {
+    color: #f077a3;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-@media (max-width: 1280px){
-    .sector{
-        margin: 0px 47px;
-        gap: 28px;
-    }
+/* ================= RESPONSIVE ================= */
+/* El margen lateral lo maneja --gutter, aquí solo se ajusta lo vertical */
+@media (max-width: 1366px) {
+    .sec { margin: 3px 0; font-size: 15px; }   /* compartido con productos, igual que antes */
+
+    .sector { margin-top: 28px; margin-bottom: 36px; gap: 18px; }
+    .sect { font-size: 16px; padding: 20px 22px; }
+    .cantidad-pedidosH,
+    .cantidad-pedidosP,
+    .cantidad-pedidosE { font-size: 26px; }
+
+    .paneles-pedidos { gap: 16px; }
+    .tabla { padding: 20px 16px 16px; }
+    .tabla #pR { font-size: 1.25rem; }
+    .pedido { font-size: 14px; padding: 12px 6px; margin-bottom: 8px; }
+    .estado { width: 108px; font-size: .8rem; }
+    .tiquet { flex: 0 0 260px; width: 260px; padding: 20px; }
+}
+
+@media (max-width: 1032px) {
+    .sector { margin-top: 20px; margin-bottom: 28px; gap: 12px; }
+    .pedido { font-size: 13px; padding: 10px 4px; }
+    .estado { width: 92px; font-size: .75rem; }
 }
 
 @media (max-width: 992px) {
-    .paneles-pedidos {
-        flex-direction: column;
-    }
+    .paneles-pedidos { flex-direction: column; }
 
     .tabla,
     .tiquet {
@@ -252,137 +266,36 @@ padding: 0px 13px;
         flex: none;
     }
 
-    .tiquet {
-        min-height: 300px;
-    }
+    .tiquet { min-height: 220px; }
 }
 
-@media (max-width: 1366px){
-    .sect{
-        font-size: 24px;
-        padding: 28px 21px;
-    }
-
-    .header{
-        padding: 0;
-    }
-
-    .sec{
-        margin: 3px 0;
-        font-size: 15px;
-    }
-
-    .paneles-pedidos{
-        gap: 12px;
-    }
-
-    .pedido {
-        margin-bottom: 6px;
-        padding: 3px;
-        font-size: 12px;
-    }
-    .estado{
-        width: 15vh;
-    }
-
-    #pR{
-        font-size: 27px;
-    }
+@media (max-width: 860px) {
+    .pedido { font-size: 14px; }
+    .estado { width: 100px; }
 }
 
-@media(max-width: 1032px){
-    .sector{
-        margin: 0px 16px;
-        gap: 6px;
-    }
-
-    .pedido{
-        padding: 1px;
-        font-size: 13px;
-    }
-
-    .estado{
-        width: 10vh;
-    }
+@media (max-width: 600px) {
+    .sector { margin-top: 12px; margin-bottom: 24px; }
 }
 
-@media (max-width: 992px) {
-    .estado{
-        width: 13vh;
-    }
-}
-
-@media (max-width: 860px){
-    .sector{
-        margin: 0px 76px;
-        gap: 10px;
-    }
-
-    .pedido{
-        padding: 0;
-        font-size: 16px;
-    }
-
-    .estado{
-        width: 12vh;
-    }
-}
-
-@media (max-width: 600px){
-    .sector{
-        margin: 0px 7px;
-    }
-}
-
-@media (max-width: 500px){
-    .sector{
-        display: block;
-    }
-
-    .header{
-        display: none;
-    }
-
-    .pedido-first{
-        border-radius: 10px;
-    }
-
-    #pR{
-        margin: -5px 0 17px;
-    }
+@media (max-width: 500px) {
+    .sector { display: block; }
+    .sect { margin-bottom: 12px; }
+    .header { display: none; }
+    .pedido-first { border-radius: 10px; }
+    .tabla #pR { margin: 0 0 14px; }
 }
 
 @media (max-width: 459px) {
-    .sc{
-        padding: 0px 12px;
-    }
-
-    .estado{
-        width: 11vh;
-    }
+    .sc { padding: 0 12px; }
+    .estado { width: 88px; }
 }
 
-@media (max-width: 448px){
-    .pedido{
-        font-size: 17px;
-    }
+@media (max-width: 448px) {
+    .pedido { font-size: 15px; }
 }
 
-@media (max-width: 440px){
-
-    .sector {
-        display: block;
-    }
-    .sector{
-        margin: 0px 7px;
-    }
-
-    .pedido{
-        padding: 0;
-        font-size: 16px;
-    }
+@media (max-width: 440px) {
+    .sector { display: block; }
+    .pedido { font-size: 14px; }
 }
-
-
-
-

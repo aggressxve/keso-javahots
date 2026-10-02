@@ -1,6 +1,66 @@
+:root {
+    --texto-cafe: #5D3412;
+
+    /* Texto y links de Bootstrap */
+    --bs-body-color: #5D3412;
+    --bs-body-color-rgb: 93, 52, 18;
+    --bs-link-color: #F077A3;
+    --bs-link-color-rgb: 240, 119, 163;
+    --bs-link-hover-color: #CE658B;
+    --bs-link-hover-color-rgb: 206, 101, 139;
+    --bs-focus-ring-color: rgba(240, 119, 163, .25);
+
+    /* Rojo → rosa */
+    --bs-danger: #F077A3;
+    --bs-danger-rgb: 240, 119, 163;
+    --bs-danger-bg-subtle: #FDE1EC;
+    --bs-danger-border-subtle: #F8BFD4;
+    --bs-danger-text-emphasis: #B0345F;
+
+    /* Azul → azul pastel */
+    --bs-primary: #4BA3D6;
+    --bs-primary-rgb: 75, 163, 214;
+    --bs-primary-bg-subtle: #C1E9FC;
+    --bs-primary-border-subtle: #9AD3F0;
+    --bs-primary-text-emphasis: #2B6A94;
+    --bs-info: #4BA3D6;
+    --bs-info-rgb: 75, 163, 214;
+    --bs-info-bg-subtle: #C1E9FC;
+    --bs-info-border-subtle: #9AD3F0;
+    --bs-info-text-emphasis: #2B6A94;
+
+    /* Verde → menta */
+    --bs-success: #5BB28D;
+    --bs-success-rgb: 91, 178, 141;
+    --bs-success-bg-subtle: #D6F0E3;
+    --bs-success-border-subtle: #B4E0CB;
+    --bs-success-text-emphasis: #2F7A5A;
+
+    /* Amarillo → durazno */
+    --bs-warning: #E8A15F;
+    --bs-warning-rgb: 232, 161, 95;
+    --bs-warning-bg-subtle: #FFE8D1;
+    --bs-warning-border-subtle: #F5CFA6;
+    --bs-warning-text-emphasis: #A8601F;
+}
+
 body{
 padding: 0%;
 font-family: Domine, sans-serif;
+color: #5D3412;
+}
+
+/* Azul de Bootstrap al enfocar campos → rosa */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: #f077a3;
+    box-shadow: 0 0 0 .25rem rgba(240, 119, 163, .25);
+}
+
+.form-check-input:checked {
+    background-color: #f077a3;
+    border-color: #f077a3;
 }
 
 .app-container {
@@ -56,7 +116,7 @@ font-family: Domine, sans-serif;
     text-align: center;
     font-family: Outfit, sans-serif;
     color: white;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-top: 0;
     margin-bottom: 20px;
     border-bottom: 3px solid rgba(255,255,255,0.2);
@@ -208,7 +268,7 @@ h1 {
 .product-page .form-section .form-label {
     display: block;
     margin-bottom: 8px;
-    color: #362c2c;
+    color: #5D3412;
     font-family: Outfit, sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -221,7 +281,7 @@ h1 {
     border: 1px solid #e2d9dd;
     border-radius: 15px;
     background-color: #ffffff;
-    color: #555;
+    color: #5D3412;
     font-family: Outfit, sans-serif;
     font-size: 1rem;
     outline: none;
@@ -292,7 +352,7 @@ h1 {
 
 .product-page > .container > .AgregarIMG p {
     margin: 0 0 10px;
-    color: #362c2c;
+    color: #5D3412;
     font-family: Outfit, sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
@@ -317,7 +377,7 @@ h1 {
     margin-top: 20px;
     border: none;
     background-color: transparent;
-    color: #555;
+    color: #5D3412;
     font-family: Outfit, sans-serif;
 }
 
@@ -433,7 +493,7 @@ h1 {
     }
 
     .sidebar h2{
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 
     #salir {
@@ -458,7 +518,7 @@ h1 {
     }
 
     .sidebar h2{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     #salir {
@@ -605,6 +665,35 @@ h1 {
 }
 
 
+
+/* Select personalizable: permite estilar la lista desplegable */
+.product-page .form-selectP,
+.product-page .form-selectP::picker(select) {
+  appearance: base-select;
+}
+
+.product-page .form-selectP::picker(select) {
+  border: 1px solid #e2d9dd;
+  border-radius: 15px;
+  padding: 6px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(93, 52, 18, 0.12);
+}
+
+.product-page .form-selectP option {
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #5D3412;
+  font-family: Outfit, sans-serif;
+}
+
+/* Aquí cambia el azul por rosa */
+.product-page .form-selectP option:hover,
+.product-page .form-selectP option:focus,
+.product-page .form-selectP option:checked {
+  background-color: #f077a3;
+  color: #fff;
+}
 
 *,
 *::before,
