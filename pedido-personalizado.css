@@ -196,6 +196,19 @@
     appearance: base-select;
   }
 
+  /* Un solo renglón, ancho completo y sin flecha duplicada */
+  .pedido-form select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 2.5rem; /* espacio para la flecha de Bootstrap */
+  }
+
+  /* Oculta la flecha nativa de base-select */
+  .pedido-form select::picker-icon {
+    display: none;
+  }
+
   /* El menú desplegable */
   .pedido-form select::picker(select) {
     background: #ffffff;
@@ -225,3 +238,4 @@
     color: #5D3412;
   }
 }
+
