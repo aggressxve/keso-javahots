@@ -90,11 +90,13 @@ color: #5D3412;
 }
 
 .sidebar {
-    width: 279px;
+    width: 280px !important;
+    min-width: 280px !important;
+    flex-shrink: 0 !important;
     background-color: #f077a3;
     color: white;
     border-radius: 0px;
-    padding: 20px;
+    padding: 30px;
     position: sticky;
     height: 100dvh;
     top: 0px;
