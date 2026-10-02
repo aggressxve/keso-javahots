@@ -45,7 +45,7 @@
             padding: 2rem;
             display: grid;
             justify-content: space-evenly;
-            align-items: center;
+            align-items: stretch; 
             justify-items: center;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 5rem;
@@ -56,20 +56,24 @@
         }
         .catalogo-card{
             max-width: 380px;
+            width: 100%;           /* nuevo: para que ocupe el ancho completo de su columna */
+            height: 100%;           /* nuevo: ahora sí puede estirarse para igualar a las demás */
+            display: flex;           /* nuevo */
+            flex-direction: column;  /* nuevo */
             background-color: #F077A3;
             border-radius: 20px;
-            /*padding: .5rem;*/
             transition: transform 0.3s ease;
-                    box-shadow: 
+            box-shadow: 
             0 2px 4px rgba(0, 0, 0, 0.04),
             0 4px 8px rgba(0, 0, 0, 0.06),
-            0 12px 24px rgba(0, 0, 0, 0.08);           
+            0 12px 24px rgba(0, 0, 0, 0.08);                
         }
         .catalogo-card:hover{
             transform: scale(1.02);
         }
         .card-body{
-            height: 230px;
+            flex: 1;  
+            min-height: 230px;   /* antes: height: 230px */
             background-color: #fff;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
