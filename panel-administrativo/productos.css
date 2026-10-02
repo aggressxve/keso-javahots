@@ -405,6 +405,7 @@
 
 /* 1) Pantallas medianas: columnas más compactas */
 @media (max-width: 1400px) {
+
     .tabla-productos {
         --columnas: 64px minmax(80px, 1fr) 64px 72px minmax(100px, 1.3fr) 104px 200px;
     }
@@ -412,6 +413,15 @@
     .tabla-productos .header-productos,
     .tabla-productos .fila-producto {
         min-width: 780px;
+    }
+
+    /* Separación entre estado y acciones */
+    .tabla-productos .estado-pill {
+        margin-right: 30px;
+    }
+
+    .tabla-productos .acciones-col {
+        padding-left: 30px;
     }
 }
 
@@ -557,4 +567,59 @@
     .editar-layout {
         gap: 20px;
     }
+}
+@media (max-width: 500px) {
+
+    .tabla-productos .fila-producto {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nombre"
+            "img"
+            "precio"
+            "porcion"
+            "desc"
+            "estado"
+            "acc";
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    /* Nombre arriba */
+    .tabla-productos .fila-producto > *:nth-child(2) {
+        grid-area: nombre;
+        justify-self: center;
+        text-align: center;
+        width: 100%;
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+
+    /* Todo lo demás centrado */
+    .tabla-productos .fila-producto > *:nth-child(1),
+    .tabla-productos .fila-producto > *:nth-child(3),
+    .tabla-productos .fila-producto > *:nth-child(4),
+    .tabla-productos .fila-producto > *:nth-child(5),
+    .tabla-productos .fila-producto > *:nth-child(6),
+    .tabla-productos .fila-producto > *:nth-child(7) {
+        justify-self: center;
+        text-align: center;
+    }
+
+        .tabla-productos .fila-producto > *:nth-child(7) {
+        grid-area: acc;
+        justify-self: center;
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .tabla-productos .acciones-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
 }
