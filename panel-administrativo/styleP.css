@@ -697,6 +697,38 @@ h1 {
   color: #fff;
 }
 
+
+
+/* Menú lateral oculto con botón, desde 918px hacia abajo */
+@media (max-width: 918px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 250px;
+        height: 100dvh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu-checkbox:checked ~ .sidebar {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        width: 100%;
+        min-height: 100dvh;
+        margin-left: 0;
+        padding: 60px 15px 20px;
+    }
+}
+
 *,
 *::before,
 *::after {
