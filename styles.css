@@ -240,10 +240,11 @@ ul.lista-vendidos li {
   list-style: none;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 485px) {
   ul.lista-vendidos li {
     width: 50%;
   }
+  
 }
 
 @media only screen and (min-width: 768px) {
@@ -337,6 +338,14 @@ div.pastel p {
 /* Bootstrap recorta el carrusel con overflow: hidden; este padding da holgura */
 #carouselMasVendido .carousel-inner {
   padding: 20px 0;
+}
+
+#carouselMasVendido .carousel-item {
+    padding: 0 10px;
+}
+
+#carouselMasVendido .comprar-pastel {
+    width: 100%;
 }
 
 .text-center-titulo {
@@ -515,27 +524,49 @@ div.pastel p {
     align-self: center;   /* centra el botón específicamente, por si acaso */
   }
 
+  #carouselMasVendido .carousel-item .row > div:nth-child(3) {
+        display: none !important;
+  }
+
 
 }
 
-@media (max-width: 576px){
-  .comprar-pastel{
-    text-align: center;
-    align-items: center;
-  }
+@media (max-width: 576px) and (min-width: 501px){
+   .comprar-pastel {
+        height: auto;
+        min-height: 475px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+      
+    }
 
-  .comprar-pastel h6,
-  .comprar-pastel h3{
-    text-align: center !important;
-  }
+    .comprar-pastel .img-wrap {
+        width: 100%;
+    }
 
-  .comprar-pastel .btn{
-    align-self: center;
-  }
+    .comprar-pastel h6 {
+        min-height: auto;
+        height: auto;
+        margin: 10px 0 5px;
+        padding: 5px !important;
+        text-align: center !important;
+        overflow: visible;
+        display: block;
+    }
 
- .hero_banner{
-  font-size: .8rem;
- }
+    .comprar-pastel h3 {
+        margin: 5px 0 10px;
+        padding: 5px !important;
+        text-align: center !important;
+    }
+
+    .comprar-pastel .btn {
+        margin: 5px 0 0;
+        align-self: center;
+    }
 
 }
 
@@ -670,6 +701,19 @@ div.pastel p {
   .hero__image{
     height: 80%;
   }
+
+  .bannerPedido__imagen {
+        max-width: 45%;
+        max-height: 250px;
+    }
+
+    .bannerPedido__imagen img {
+        width: 100%;
+        max-height: 250px;
+        height: auto;
+        object-fit: contain;
+    }
+
 }
 @media (max-width: 992px) {
   .hero {
@@ -721,6 +765,9 @@ div.pastel p {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+  }
+  #carouselMasVendido .carousel-item .row > div:nth-child(3) {
+        display: none !important;
   }
 }
 @media (max-width: 932px) and (min-width: 769px) {
