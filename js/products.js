@@ -72,7 +72,7 @@ export const productos = [
         "relleno": "crema batida con fresa",
         "cobertura": "crema batida de chocolate con fresa",
         "pan": "chocolate",
-        "img": "images/Fotos de Pasteles/3-leches-chocolate-fresa.png",
+        "img": "/images/Fotos de Pasteles/3-leches-chocolate-fresa.png",
         "precio": 440,
         "createdAt": null
     },
