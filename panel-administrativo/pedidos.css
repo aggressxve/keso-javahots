@@ -269,6 +269,39 @@
     .tiquet { min-height: 220px; }
 }
 
+@media (max-width: 2560px){
+    .sect{
+        font-size: 24px;
+        padding: 28px 21px;
+    }
+
+    .header{
+        padding: 0;
+    }
+
+    .sec{
+        margin: 3px 0;
+        font-size: 15px;
+    }
+
+    .paneles-pedidos{
+        gap: 12px;
+    }
+
+    .pedido {
+        margin-bottom: 6px;
+        padding: 3px;
+        font-size: 12px;
+    }
+    .estado{
+        width: 15vh;
+    }
+
+    #pR{
+        font-size: 27px;
+    }
+}
+   
 @media (max-width: 860px) {
     .pedido { font-size: 14px; }
     .estado { width: 100px; }
