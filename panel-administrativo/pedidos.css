@@ -299,3 +299,31 @@
     .sector { display: block; }
     .pedido { font-size: 14px; }
 }
+
+/* ---------- Scroll horizontal de la tabla en responsive ---------- */
+@media (max-width: 768px) {
+
+    .tabla {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;   /* scroll suave en iPhone */
+    }
+
+    /* Ancho mínimo para que las columnas no se aplasten */
+    .tabla .header,
+    .tabla .pedido {
+        min-width: 720px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* El encabezado vuelve a verse (antes se ocultaba en ≤500px) */
+    .tabla .header {
+        display: flex;
+    }
+
+    /* El título "Pedidos" se queda fijo a la izquierda al desplazar */
+    .tabla #pR {
+        position: sticky;
+        left: 0;
+    }
+}
