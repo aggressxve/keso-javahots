@@ -13,13 +13,15 @@ if (!producto) {
   document.getElementById("producto-nombre").textContent = producto.name;
   document.getElementById("producto-descripcion").textContent = producto.descripcion;
 
-  document.getElementById("producto-specs").innerHTML = `
-    <li>Número de personas: ${producto.numeroDePersonas}</li>
-    <li>Relleno: ${producto.relleno || "no aplica"}</li>
-    <li>Cobertura: ${producto.cobertura || "no aplica"}</li>
-    <li>Pan: ${producto.pan || "no aplica"}</li>
-    <h4 style="font-weight: bold; margin-top: 2rem;">Precio: $${producto.precio}</h4>
-  `;
+ document.getElementById("producto-specs").innerHTML = `
+  <li>Número de personas: ${producto.numeroDePersonas}</li>
+  <li>Relleno: ${producto.relleno || "no aplica"}</li>
+  <li>Cobertura: ${producto.cobertura || "no aplica"}</li>
+  <li>Pan: ${producto.pan || "no aplica"}</li>
+`;
+
+document.getElementById("producto-precio").textContent = `Precio: $${producto.precio}`;
+
 
   const imagenPrincipal = document.getElementById("producto-imagen-principal");
   imagenPrincipal.src = producto.img || IMAGEN_RESPALDO;
