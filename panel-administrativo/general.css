@@ -35,7 +35,10 @@
   min-width: 0;
 }
 
-/* stats */
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .stat-card {
   position: relative;
@@ -50,7 +53,6 @@
               background-color 0.25s ease, color 0.25s ease;
   text-align: center;
   font-family: 'Outfit', sans-serif;
-  
 }
 
 .stat-card:hover {
@@ -187,59 +189,105 @@
 }
 
 
+/* =====================================================
+   TABLA "PEDIDOS RECIENTES"
+===================================================== */
+
 .tablaGen{
   flex: 1;
-    min-width: 0;
-    border-radius: 25px;
-    text-align: center;
-    background-color: white;
-    padding-top: 2rem;
-    margin: 0;
-    max-width: none;
+  min-width: 0;
+  border-radius: 25px;
+  text-align: center;
+  background-color: white;
+  padding-top: 2rem;
+  margin: 0;
+  max-width: none;
 }
 
-  .tabla-scroll::-webkit-scrollbar{
-    height: 6px;
-  }
-
-  .tabla-scroll::-webkit-scrollbar-thumb{
-    background-color: #d9b4c2;
-    border-radius: 10px;
-  }
-
-.header{
-  display: flex; /* establish flex container */
-  justify-content: center; /* center flex items horizontally, in this case */
-  align-items: center;
+.tabla-scroll::-webkit-scrollbar{
+  height: 6px;
 }
 
+.tabla-scroll::-webkit-scrollbar-thumb{
+  background-color: #d9b4c2;
+  border-radius: 10px;
+}
+
+.header,
 .row{
-  display: flex; /* establish flex container */
-  justify-content: center; /* center flex items horizontally, in this case */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-
 
 .sec{
   white-space: nowrap;
   padding: 10px 8px;
 }
 
+/* ----- Alineación en todos los tamaños ----- */
+.tabla-scroll .header,
+.tabla-scroll .row {
+  --bs-gutter-x: 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  flex-wrap: nowrap;
+}
+
+/* Todas las celdas con el mismo ancho, en header y en filas */
+.tabla-scroll .header > *,
+.tabla-scroll .row > * {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  max-width: none;
+  padding: 10px 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Títulos de columna más compactos */
+.tabla-scroll .header > * {
+  font-size: 1.1rem !important;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+/* Título "Fecha" un poco más a la izquierda */
+.tabla-scroll .header > :nth-child(3) {
+  transform: translateX(-8px);
+}
+
+.tabla-scroll .header > :nth-child(4) {
+  transform: translateX(-8px);
+}
+
+
+/* =====================================================
+   TOP PASTEL + VENTAS DEL AÑO
+===================================================== */
+
 .topPastel{
-    width: 100%;
-    max-width: 420px; 
-    margin: 20px auto;
-    padding: 35px;
-    border-radius: 30px;
-    background-color: #ffffff;
-    box-shadow: 0 8px 25px rgba(93, 52, 18, 0.08);
-    font-family: "Outfit", sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 35px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 25px rgba(93, 52, 18, 0.08);
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .topdiv{
@@ -253,6 +301,7 @@
   font-family: "Outfit", sans-serif;
   margin: 0;
 }
+
 #pastel{
   font-family: "Outfit", sans-serif;
   color: #f077a3;
@@ -262,13 +311,14 @@
 }
 
 #avg{
-font-family: "Outfit", sans-serif;
-font-size: 10px;
+  font-family: "Outfit", sans-serif;
+  font-size: 10px;
 }
+
 #cant{
-font-family: "Outfit", sans-serif;
-font-weight: bold;
-color: #f077a3;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  color: #f077a3;
 }
 
 .btn-cakes{
@@ -281,7 +331,6 @@ color: #f077a3;
   font-size: 16px;
   transition: transform 0.2s, background-color 0.2s, color 0.2s;
   margin: 5px;
-
 }
 
 .btn-cakes:hover{
@@ -295,7 +344,7 @@ color: #f077a3;
   width: 100%;
   max-width: 300px;
   border-radius: 10px;
-  height: auto;         
+  height: auto;
   object-fit: cover;
 }
 
@@ -311,19 +360,18 @@ color: #f077a3;
 .dashboard-row{
   display: flex;
   gap: 20px;
-  align-items: stretch;   
+  align-items: stretch;
   margin: 20px auto;
   max-width: 900px;
 }
 
 .topPastel,
 .ventas-ano{
-  flex: 1 1 0;      
-  width: auto;      
-  max-width: none;  
-  margin: 0 ;       
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
+  margin: 0;
 }
-
 
 #avg{
   font-weight: 400;
@@ -338,6 +386,11 @@ color: #f077a3;
   font-size: 2rem;
   margin: 5px 0 25px 0;
 }
+
+
+/* =====================================================
+   GRÁFICA
+===================================================== */
 
 .chart-container{
   position: relative;
@@ -377,7 +430,7 @@ color: #f077a3;
 }
 
 .bar:hover{
-  background-color: #BFDDEC;             /* un poco más oscuro al pasar el cursor */
+  background-color: #BFDDEC;   /* un poco más oscuro al pasar el cursor */
 }
 
 .bar.activo{
@@ -413,6 +466,11 @@ color: #f077a3;
   color: var(--texto-cafe);
 }
 
+
+/* =====================================================
+   CONFETI
+===================================================== */
+
 .confetti-emoji{
   position: fixed;
   pointer-events: none;
@@ -433,91 +491,13 @@ color: #f077a3;
 }
 
 
-/* Responsive */
-@media (max-width: 576px){
-  .ventas-ano{
-    padding: 22px;
-  }
-  .chart-container{
-    height: 160px;
-  }
-  .chart-labels span{
-    font-size: 0.7rem;
-  }
-  #top,
-  #top-pastel,
-  #top-ventas{
-    font-size: 1.35rem;
-  }
-}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-
-
-/* ================================================
-   TABLA "PEDIDOS RECIENTES" EN RESPONSIVE
-   Solo aplica en 1100px o menos; en pantalla grande
-   la tabla queda exactamente como estaba.
-   ================================================ */
+/* Tabla "Pedidos recientes": scroll horizontal cuando ya no cabe */
 @media (max-width: 1100px) {
 
-  /* Scroll horizontal cuando la tabla ya no cabe */
-  .tabla-scroll{
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-  }
-
-  /* Encabezado y filas: mismo ancho, sin márgenes negativos de Bootstrap */
-  .tabla-scroll .header,
-  .tabla-scroll .row{
-    --bs-gutter-x: 0;
-    box-sizing: border-box;
-    min-width: 760px;
-    margin-left: 0;
-    margin-right: 0;
-    flex-wrap: nowrap;
-  }
-
-  /* Todas las celdas miden lo mismo, tengan lo que tengan dentro */
-  .tabla-scroll .header > *,
-  .tabla-scroll .row > *{
-    flex: 1 1 0;
-    min-width: 0;
-    width: auto;
-    max-width: none;
-    padding: 10px 6px;
-    text-align: center;
-    justify-content: center;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  /* La píldora de estado se adapta al ancho de su columna */
-  .tabla-scroll .estado{
-    width: auto;
-    max-width: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
-    white-space: normal;
-  }
-}
-
-@media (max-width: 768px){
-  .dashboard-row{
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 576px){
-  .tabla-scroll .header > *,
-  .tabla-scroll .row > *{
-    font-size: .85rem;
-    padding: 8px 4px;
-  }
-}
-
-
-@media (max-width: 1100px) {
   .tabla-scroll {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -526,35 +506,33 @@ color: #f077a3;
 
   .tabla-scroll .header,
   .tabla-scroll .row {
-    --bs-gutter-x: 0;
-    box-sizing: border-box;
     min-width: 820px;          /* sube/baja según tus columnas */
-    margin-left: 0;
-    margin-right: 0;
-    flex-wrap: nowrap;
   }
 
-  /* Celdas: todas iguales, sin romper palabras */
   .tabla-scroll .header > *,
   .tabla-scroll .row > * {
-    flex: 1 1 0;
-    min-width: 0;
-    width: auto;
-    max-width: none;
-    padding: 10px 6px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;       /* en vez de normal */
-    overflow-wrap: normal;     /* quita "anywhere" */
+    white-space: nowrap;
+    overflow-wrap: normal;
   }
 
-  /* Píldora: tamaño propio, NO es la celda */
+  /* Los títulos sí pueden partirse en dos líneas */
+  .tabla-scroll .header > * {
+    white-space: normal;
+  }
+
+  /* Con scroll horizontal, "Fecha" vuelve a su lugar */
+  .tabla-scroll .header > :nth-child(3) {
+    transform: none;
+  }
+    .tabla-scroll .header > :nth-child() {
+    transform: none;
+  }
+
+  /* Píldora de estado: tamaño propio, NO es la celda */
   .tabla-scroll .estado,
   .tabla-scroll [class*="estado-"] {
-    flex: none !important;     /* no se estira */
-    width: 100px !important;   /* igual que en Pedidos */
+    flex: none !important;
+    width: 100px !important;
     padding: 5px 0 !important;
     font-size: .78rem;
     font-weight: 600;
@@ -571,9 +549,46 @@ color: #f077a3;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px){
+  .dashboard-row{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px){
+
+  .ventas-ano{
+    padding: 22px;
+  }
+
+  .chart-container{
+    height: 160px;
+  }
+
+  .chart-labels span{
+    font-size: 0.7rem;
+  }
+
+  #top,
+  #top-pastel,
+  #top-ventas{
+    font-size: 1.35rem;
+  }
+
   .tabla-scroll .header > *,
-  .tabla-scroll .row > * { font-size: .85rem; padding: 8px 4px; }
+  .tabla-scroll .row > *{
+    font-size: .85rem;
+    padding: 8px 4px;
+  }
+
+  /* Títulos de columna más chicos en celular (pisa el !important de escritorio) */
+  .tabla-scroll .header > *{
+    font-size: .85rem !important;
+  }
+
   .tabla-scroll .estado,
-  .tabla-scroll [class*="estado-"] { width: 88px !important; font-size: .72rem; }
+  .tabla-scroll [class*="estado-"] {
+    width: 88px !important;
+    font-size: .72rem;
+  }
 }

@@ -256,7 +256,7 @@
     .estado { width: 92px; font-size: .75rem; }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1306px) {
     .paneles-pedidos { flex-direction: column; }
 
     .tabla,
@@ -322,6 +322,28 @@
     }
 
     /* El título "Pedidos" se queda fijo a la izquierda al desplazar */
+    .tabla #pR {
+        position: sticky;
+        left: 0;
+    }
+}
+
+
+/* ---------- Tabla de 769px a 917px: scroll para que no se amontone ---------- */
+@media (min-width: 769px) and (max-width: 917px) {
+
+    .tabla {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabla .header,
+    .tabla .pedido {
+        min-width: 720px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .tabla #pR {
         position: sticky;
         left: 0;
